@@ -89,7 +89,7 @@ const linkify = (t) => {
           <div class="m-role">{lab.director.role}</div>
         </a>
         {team.members.map((m) => (
-          <a class="member" href={u("team")}>
+          <a class="member" href={u("team/" + m.slug)}>
             <div class="m-photo" style={`background-image:url('${u(m.photo)}')`}></div>
             <div class="m-name">{m.name}</div>
             <div class="m-role">{m.role}</div>
