@@ -32,13 +32,6 @@ const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
       </aside>
     </div>
   </section>
-  <section class="section section-alt">
-    <div class="wrap"><span class="eyebrow">Gallery</span><h2 class="h-lg" style="margin-bottom:1.4rem;">Life in the lab</h2>
-      <div class="gallery">
-        {gallery.map((g, i) => <figure class="g-fig"><div class="g-img" style={`background-image:url('${u(g.src)}')`} data-gallery={JSON.stringify(gallery.map((x) => u(x.src)))} data-index={i} role="button" tabindex="0" aria-label={g.caption}></div><figcaption>{g.caption}</figcaption></figure>)}
-      </div>
-    </div>
-  </section>
 </Base>
 <style>
   .page-head{padding:clamp(2.5rem,6vw,5rem) 0 0;}

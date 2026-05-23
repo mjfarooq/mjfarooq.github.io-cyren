@@ -90,28 +90,21 @@ const recentNews = news.slice(0, 4);
     </div>
   </section>
 
-  <!-- NEWS + GALLERY -->
+  <!-- NEWS -->
   <section class="section section-alt">
-    <div class="wrap news-grid">
-      <div>
-        <span class="eyebrow">News</span>
-        <h2 class="h-lg">Latest</h2>
-        <ul class="news-list">
-          {recentNews.map((n) => (
-            <li>
-              {n.images && n.images.length > 0 && <img class="n-thumb" src={u(n.images[0])} data-gallery={JSON.stringify(n.images.map((s) => u(s)))} data-index="0" alt="" loading="lazy" onerror="this.style.display='none'" />}
-              <span class="n-date">{n.date}</span>
-              <span class="n-text">{n.text}</span>
-            </li>
-          ))}
-        </ul>
-        <a class="btn link-more" href={u("news")}>All news →</a>
-      </div>
-      <div class="gallery">
-        {gallery.slice(0, 6).map((g) => (
-          <div class="g-cell" style={`background-image:url('${u(g.src)}')`} data-gallery={JSON.stringify(gallery.map((x) => u(x.src)))} data-index={gallery.indexOf(g)} title={g.caption} role="button" tabindex="0" aria-label={g.caption}></div>
+    <div class="wrap">
+      <span class="eyebrow">News</span>
+      <h2 class="h-lg">Latest</h2>
+      <ul class="news-list">
+        {recentNews.map((n) => (
+          <li>
+            {n.images && n.images.length > 0 && <img class="n-thumb" src={u(n.images[0])} data-gallery={JSON.stringify(n.images.map((s) => u(s)))} data-index="0" alt="" loading="lazy" onerror="this.style.display='none'" />}
+            <span class="n-date">{n.date}</span>
+            <span class="n-text">{n.text}</span>
+          </li>
         ))}
-      </div>
+      </ul>
+      <a class="btn link-more" href={u("news")}>All news →</a>
     </div>
   </section>
 
