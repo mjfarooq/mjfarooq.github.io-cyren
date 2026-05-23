@@ -43,7 +43,11 @@ const linkify = (t) => {
           <div><b>{pubCount}+</b><span>Publications</span></div>
           <div><b>{team.members.length}</b><span>Researchers</span></div>
           <div><b>4</b><span>Research thrusts</span></div>
-          <div><b>NSF</b><span>Funded</span></div>
+          <div><b>{lab.sponsors.length}</b><span>Sponsors</span></div>
+        </div>
+        <div class="sponsors">
+          <span class="sp-label">Sponsors</span>
+          {lab.sponsors.map((s) => <span class="tag">{s}</span>)}
         </div>
       </div>
     </div>
@@ -138,6 +142,8 @@ const linkify = (t) => {
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem;border-top:1px solid var(--border);padding-top:1.5rem;}
   .stats b{font-family:var(--ff-serif);font-size:2rem;color:var(--blue);display:block;line-height:1;}
   .stats span{font-size:.8rem;color:var(--text-mute);}
+  .sponsors{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem;margin-top:1rem;}
+  .sp-label{font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-mute);margin-right:.3rem;}
 
   .thrust-h{margin-bottom:2rem;}
   .thrusts{display:flex;flex-direction:column;gap:clamp(1.5rem,3vw,2.6rem);}
