@@ -9,21 +9,68 @@
   "intro": "The Cyber Resilient Networks (CyReN) Lab develops the theory and systems that keep next-generation networks connected, secure, and intelligent under stress, attack, and uncertainty. Our work spans 5G and 6G open radio access networks, zero trust security, autonomous aerial systems, and AI-driven network management for mission-critical applications.",
   "director": {
     "name": "Junaid Farooq",
-    "role": "Director · Assistant Professor of ECE",
+    "role": "Director · Associate Professor of ECE",
     "url": "https://mjfarooq.github.io/",
     "photo": "/images/team/farooq.jpg"
   },
   "thrusts": [
-    { "title": "NextG & O-RAN", "blurb": "Network slicing, admission control, and multi-agent resource orchestration for ultra-reliable low-latency 5G and 6G open radio access networks.", "image": "/images/thrusts/oran.jpg", "tags": ["O-RAN", "Slicing", "URLLC"] },
-    { "title": "Cyber Resilience & Zero Trust", "blurb": "Zero trust architectures, cyber risk quantification, and supply chain risk analysis that keep untrusted infrastructure trustworthy.", "image": "/images/thrusts/zerotrust.jpg", "tags": ["Zero Trust", "Cyber Risk", "Supply Chain"] },
-    { "title": "Autonomous & Aerial Systems", "blurb": "Distributed orchestration of UAV and robotic networks for coverage, connectivity, and resilient service in contested environments.", "image": "/images/thrusts/uav.jpg", "tags": ["UAV", "Robotics", "Coverage"] },
-    { "title": "AI-Driven Network Management", "blurb": "Reinforcement learning, agentic AI, and large language model methods for autonomous network management and orchestration.", "image": "/images/thrusts/ai.jpg", "tags": ["Reinforcement Learning", "LLM Agents"] }
+    {
+      "title": "NextG & O-RAN",
+      "blurb": "Network slicing, admission control, and multi-agent resource orchestration for ultra-reliable low-latency 5G and 6G open radio access networks.",
+      "image": "/images/thrusts/oran.jpg",
+      "tags": [
+        "O-RAN",
+        "Slicing",
+        "URLLC"
+      ]
+    },
+    {
+      "title": "Cyber Resilience & Zero Trust",
+      "blurb": "Zero trust architectures, cyber risk quantification, and supply chain risk analysis that keep untrusted infrastructure trustworthy.",
+      "image": "/images/thrusts/zerotrust.jpg",
+      "tags": [
+        "Zero Trust",
+        "Cyber Risk",
+        "Supply Chain"
+      ]
+    },
+    {
+      "title": "Autonomous & Aerial Systems",
+      "blurb": "Distributed orchestration of UAV and robotic networks for coverage, connectivity, and resilient service in contested environments.",
+      "image": "/images/thrusts/uav.jpg",
+      "tags": [
+        "UAV",
+        "Robotics",
+        "Coverage"
+      ]
+    },
+    {
+      "title": "AI-Driven Network Management",
+      "blurb": "Reinforcement learning, agentic AI, and large language model methods for autonomous network management and orchestration.",
+      "image": "/images/thrusts/ai.jpg",
+      "tags": [
+        "Reinforcement Learning",
+        "LLM Agents"
+      ]
+    }
   ],
   "hero": "/images/hero-team.jpg",
   "social": [
-    { "label": "Email", "url": "mailto:mjfarooq@umich.edu" },
-    { "label": "GitHub", "url": "https://github.com/mjfarooq" },
-    { "label": "Google Scholar", "url": "https://scholar.google.com/citations?user=Per3ks8AAAAJ&hl=en" },
-    { "label": "Faculty page", "url": "https://mjfarooq.github.io/" }
+    {
+      "label": "Email",
+      "url": "mailto:mjfarooq@umich.edu"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/mjfarooq"
+    },
+    {
+      "label": "Google Scholar",
+      "url": "https://scholar.google.com/citations?user=Per3ks8AAAAJ&hl=en"
+    },
+    {
+      "label": "Faculty page",
+      "url": "https://mjfarooq.github.io/"
+    }
   ]
 }
