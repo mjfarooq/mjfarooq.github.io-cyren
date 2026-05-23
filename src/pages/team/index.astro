@@ -86,11 +86,11 @@ const initials = (n) => n.split(" ").map((w) => w[0]).join("").slice(0, 2).toUpp
   .page-head{padding:clamp(2.5rem,6vw,5rem) 0 0;}
   .director{display:grid;grid-template-columns:200px 1fr;gap:1.8rem;align-items:center;padding:1.6rem;border:1px solid var(--border);border-left:4px solid var(--maize);border-radius:var(--radius);margin-bottom:3rem;}
   .director:hover{text-decoration:none;border-color:var(--border-strong);}
-  .d-photo{aspect-ratio:4/5;background-size:cover;background-position:center;border-radius:var(--radius);}
+  .d-photo{aspect-ratio:4/5;background-size:cover;background-position:top;border-radius:var(--radius);}
   .sect{margin-bottom:1.2rem;}
   .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
   .card{}
-  .c-photo{aspect-ratio:4/5;background-size:cover;background-position:center;border-radius:var(--radius);margin-bottom:.7rem;filter:grayscale(.15);transition:filter .25s;}
+  .c-photo{aspect-ratio:4/5;background-size:cover;background-position:top;border-radius:var(--radius);margin-bottom:.7rem;filter:grayscale(.15);transition:filter .25s;}
   .card:hover .c-photo{filter:none;}
   .c-name{display:inline-block;font-family:var(--ff-serif);font-weight:600;color:var(--blue);font-size:1.1rem;}
   a.c-name:hover{color:var(--link);}
@@ -102,7 +102,7 @@ const initials = (n) => n.split(" ").map((w) => w[0]).join("").slice(0, 2).toUpp
   .people-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;margin-top:1rem;}
   .person{display:flex;gap:.9rem;align-items:center;}
   .p-av{width:60px;height:60px;flex:0 0 60px;border-radius:50%;overflow:hidden;background-color:var(--blue);}
-  .p-av img{width:100%;height:100%;object-fit:cover;display:block;}
+  .p-av img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;}
   .p-ini{width:100%;height:100%;display:grid;place-items:center;color:var(--maize);font-family:var(--ff-mono);font-size:16px;}
   .p-name{font-family:var(--ff-serif);font-weight:600;color:var(--blue);font-size:1.05rem;}
   a.p-name:hover{color:var(--link);}
