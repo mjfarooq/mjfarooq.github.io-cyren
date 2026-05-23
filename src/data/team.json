@@ -1,34 +1,13 @@
 {
   "members": [
-    {
-      "name": "Xingqi Wu",
-      "role": "Ph.D. Researcher",
-      "focus": "O-RAN resource orchestration & RL",
-      "photo": "/images/team/xingqi.jpg"
-    },
-    {
-      "name": "Yuhui Wang",
-      "role": "Ph.D. Researcher",
-      "focus": "UAV networks & deep RL",
-      "photo": "/images/team/yuhui.jpg"
-    },
-    {
-      "name": "Elahe Delavari",
-      "role": "Ph.D. Researcher",
-      "focus": "Resilient O-RAN slicing",
-      "photo": "/images/team/elahe.jpg"
-    }
+    { "name": "Xingqi Wu", "role": "Ph.D. Researcher", "focus": "Resource orchestration for 5G O-RAN networks", "photo": "/images/team/xingqi.jpg" },
+    { "name": "Yuhui Wang", "role": "Ph.D. Researcher", "focus": "UAV networks and reinforcement learning", "photo": "/images/team/yuhui.jpg" },
+    { "name": "Elahe Delavari", "role": "Ph.D. Researcher", "focus": "RL-driven O-RAN control", "photo": "/images/team/elahe.jpg" }
   ],
   "alumni": [
-    {
-      "name": "Tristan Kieras",
-      "note": "IoT supply chain security",
-      "year": ""
-    },
-    {
-      "name": "Minzhao Lyu",
-      "note": "Zero trust for 5G",
-      "year": ""
-    }
+    { "name": "Ritesh Honnalli", "note": "AI-driven cybersecurity for EV charging systems", "year": "2024 - 2025" },
+    { "name": "Dhia Neifar", "note": "Federated learning for vehicular networks", "year": "2023 - 2024" },
+    { "name": "Moyan Lyu", "note": "Zero trust cybersecurity for 5G networks", "year": "2023 - 2024" },
+    { "name": "Zhaoguo Wang", "note": "Resource matching for ride sharing", "year": "2021 - 2022" }
   ]
 }

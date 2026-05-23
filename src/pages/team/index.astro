@@ -34,7 +34,7 @@ const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
         <div class="alumni">
           <h2 class="h-md sect">Alumni</h2>
           <ul class="alum-list">
-            {team.alumni.map((a) => <li><span class="a-name">{a.name}</span><span class="a-note">{a.note}</span></li>)}
+            {team.alumni.map((a) => <li><span class="a-name">{a.name}</span><span class="a-note">{a.note}</span>{a.year && <span class="a-year">{a.year}</span>}</li>)}
           </ul>
         </div>
       )}
@@ -58,6 +58,7 @@ const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
   .alum-list{list-style:none;padding:0;margin:1rem 0 0;}
   .alum-list li{display:flex;gap:1rem;flex-wrap:wrap;padding:.7rem 0;border-bottom:1px solid var(--border);}
   .a-name{font-weight:600;color:var(--blue);}
-  .a-note{color:var(--text-mute);font-size:.9rem;}
+  .a-note{color:var(--text-mute);font-size:.9rem;flex:1;}
+  .a-year{font-family:var(--ff-mono);font-size:.8rem;color:var(--link);}
   @media(max-width:880px){.director{grid-template-columns:1fr;}.grid{grid-template-columns:repeat(2,1fr);}}
 </style>
