@@ -8,6 +8,12 @@ const base = import.meta.env.BASE_URL;
 const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
 const pubCount = pubs.filter(p => p.type !== "Thesis").length;
 const recentNews = news.slice(0, 4);
+const linkMembers = team.members.filter((m) => m.slug);
+const linkify = (t) => {
+  let s = t;
+  for (const m of linkMembers) s = s.split(m.name).join(`<a class="n-link" href="${u("team/" + m.slug)}">${m.name}</a>`);
+  return s;
+};
 ---
 <Base transparentNav={true}>
   <!-- HERO -->
@@ -99,7 +105,7 @@ const recentNews = news.slice(0, 4);
           <li>
             {n.images && n.images.length > 0 && <img class="n-thumb" src={u(n.images[0])} data-gallery={JSON.stringify(n.images.map((s) => u(s)))} data-index="0" alt="" loading="lazy" onerror="this.style.display='none'" />}
             <span class="n-date">{n.date}</span>
-            <span class="n-text">{n.text}</span>
+            <span class="n-text" set:html={linkify(n.text)}></span>
           </li>
         ))}
       </ul>

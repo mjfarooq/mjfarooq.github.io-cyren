@@ -2,6 +2,7 @@
 import Base from "../../layouts/Base.astro";
 import team from "../../data/team.json";
 import pubs from "../../data/publications.json";
+import news from "../../data/news.json";
 
 export async function getStaticPaths() {
   const t = (await import("../../data/team.json")).default;
@@ -17,8 +18,7 @@ const mine = pubs.filter((p) => p.authors_str && p.authors_str.indexOf(member.ma
 const journals = mine.filter((p) => p.type === "Journal");
 const confs = mine.filter((p) => p.type === "Conference");
 const other = mine.filter((p) => p.type !== "Journal" && p.type !== "Conference");
-
-const PubList = "";
+const relatedNews = news.filter((n) => n.text && n.text.indexOf(member.name) !== -1);
 ---
 <Base title={member.name} description={member.bio}>
   <section class="section">
@@ -36,6 +36,23 @@ const PubList = "";
       </div>
 
       <p class="bio">{member.bio}</p>
+
+      {relatedNews.length > 0 && (
+        <div class="pnews">
+          <h2 class="h-sec">In the news</h2>
+          <div class="pnews-row">
+            {relatedNews.map((n) => (
+              <a class="pnews-card" href={u("news")}>
+                {n.images && n.images.length > 0 && <div class="pnews-img" style={`background-image:url('${u(n.images[0])}')`}></div>}
+                <div class="pnews-body">
+                  <span class="pnews-date">{n.date}</span>
+                  <p class="pnews-text">{n.text}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
 
       {journals.length > 0 && (
         <div class="pubs">
@@ -101,6 +118,14 @@ const PubList = "";
   .grad{font-family:var(--ff-mono);font-size:13px;color:var(--maize-deep);margin:0 0 .5rem;}
   .li{font-family:var(--ff-mono);font-size:13px;}
   .bio{font-size:1.05rem;max-width:70ch;margin-bottom:1rem;}
+  .pnews{margin-top:2rem;}
+  .pnews-row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.6rem;-webkit-overflow-scrolling:touch;}
+  .pnews-card{flex:0 0 270px;scroll-snap-align:start;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--surface);}
+  .pnews-card:hover{text-decoration:none;border-color:var(--border-strong);}
+  .pnews-img{height:150px;background-size:cover;background-position:top;}
+  .pnews-body{padding:.8rem 1rem;}
+  .pnews-date{font-family:var(--ff-mono);font-size:12px;color:var(--link);}
+  .pnews-text{font-size:.86rem;color:var(--text);margin:.4rem 0 0;}
   .pubs{margin-top:2rem;}
   .plist{list-style:none;padding:0;margin:1rem 0 0;}
   .pitem{display:grid;grid-template-columns:54px 1fr;gap:1rem;padding:1.1rem 0;border-top:1px solid var(--border);}
