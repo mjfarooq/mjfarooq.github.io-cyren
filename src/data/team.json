@@ -94,5 +94,25 @@
       "photo": "/images/team/danish.jpg",
       "linkedin": "https://www.linkedin.com/in/danish-asim/"
     }
+  ],
+  "undergrads": [
+    {
+      "name": "Jawad Hazime",
+      "note": "",
+      "photo": "",
+      "linkedin": ""
+    },
+    {
+      "name": "Meher Jabbar",
+      "note": "",
+      "photo": "",
+      "linkedin": ""
+    },
+    {
+      "name": "Shouryan Nikam",
+      "note": "",
+      "photo": "",
+      "linkedin": ""
+    }
   ]
 }
