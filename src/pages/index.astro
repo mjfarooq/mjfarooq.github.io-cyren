@@ -99,7 +99,7 @@ const recentNews = news.slice(0, 4);
         <ul class="news-list">
           {recentNews.map((n) => (
             <li>
-              {n.images && n.images.length > 0 && <img class="n-thumb" src={u(n.images[0])} alt="" loading="lazy" />}
+              {n.images && n.images.length > 0 && <img class="n-thumb" src={u(n.images[0])} data-zoom={u(n.images[0])} alt="" loading="lazy" />}
               <span class="n-date">{n.date}</span>
               <span class="n-text">{n.text}</span>
             </li>
@@ -109,7 +109,7 @@ const recentNews = news.slice(0, 4);
       </div>
       <div class="gallery">
         {gallery.slice(0, 6).map((g) => (
-          <div class="g-cell" style={`background-image:url('${u(g.src)}')`} title={g.caption}></div>
+          <div class="g-cell" style={`background-image:url('${u(g.src)}')`} data-zoom={u(g.src)} title={g.caption} role="button" tabindex="0" aria-label={g.caption}></div>
         ))}
       </div>
     </div>
@@ -165,9 +165,9 @@ const recentNews = news.slice(0, 4);
   .news-list li{display:flex;align-items:center;gap:.8rem;padding:.85rem 0;border-top:1px solid var(--border-strong);}
   .n-date{flex:0 0 76px;font-family:var(--ff-mono);font-size:12px;color:var(--link);align-self:flex-start;padding-top:.15rem;}
   .n-text{flex:1;font-size:.92rem;color:var(--text);}
-  .n-thumb{flex:0 0 64px;width:64px;height:48px;object-fit:cover;border-radius:5px;border:1px solid var(--border);order:3;}
+  .n-thumb{flex:0 0 64px;width:64px;height:48px;object-fit:cover;border-radius:5px;border:1px solid var(--border);order:3;cursor:zoom-in;}
   .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-  .g-cell{aspect-ratio:1;background-size:cover;background-position:center;border-radius:3px;}
+  .g-cell{aspect-ratio:1;background-size:cover;background-position:center;border-radius:3px;cursor:zoom-in;}
 
   .join-band{background:var(--blue);color:#fff;}
   .join-in{padding:clamp(3rem,7vw,5rem) 0;text-align:center;}

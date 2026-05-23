@@ -18,7 +18,7 @@ const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
               <span class="n-text">{n.text}</span>
               {n.images && n.images.length > 0 && (
                 <div class="n-thumbs">
-                  {n.images.map((src) => <img class="n-thumb" src={u(src)} alt="" loading="lazy" />)}
+                  {n.images.map((src) => <img class="n-thumb" src={u(src)} data-zoom={u(src)} alt="" loading="lazy" />)}
                 </div>
               )}
             </div>
@@ -35,7 +35,7 @@ const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
   <section class="section section-alt">
     <div class="wrap"><span class="eyebrow">Gallery</span><h2 class="h-lg" style="margin-bottom:1.4rem;">Life in the lab</h2>
       <div class="gallery">
-        {gallery.map((g) => <figure class="g-fig"><div class="g-img" style={`background-image:url('${u(g.src)}')`}></div><figcaption>{g.caption}</figcaption></figure>)}
+        {gallery.map((g) => <figure class="g-fig"><div class="g-img" style={`background-image:url('${u(g.src)}')`} data-zoom={u(g.src)} role="button" tabindex="0" aria-label={g.caption}></div><figcaption>{g.caption}</figcaption></figure>)}
       </div>
     </div>
   </section>
@@ -49,14 +49,14 @@ const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
   .n-body{flex:1;}
   .n-text{font-size:.95rem;color:var(--text);}
   .n-thumbs{display:flex;flex-wrap:wrap;gap:8px;margin-top:.7rem;}
-  .n-thumb{width:120px;height:84px;object-fit:cover;border-radius:6px;border:1px solid var(--border);}
+  .n-thumb{width:120px;height:84px;object-fit:cover;border-radius:6px;border:1px solid var(--border);cursor:zoom-in;}
   @media(max-width:520px){.n-thumb{width:calc(50% - 4px);height:96px;}}
   .join-card{background:var(--blue);color:#fff;border-radius:var(--radius);padding:1.6rem;position:sticky;top:90px;}
   .join-card h2{color:#fff;margin-bottom:.6rem;}
   .join-card p{color:#cdd9e6;font-size:.92rem;}
   .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
   .g-fig{margin:0;}
-  .g-img{aspect-ratio:4/3;background-size:cover;background-position:center;border-radius:var(--radius);}
+  .g-img{aspect-ratio:4/3;background-size:cover;background-position:center;border-radius:var(--radius);cursor:zoom-in;}
   .g-fig figcaption{font-size:.82rem;color:var(--text-mute);margin-top:.4rem;font-family:var(--ff-mono);}
   @media(max-width:880px){.news-grid{grid-template-columns:1fr;}.join-card{position:static;}.gallery{grid-template-columns:repeat(2,1fr);}}
 </style>

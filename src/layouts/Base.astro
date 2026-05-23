@@ -25,6 +25,31 @@ const desc = description || lab.tagline;
   <Nav transparent={transparentNav} />
   <main><slot /></main>
   <Footer />
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lb-close" aria-label="Close">&times;</button>
+    <img class="lb-img" alt="" />
+  </div>
+  <style>
+    .lightbox{display:none;position:fixed;inset:0;z-index:200;background:rgba(8,18,34,.9);align-items:center;justify-content:center;padding:24px;cursor:zoom-out;}
+    .lightbox.open{display:flex;}
+    .lb-img{max-width:92vw;max-height:90vh;border-radius:8px;box-shadow:0 24px 70px rgba(0,0,0,.55);}
+    .lb-close{position:fixed;top:16px;right:20px;width:46px;height:46px;border:0;background:rgba(255,255,255,.14);color:#fff;font-size:28px;line-height:1;border-radius:50%;cursor:pointer;}
+    .lb-close:hover{background:rgba(255,255,255,.26);}
+  </style>
+  <script is:inline>
+    (function(){
+      var lb=document.getElementById("lightbox"); if(!lb) return;
+      var img=lb.querySelector(".lb-img");
+      function open(url){ img.src=url; lb.classList.add("open"); lb.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden"; }
+      function close(){ lb.classList.remove("open"); lb.setAttribute("aria-hidden","true"); img.src=""; document.body.style.overflow=""; }
+      document.addEventListener("click",function(e){
+        var t=e.target.closest("[data-zoom]");
+        if(t){ e.preventDefault(); open(t.getAttribute("data-zoom")); return; }
+        if(e.target.closest(".lightbox")){ close(); }
+      });
+      document.addEventListener("keydown",function(e){ if(e.key==="Escape") close(); });
+    })();
+  </script>
   <script is:inline>
     (function(){
       var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.12});
