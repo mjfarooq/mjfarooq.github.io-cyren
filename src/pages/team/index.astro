@@ -4,6 +4,7 @@ import lab from "../../data/lab.json";
 import team from "../../data/team.json";
 const base = import.meta.env.BASE_URL;
 const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
+const initials = (n) => n.split(" ").map((w) => w[0]).join("").slice(0, 2).toUpperCase();
 ---
 <Base title="Team" description="The people of the CyReN Lab.">
   <section class="page-head"><div class="wrap"><span class="eyebrow">People</span><h1 class="h-xl">The team</h1></div></section>
@@ -22,20 +23,58 @@ const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
       <div class="grid">
         {team.members.map((m) => (
           <article class="card">
-            <div class="c-photo" style={`background-image:url('${u(m.photo)}')`}></div>
-            <div class="c-name">{m.name}</div>
+            <a href={u("team/" + m.slug)} aria-label={m.name}><div class="c-photo" style={`background-image:url('${u(m.photo)}')`}></div></a>
+            <a class="c-name" href={u("team/" + m.slug)}>{m.name}</a>
             <div class="c-role">{m.role}</div>
             <div class="c-focus">{m.focus}</div>
+            <div class="c-links">
+              <a href={u("team/" + m.slug)}>Profile →</a>
+              {m.linkedin && <a href={m.linkedin} target="_blank" rel="noopener">LinkedIn ↗</a>}
+            </div>
           </article>
         ))}
       </div>
 
       {team.alumni.length > 0 && (
-        <div class="alumni">
+        <div class="people-sec">
           <h2 class="h-md sect">Alumni</h2>
-          <ul class="alum-list">
-            {team.alumni.map((a) => <li><span class="a-name">{a.name}</span><span class="a-note">{a.note}</span>{a.year && <span class="a-year">{a.year}</span>}</li>)}
-          </ul>
+          <div class="people-grid">
+            {team.alumni.map((a) => (
+              <article class="person">
+                {a.photo
+                  ? <div class="p-av" style={`background-image:url('${u(a.photo)}')`}></div>
+                  : <div class="p-av p-initials">{initials(a.name)}</div>}
+                <div>
+                  {a.linkedin
+                    ? <a class="p-name" href={a.linkedin} target="_blank" rel="noopener">{a.name}</a>
+                    : <span class="p-name">{a.name}</span>}
+                  {a.note && <div class="p-note">{a.note}</div>}
+                  {a.year && <div class="p-year">{a.year}</div>}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {team.interns && team.interns.length > 0 && (
+        <div class="people-sec">
+          <h2 class="h-md sect">Interns & visiting researchers</h2>
+          <div class="people-grid">
+            {team.interns.map((a) => (
+              <article class="person">
+                {a.photo
+                  ? <div class="p-av" style={`background-image:url('${u(a.photo)}')`}></div>
+                  : <div class="p-av p-initials">{initials(a.name)}</div>}
+                <div>
+                  {a.linkedin
+                    ? <a class="p-name" href={a.linkedin} target="_blank" rel="noopener">{a.name}</a>
+                    : <span class="p-name">{a.name}</span>}
+                  {a.note && <div class="p-note">{a.note}</div>}
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       )}
     </div>
@@ -51,14 +90,21 @@ const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
   .card{}
   .c-photo{aspect-ratio:4/5;background-size:cover;background-position:center;border-radius:var(--radius);margin-bottom:.7rem;filter:grayscale(.15);transition:filter .25s;}
   .card:hover .c-photo{filter:none;}
-  .c-name{font-family:var(--ff-serif);font-weight:600;color:var(--blue);font-size:1.1rem;}
+  .c-name{display:inline-block;font-family:var(--ff-serif);font-weight:600;color:var(--blue);font-size:1.1rem;}
+  a.c-name:hover{color:var(--link);}
   .c-role{font-size:.82rem;color:var(--link);}
   .c-focus{font-size:.82rem;color:var(--text-mute);margin-top:.2rem;}
-  .alumni{margin-top:3rem;border-top:1px solid var(--border);padding-top:2rem;}
-  .alum-list{list-style:none;padding:0;margin:1rem 0 0;}
-  .alum-list li{display:flex;gap:1rem;flex-wrap:wrap;padding:.7rem 0;border-bottom:1px solid var(--border);}
-  .a-name{font-weight:600;color:var(--blue);}
-  .a-note{color:var(--text-mute);font-size:.9rem;flex:1;}
-  .a-year{font-family:var(--ff-mono);font-size:.8rem;color:var(--link);}
+  .c-links{display:flex;gap:.9rem;margin-top:.5rem;}
+  .c-links a{font-family:var(--ff-mono);font-size:12px;color:var(--link);}
+  .people-sec{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:2rem;}
+  .people-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;margin-top:1rem;}
+  .person{display:flex;gap:.9rem;align-items:center;}
+  .p-av{width:60px;height:60px;flex:0 0 60px;border-radius:50%;background-size:cover;background-position:center;background-color:var(--blue);}
+  .p-initials{display:grid;place-items:center;color:var(--maize);font-family:var(--ff-mono);font-size:16px;}
+  .p-name{font-family:var(--ff-serif);font-weight:600;color:var(--blue);font-size:1.05rem;}
+  a.p-name:hover{color:var(--link);}
+  .p-note{font-size:.84rem;color:var(--text-mute);}
+  .p-year{font-family:var(--ff-mono);font-size:.78rem;color:var(--link);margin-top:.1rem;}
   @media(max-width:880px){.director{grid-template-columns:1fr;}.grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:620px){.people-grid{grid-template-columns:1fr;}}
 </style>

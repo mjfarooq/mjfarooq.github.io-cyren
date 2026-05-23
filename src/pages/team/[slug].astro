@@ -1,0 +1,114 @@
+---
+import Base from "../../layouts/Base.astro";
+import team from "../../data/team.json";
+import pubs from "../../data/publications.json";
+
+export async function getStaticPaths() {
+  const t = (await import("../../data/team.json")).default;
+  return t.members.filter((m) => m.slug).map((m) => ({ params: { slug: m.slug }, props: { member: m } }));
+}
+
+const { member } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
+const authorsHtml = (s) => s.replace(/(M\. J\. Farooq|J\. Farooq)/g, "<strong>$1</strong>");
+
+const mine = pubs.filter((p) => p.authors_str && p.authors_str.indexOf(member.match) !== -1);
+const journals = mine.filter((p) => p.type === "Journal");
+const confs = mine.filter((p) => p.type === "Conference");
+const other = mine.filter((p) => p.type !== "Journal" && p.type !== "Conference");
+
+const PubList = "";
+---
+<Base title={member.name} description={member.bio}>
+  <section class="section">
+    <div class="wrap">
+      <a class="back" href={u("team")}>← Team</a>
+      <div class="head">
+        <div class="ph" style={member.photo ? `background-image:url('${u(member.photo)}')` : ""}>{!member.photo && member.name.split(" ").map((w) => w[0]).join("").slice(0,2)}</div>
+        <div>
+          <span class="eyebrow">PhD Researcher</span>
+          <h1 class="h-page">{member.name}</h1>
+          <p class="role">{member.focus}</p>
+          {member.grad && <p class="grad">Anticipated graduation: {member.grad}</p>}
+          {member.linkedin && <a class="li" href={member.linkedin} target="_blank" rel="noopener">LinkedIn ↗</a>}
+        </div>
+      </div>
+
+      <p class="bio">{member.bio}</p>
+
+      {journals.length > 0 && (
+        <div class="pubs">
+          <h2 class="h-sec">Journal articles</h2>
+          <ol class="plist">
+            {journals.map((p) => (
+              <li class="pitem">
+                <span class="pi-year">{p.year}</span>
+                <div>
+                  {p.url ? <a class="pi-title" href={p.url} target="_blank" rel="noopener">{p.title}</a> : <span class="pi-title">{p.title}</span>}
+                  <div class="pi-auth" set:html={authorsHtml(p.authors_str)}></div>
+                  <div class="pi-venue">{p.venue}</div>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
+
+      {confs.length > 0 && (
+        <div class="pubs">
+          <h2 class="h-sec">Conference papers</h2>
+          <ol class="plist">
+            {confs.map((p) => (
+              <li class="pitem">
+                <span class="pi-year">{p.year}</span>
+                <div>
+                  {p.url ? <a class="pi-title" href={p.url} target="_blank" rel="noopener">{p.title}</a> : <span class="pi-title">{p.title}</span>}
+                  <div class="pi-auth" set:html={authorsHtml(p.authors_str)}></div>
+                  <div class="pi-venue">{p.venue}</div>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
+
+      {other.length > 0 && (
+        <div class="pubs">
+          <h2 class="h-sec">Other</h2>
+          <ol class="plist">
+            {other.map((p) => (
+              <li class="pitem">
+                <span class="pi-year">{p.year}</span>
+                <div>
+                  {p.url ? <a class="pi-title" href={p.url} target="_blank" rel="noopener">{p.title}</a> : <span class="pi-title">{p.title}</span>}
+                  <div class="pi-auth" set:html={authorsHtml(p.authors_str)}></div>
+                  <div class="pi-venue">{p.venue}</div>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
+    </div>
+  </section>
+</Base>
+<style>
+  .back{font-family:var(--ff-mono);font-size:13px;color:var(--link);}
+  .head{display:grid;grid-template-columns:150px 1fr;gap:1.8rem;align-items:center;margin:1rem 0 1.6rem;}
+  .ph{aspect-ratio:4/5;background-size:cover;background-position:center;background-color:var(--blue);color:var(--maize);border-radius:var(--radius);display:grid;place-items:center;font-family:var(--ff-mono);font-size:2rem;}
+  .role{font-size:1.05rem;color:var(--text-soft);margin:.2rem 0 .4rem;}
+  .grad{font-family:var(--ff-mono);font-size:13px;color:var(--maize-deep);margin:0 0 .5rem;}
+  .li{font-family:var(--ff-mono);font-size:13px;}
+  .bio{font-size:1.05rem;max-width:70ch;margin-bottom:1rem;}
+  .pubs{margin-top:2rem;}
+  .plist{list-style:none;padding:0;margin:1rem 0 0;}
+  .pitem{display:grid;grid-template-columns:54px 1fr;gap:1rem;padding:1.1rem 0;border-top:1px solid var(--border);}
+  .pi-year{font-family:var(--ff-mono);font-size:13px;color:var(--link);}
+  .pi-title{font-family:var(--ff-serif);font-weight:600;font-size:1.05rem;color:var(--blue);line-height:1.3;}
+  a.pi-title:hover{color:var(--link);}
+  .pi-auth{font-size:.88rem;color:var(--text-soft);margin-top:.3rem;}
+  .pi-auth strong{color:var(--blue);}
+  .pi-venue{font-size:.84rem;color:var(--text-mute);font-style:italic;margin-top:.1rem;}
+  @media(max-width:620px){.head{grid-template-columns:1fr;}.ph{max-width:150px;}.pitem{grid-template-columns:1fr;gap:.3rem;}}
+</style>
