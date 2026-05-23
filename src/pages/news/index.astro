@@ -1,0 +1,46 @@
+---
+import Base from "../../layouts/Base.astro";
+import lab from "../../data/lab.json";
+import news from "../../data/news.json";
+import gallery from "../../data/gallery.json";
+const base = import.meta.env.BASE_URL;
+const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
+---
+<Base title="News" description="Lab news, gallery, and openings.">
+  <section class="page-head"><div class="wrap"><span class="eyebrow">News</span><h1 class="h-xl">News &amp; openings</h1></div></section>
+  <section class="section">
+    <div class="wrap news-grid">
+      <ul class="news-list">
+        {news.map((n) => <li><span class="n-date">{n.date}</span><span class="n-text">{n.text}</span></li>)}
+      </ul>
+      <aside class="join-card" id="join">
+        <h2 class="h-md">Join the lab</h2>
+        <p>We are recruiting motivated Ph.D. and master's students interested in NextG networks, cyber resilience, and autonomous systems.</p>
+        <a class="btn btn-maize" href={"mailto:" + lab.email}>Email {lab.email}</a>
+      </aside>
+    </div>
+  </section>
+  <section class="section section-alt">
+    <div class="wrap"><span class="eyebrow">Gallery</span><h2 class="h-lg" style="margin-bottom:1.4rem;">Life in the lab</h2>
+      <div class="gallery">
+        {gallery.map((g) => <figure class="g-fig"><div class="g-img" style={`background-image:url('${u(g.src)}')`}></div><figcaption>{g.caption}</figcaption></figure>)}
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  .page-head{padding:clamp(2.5rem,6vw,5rem) 0 0;}
+  .news-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:start;}
+  .news-list{list-style:none;padding:0;margin:0;}
+  .news-list li{display:grid;grid-template-columns:90px 1fr;gap:.8rem;padding:1rem 0;border-top:1px solid var(--border);}
+  .n-date{font-family:var(--ff-mono);font-size:12px;color:var(--link);}
+  .n-text{font-size:.95rem;color:var(--text);}
+  .join-card{background:var(--blue);color:#fff;border-radius:var(--radius);padding:1.6rem;position:sticky;top:90px;}
+  .join-card h2{color:#fff;margin-bottom:.6rem;}
+  .join-card p{color:#cdd9e6;font-size:.92rem;}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+  .g-fig{margin:0;}
+  .g-img{aspect-ratio:4/3;background-size:cover;background-position:center;border-radius:var(--radius);}
+  .g-fig figcaption{font-size:.82rem;color:var(--text-mute);margin-top:.4rem;font-family:var(--ff-mono);}
+  @media(max-width:880px){.news-grid{grid-template-columns:1fr;}.join-card{position:static;}.gallery{grid-template-columns:repeat(2,1fr);}}
+</style>

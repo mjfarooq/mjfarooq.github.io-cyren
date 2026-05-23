@@ -1,0 +1,7 @@
+---
+import Base from "../layouts/Base.astro";
+const base = import.meta.env.BASE_URL;
+---
+<Base title="Not found">
+  <section class="section" style="padding-top:14vh;"><div class="wrap"><span class="eyebrow">Error 404</span><h1 class="h-xl">Page not found</h1><p class="lead">That page does not exist.</p><a class="btn btn-primary" href={base}>Return home</a></div></section>
+</Base>

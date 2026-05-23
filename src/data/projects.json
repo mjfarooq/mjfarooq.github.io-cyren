@@ -1,0 +1,6 @@
+[
+  { "title": "AI-Driven Resilience for O-RAN and NextG Networks", "summary": "Multi-agent reinforcement learning and agentic AI for joint slice admission, PRB allocation, and resource orchestration, with resilience to jamming and disruptive users.", "sponsor": "", "tags": ["O-RAN", "Reinforcement Learning", "URLLC"] },
+  { "title": "Zero Trust Security Intelligence for 5G Networks", "summary": "A holistic zero trust approach for trusted communications over untrusted 5G infrastructure, with continuous trust monitoring and adaptive access control.", "sponsor": "National Science Foundation", "tags": ["Zero Trust", "5G Security"] },
+  { "title": "Cyber Supply Chain Risk Analysis and Mitigation", "summary": "Modeling, computation, and software tools for risk analysis across IT, OT, and IoT supply chains for critical and automotive infrastructure.", "sponsor": "DHS · CIRI · MEDC", "tags": ["Supply Chain", "IoT"] },
+  { "title": "Resilient Connectivity for IoT in Adversarial Environments", "summary": "Secure, reconfigurable multi-layer network design and feedback-based UAV connectivity for remotely deployed mobile IoT.", "sponsor": "", "tags": ["IoBT", "UAV", "Resilience"] }
+]

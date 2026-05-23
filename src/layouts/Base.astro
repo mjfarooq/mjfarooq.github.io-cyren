@@ -1,0 +1,38 @@
+---
+import "../styles/global.css";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import lab from "../data/lab.json";
+const { title, description, transparentNav = false } = Astro.props;
+const pageTitle = title ? `${title} · ${lab.name} Lab` : `${lab.name} · ${lab.fullName}`;
+const desc = description || lab.tagline;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={desc} />
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={desc} />
+  <link rel="icon" href={import.meta.env.BASE_URL.replace(/\/$/,'') + "/favicon.svg"} type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <Nav transparent={transparentNav} />
+  <main><slot /></main>
+  <Footer />
+  <script is:inline>
+    (function(){
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.12});
+      function bind(){document.querySelectorAll(".reveal:not(.in)").forEach(function(el){io.observe(el);});}
+      document.addEventListener("DOMContentLoaded",bind);bind();
+      var nav=document.querySelector(".nav.over");
+      if(nav){ var onScroll=function(){ nav.classList.toggle("scrolled", window.scrollY>60); }; onScroll(); window.addEventListener("scroll",onScroll,{passive:true}); }
+    })();
+  </script>
+</body>
+</html>

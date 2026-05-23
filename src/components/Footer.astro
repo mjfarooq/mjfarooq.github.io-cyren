@@ -1,0 +1,27 @@
+---
+import lab from "../data/lab.json";
+const year = new Date().getFullYear();
+---
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <div class="foot-brand">{lab.name}</div>
+      <p class="foot-sub">{lab.fullName}<br/>{lab.institution}</p>
+    </div>
+    <div class="foot-links">
+      {lab.social.map((s) => <a href={s.url} target="_blank" rel="noopener">{s.label}</a>)}
+    </div>
+  </div>
+  <div class="wrap foot-base"><span>© {year} {lab.fullName}</span><span>Directed by <a href={lab.facultyUrl}>Junaid Farooq</a></span></div>
+</footer>
+<style>
+  .foot{background:var(--blue);color:#cdd9e6;margin-top:0;border-top:4px solid var(--maize);}
+  .foot-in{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;padding-top:3rem;padding-bottom:1.5rem;}
+  .foot-brand{font-family:var(--ff-mono);font-size:1.4rem;color:var(--maize);}
+  .foot-sub{color:#9fb3cc;font-size:13.5px;margin:.5rem 0 0;}
+  .foot-links{display:flex;flex-wrap:wrap;gap:1.1rem;align-content:flex-start;}
+  .foot-links a{color:#cdd9e6;font-family:var(--ff-mono);font-size:13px;}
+  .foot-links a:hover{color:var(--maize);}
+  .foot-base{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:1.4rem;padding-bottom:2.2rem;margin-top:1.6rem;border-top:1px solid rgba(255,255,255,.14);font-family:var(--ff-mono);font-size:12px;color:#9fb3cc;}
+  .foot-base a{color:#cdd9e6;}
+</style>

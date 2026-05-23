@@ -1,10 +1,5 @@
-# IDEs
-.idea/
-
-# Hugo
-resources/
-public/
-jsconfig.json
+dist/
 node_modules/
-go.sum
-.hugo_build.lock
+.astro/
+.DS_Store
+npm-debug.log*

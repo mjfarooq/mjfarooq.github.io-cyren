@@ -1,0 +1,180 @@
+---
+import Base from "../layouts/Base.astro";
+import lab from "../data/lab.json";
+import team from "../data/team.json";
+import news from "../data/news.json";
+import gallery from "../data/gallery.json";
+import pubs from "../data/publications.json";
+const base = import.meta.env.BASE_URL;
+const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
+const pubCount = pubs.filter(p => p.type !== "Thesis").length;
+const recentNews = news.slice(0, 4);
+---
+<Base transparentNav={true}>
+  <!-- HERO -->
+  <section class="hero" style={`background-image:linear-gradient(180deg,rgba(0,20,40,.35),rgba(0,20,40,.78)),url('${u(lab.hero)}')`}>
+    <div class="wrap hero-in">
+      <span class="hero-eyebrow">{lab.institution}</span>
+      <h1 class="hero-title">Cyber Resilient<br/>Networks Lab</h1>
+      <p class="hero-tag">{lab.tagline}</p>
+      <div class="hero-cta">
+        <a class="btn btn-maize" href={u("research")}>Our research</a>
+        <a class="btn btn-ghost" href={u("news") + "#join"}>Join the lab</a>
+      </div>
+    </div>
+    <div class="hero-scroll">scroll</div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="wrap intro-grid">
+      <div>
+        <span class="eyebrow">The lab</span>
+        <h2 class="h-lg">{lab.tagline}</h2>
+      </div>
+      <div>
+        <p class="lead">{lab.intro}</p>
+        <div class="stats">
+          <div><b>{pubCount}+</b><span>Publications</span></div>
+          <div><b>{team.members.length}</b><span>Researchers</span></div>
+          <div><b>4</b><span>Research thrusts</span></div>
+          <div><b>NSF</b><span>Funded</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THRUSTS -->
+  <section class="section section-alt">
+    <div class="wrap">
+      <span class="eyebrow">Research</span>
+      <h2 class="h-lg thrust-h">What we work on</h2>
+      <div class="thrusts">
+        {lab.thrusts.map((t, i) => (
+          <article class={"thrust reveal" + (i % 2 ? " flip" : "")}>
+            <div class="thrust-img" style={`background-image:url('${u(t.image)}')`}></div>
+            <div class="thrust-body">
+              <div class="thrust-num">0{i + 1}</div>
+              <h3 class="h-md">{t.title}</h3>
+              <p>{t.blurb}</p>
+              <div class="tags">{t.tags.map((x) => <span class="tag">{x}</span>)}</div>
+            </div>
+          </article>
+        ))}
+      </div>
+      <a class="btn link-more" href={u("research")}>All research and projects →</a>
+    </div>
+  </section>
+
+  <!-- TEAM PREVIEW -->
+  <section class="section">
+    <div class="wrap">
+      <div class="row-head">
+        <div><span class="eyebrow">People</span><h2 class="h-lg">The team</h2></div>
+        <a class="btn" href={u("team")}>Meet everyone →</a>
+      </div>
+      <div class="team-strip">
+        <a class="member" href={u("team")}>
+          <div class="m-photo" style={`background-image:url('${u(lab.director.photo)}')`}></div>
+          <div class="m-name">{lab.director.name}</div>
+          <div class="m-role">{lab.director.role}</div>
+        </a>
+        {team.members.map((m) => (
+          <a class="member" href={u("team")}>
+            <div class="m-photo" style={`background-image:url('${u(m.photo)}')`}></div>
+            <div class="m-name">{m.name}</div>
+            <div class="m-role">{m.role}</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS + GALLERY -->
+  <section class="section section-alt">
+    <div class="wrap news-grid">
+      <div>
+        <span class="eyebrow">News</span>
+        <h2 class="h-lg">Latest</h2>
+        <ul class="news-list">
+          {recentNews.map((n) => (
+            <li><span class="n-date">{n.date}</span><span class="n-text">{n.text}</span></li>
+          ))}
+        </ul>
+        <a class="btn link-more" href={u("news")}>All news →</a>
+      </div>
+      <div class="gallery">
+        {gallery.slice(0, 6).map((g) => (
+          <div class="g-cell" style={`background-image:url('${u(g.src)}')`} title={g.caption}></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN -->
+  <section class="join-band" id="join">
+    <div class="wrap join-in">
+      <h2 class="h-lg join-h">Join the lab</h2>
+      <p>We are looking for motivated Ph.D. and master's students interested in NextG networks, cyber resilience, and autonomous systems. Reach out with a CV and a short note on your interests.</p>
+      <a class="btn btn-maize" href={"mailto:" + lab.email}>{lab.email}</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero{min-height:84vh;background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;position:relative;}
+  .hero-in{padding-bottom:clamp(3rem,8vh,7rem);padding-top:8rem;}
+  .hero-eyebrow{font-family:var(--ff-mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--maize);}
+  .hero-title{color:#fff;font-size:clamp(2.8rem,8vw,5.4rem);line-height:1.02;letter-spacing:-.03em;margin:1rem 0 0;}
+  .hero-tag{color:#e7ecf2;font-size:clamp(1.05rem,2vw,1.4rem);max-width:46ch;margin:1.1rem 0 1.8rem;}
+  .hero-cta{display:flex;gap:.7rem;flex-wrap:wrap;}
+  .btn-ghost{background:transparent;border-color:rgba(255,255,255,.6);color:#fff;}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1);color:#fff;}
+  .hero-scroll{position:absolute;right:clamp(20px,5vw,52px);bottom:1.6rem;font-family:var(--ff-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);writing-mode:vertical-rl;}
+
+  .intro-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(1.5rem,5vw,4rem);align-items:start;}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem;border-top:1px solid var(--border);padding-top:1.5rem;}
+  .stats b{font-family:var(--ff-serif);font-size:2rem;color:var(--blue);display:block;line-height:1;}
+  .stats span{font-size:.8rem;color:var(--text-mute);}
+
+  .thrust-h{margin-bottom:2rem;}
+  .thrusts{display:flex;flex-direction:column;gap:clamp(1.5rem,3vw,2.6rem);}
+  .thrust{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(1.2rem,3vw,2.6rem);align-items:center;}
+  .thrust.flip .thrust-img{order:2;}
+  .thrust-img{height:300px;background-size:cover;background-position:center;border-radius:var(--radius);}
+  .thrust-num{font-family:var(--ff-mono);font-size:13px;color:var(--maize-deep);margin-bottom:.4rem;}
+  .thrust-body h3{margin-bottom:.6rem;}
+  .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem;}
+  .link-more{margin-top:2rem;}
+
+  .row-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;margin-bottom:1.8rem;}
+  .team-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;}
+  .member{display:block;}
+  .member:hover{text-decoration:none;}
+  .m-photo{aspect-ratio:4/5;background-size:cover;background-position:center;border-radius:var(--radius);margin-bottom:.6rem;filter:grayscale(.15);transition:filter .25s;}
+  .member:hover .m-photo{filter:none;}
+  .m-name{font-weight:600;color:var(--blue);font-size:.98rem;font-family:var(--ff-serif);}
+  .m-role{font-size:.8rem;color:var(--text-mute);}
+
+  .news-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:start;}
+  .news-list{list-style:none;padding:0;margin:1.2rem 0;}
+  .news-list li{display:grid;grid-template-columns:84px 1fr;gap:.8rem;padding:.85rem 0;border-top:1px solid var(--border-strong);}
+  .n-date{font-family:var(--ff-mono);font-size:12px;color:var(--link);}
+  .n-text{font-size:.92rem;color:var(--text);}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+  .g-cell{aspect-ratio:1;background-size:cover;background-position:center;border-radius:3px;}
+
+  .join-band{background:var(--blue);color:#fff;}
+  .join-in{padding:clamp(3rem,7vw,5rem) 0;text-align:center;}
+  .join-h{color:#fff;}
+  .join-in p{color:#cdd9e6;max-width:60ch;margin:1rem auto 1.6rem;}
+
+  @media(max-width:880px){
+    .intro-grid,.news-grid{grid-template-columns:1fr;}
+    .thrust{grid-template-columns:1fr;}
+    .thrust.flip .thrust-img{order:0;}
+    .thrust-img{height:220px;}
+    .team-strip{grid-template-columns:repeat(3,1fr);}
+  }
+  @media(max-width:520px){.stats{grid-template-columns:repeat(2,1fr);}.team-strip{grid-template-columns:repeat(2,1fr);}.news-list li{grid-template-columns:1fr;gap:.2rem;}}
+</style>

@@ -1,0 +1,12 @@
+{
+  "members": [
+    { "name": "Xingqi Wu", "role": "Ph.D. Researcher", "focus": "O-RAN resource orchestration & RL", "photo": "/images/team/xingqi.jpg" },
+    { "name": "Yuhui Wang", "role": "Ph.D. Researcher", "focus": "UAV networks & deep RL", "photo": "/images/team/yuhui.jpg" },
+    { "name": "Ritesh Honnalli", "role": "Ph.D. Researcher", "focus": "Agentic AI for cyber threat detection", "photo": "/images/team/ritesh.jpg" },
+    { "name": "Ehsan Delavari", "role": "Ph.D. Researcher", "focus": "Resilient O-RAN slicing", "photo": "/images/team/ehsan.jpg" }
+  ],
+  "alumni": [
+    { "name": "Tristan Kieras", "note": "IoT supply chain security", "year": "" },
+    { "name": "Minzhao Lyu", "note": "Zero trust for 5G", "year": "" }
+  ]
+}

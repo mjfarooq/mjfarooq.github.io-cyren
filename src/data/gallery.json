@@ -1,0 +1,8 @@
+[
+  { "src": "/images/gallery/g1.jpg", "caption": "Team in the lab" },
+  { "src": "/images/gallery/g2.jpg", "caption": "UAV platform" },
+  { "src": "/images/gallery/g3.jpg", "caption": "Robotic manipulation testbed" },
+  { "src": "/images/gallery/g4.jpg", "caption": "Network slicing results review" },
+  { "src": "/images/gallery/g5.jpg", "caption": "Whiteboard session" },
+  { "src": "/images/gallery/g6.jpg", "caption": "O-RAN experiments" }
+]

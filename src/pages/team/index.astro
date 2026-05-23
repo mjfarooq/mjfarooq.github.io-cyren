@@ -1,0 +1,63 @@
+---
+import Base from "../../layouts/Base.astro";
+import lab from "../../data/lab.json";
+import team from "../../data/team.json";
+const base = import.meta.env.BASE_URL;
+const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
+---
+<Base title="Team" description="The people of the CyReN Lab.">
+  <section class="page-head"><div class="wrap"><span class="eyebrow">People</span><h1 class="h-xl">The team</h1></div></section>
+  <section class="section">
+    <div class="wrap">
+      <a class="director" href={lab.director.url} target="_blank" rel="noopener">
+        <div class="d-photo" style={`background-image:url('${u(lab.director.photo)}')`}></div>
+        <div>
+          <div class="eyebrow">Director</div>
+          <h2 class="h-lg">{lab.director.name}</h2>
+          <p>{lab.director.role}. Visit faculty page →</p>
+        </div>
+      </a>
+
+      <h2 class="h-md sect">Researchers</h2>
+      <div class="grid">
+        {team.members.map((m) => (
+          <article class="card">
+            <div class="c-photo" style={`background-image:url('${u(m.photo)}')`}></div>
+            <div class="c-name">{m.name}</div>
+            <div class="c-role">{m.role}</div>
+            <div class="c-focus">{m.focus}</div>
+          </article>
+        ))}
+      </div>
+
+      {team.alumni.length > 0 && (
+        <div class="alumni">
+          <h2 class="h-md sect">Alumni</h2>
+          <ul class="alum-list">
+            {team.alumni.map((a) => <li><span class="a-name">{a.name}</span><span class="a-note">{a.note}</span></li>)}
+          </ul>
+        </div>
+      )}
+    </div>
+  </section>
+</Base>
+<style>
+  .page-head{padding:clamp(2.5rem,6vw,5rem) 0 0;}
+  .director{display:grid;grid-template-columns:200px 1fr;gap:1.8rem;align-items:center;padding:1.6rem;border:1px solid var(--border);border-left:4px solid var(--maize);border-radius:var(--radius);margin-bottom:3rem;}
+  .director:hover{text-decoration:none;border-color:var(--border-strong);}
+  .d-photo{aspect-ratio:4/5;background-size:cover;background-position:center;border-radius:var(--radius);}
+  .sect{margin-bottom:1.2rem;}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
+  .card{}
+  .c-photo{aspect-ratio:4/5;background-size:cover;background-position:center;border-radius:var(--radius);margin-bottom:.7rem;filter:grayscale(.15);transition:filter .25s;}
+  .card:hover .c-photo{filter:none;}
+  .c-name{font-family:var(--ff-serif);font-weight:600;color:var(--blue);font-size:1.1rem;}
+  .c-role{font-size:.82rem;color:var(--link);}
+  .c-focus{font-size:.82rem;color:var(--text-mute);margin-top:.2rem;}
+  .alumni{margin-top:3rem;border-top:1px solid var(--border);padding-top:2rem;}
+  .alum-list{list-style:none;padding:0;margin:1rem 0 0;}
+  .alum-list li{display:flex;gap:1rem;flex-wrap:wrap;padding:.7rem 0;border-bottom:1px solid var(--border);}
+  .a-name{font-weight:600;color:var(--blue);}
+  .a-note{color:var(--text-mute);font-size:.9rem;}
+  @media(max-width:880px){.director{grid-template-columns:1fr;}.grid{grid-template-columns:repeat(2,1fr);}}
+</style>

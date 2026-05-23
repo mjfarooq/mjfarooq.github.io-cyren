@@ -1,0 +1,1312 @@
+[
+  {
+    "title": "Cyber Resilience in Next-Generation Networks: Theoretical Foundations, Threat Landscape, and Design Paradigms",
+    "authors": [
+      "J. Farooq",
+      "Q. Zhu"
+    ],
+    "authors_str": "J. Farooq and Q. Zhu",
+    "year": 2026,
+    "type": "Book",
+    "venue": "Foundations and Trends in Networking (FnT), Emerald Publishers",
+    "url": "",
+    "tags": [
+      "Cyber Resilience"
+    ]
+  },
+  {
+    "title": "Dependency-Aware Task Offloading via Quantum Graph Attention Network-based Deep Reinforcement Learning in Collaborative Edge-Cloud Systems",
+    "authors": [
+      "Y. Wang",
+      "X. Wu",
+      "J. Farooq",
+      "S. Y. Chen",
+      "J. Chen"
+    ],
+    "authors_str": "Y. Wang, X. Wu, J. Farooq, S. Y. Chen, and J. Chen",
+    "year": 2026,
+    "type": "Conference",
+    "venue": "in International Conference on Computer Communications and Networks (ICCCN 2026)",
+    "url": "",
+    "tags": [
+      "NextG / O-RAN",
+      "AI / Learning"
+    ]
+  },
+  {
+    "title": "Differentiable architecture search for adversarially robust quantum computer vision",
+    "authors": [
+      "M. Afane",
+      "Q. Long",
+      "H. Shen",
+      "Y. Mao",
+      "J. Farooq",
+      "Y. Chen",
+      "J. Chen"
+    ],
+    "authors_str": "M. Afane, Q. Long, H. Shen, Y. Mao, J. Farooq, Y. Chen, and J. Chen",
+    "year": 2026,
+    "type": "Journal",
+    "venue": "in Quantum Machine Intelligence, vol. 8, no. 2",
+    "url": "https://link.springer.com/article/10.1007/s42484-026-00353-0",
+    "tags": [
+      "Cyber Resilience",
+      "AI / Learning"
+    ]
+  },
+  {
+    "title": "Dynamic Multi-Modal UAV Control for Optimized Coverage and Backhaul Connectivity in Spatially Unstructured and Dispersed User Environments",
+    "authors": [
+      "Y. Wang",
+      "J. Farooq",
+      "J. Chen"
+    ],
+    "authors_str": "Y. Wang, J. Farooq, and J. Chen",
+    "year": 2026,
+    "type": "Journal",
+    "venue": "in IEEE Transactions on Mobile Computing, vol. 25, no. 2, pp. 2320-2334",
+    "url": "https://www.computer.org/csdl/journal/tm/5555/01/11152341/29LAw5X8z2E",
+    "tags": [
+      "UAV & Aerial"
+    ]
+  },
+  {
+    "title": "Jamming-Resilient PRB Reservation for Latency-Critical O-RAN Network Slicing",
+    "authors": [
+      "E. Delavari",
+      "J. Farooq"
+    ],
+    "authors_str": "E. Delavari and J. Farooq",
+    "year": 2026,
+    "type": "Conference",
+    "venue": "in IEEE DySPAN 2026 ML-Spec Workshop, Washington D.C., USA",
+    "url": "",
+    "tags": [
+      "NextG / O-RAN",
+      "Cyber Resilience"
+    ]
+  },
+  {
+    "title": "Multi-agent Resource Orchestration Based on D3QN for Network Slicing in 5G Edge-Cloud Networks",
+    "authors": [
+      "X. Wu",
+      "J. Farooq",
+      "J. Chen"
+    ],
+    "authors_str": "X. Wu, J. Farooq, and J. Chen",
+    "year": 2026,
+    "type": "Journal",
+    "venue": "in IEEE Transactions on Network and Service Management, vol. 23, pp. 1766-1781",
+    "url": "https://ieeexplore.ieee.org/document/11297800",
+    "tags": [
+      "NextG / O-RAN"
+    ]
+  },
+  {
+    "title": "PROMPTGUARD: Zero Trust Prompting for Securing LLM-Driven O-RAN Control",
+    "authors": [
+      "Y. Wang",
+      "X. Wu",
+      "J. Farooq",
+      "J. Chen"
+    ],
+    "authors_str": "Y. Wang, X. Wu, J. Farooq, and J. Chen",
+    "year": 2026,
+    "type": "Conference",
+    "venue": "in Proc. NDSS 2026 Workshop on Security and Privacy of Next-Generation Networks (FutureG), San Diego CA",
+    "url": "https://www.ndss-symposium.org/wp-content/uploads/futureg26-22.pdf",
+    "tags": [
+      "NextG / O-RAN",
+      "Cyber Resilience",
+      "AI / Learning"
+    ]
+  },
+  {
+    "title": "Process-Informed Multi-Agent Reinforcement Learning for Joint Radio-Compute Orchestration in Industrial O-RAN",
+    "authors": [
+      "X. Wu",
+      "Y. Wang",
+      "J. Farooq",
+      "M. M. Butt",
+      "H. Ghazzai",
+      "G. Setti"
+    ],
+    "authors_str": "X. Wu, Y. Wang, J. Farooq, M. M. Butt, H. Ghazzai, and G. Setti",
+    "year": 2026,
+    "type": "Journal",
+    "venue": "in IEEE Networking Letters",
+    "url": "https://ieeexplore.ieee.org/document/11494807",
+    "tags": [
+      "NextG / O-RAN",
+      "AI / Learning"
+    ]
+  },
+  {
+    "title": "Risk-Aware Resource Orchestration in Multi-Tier 5G Edge-Cloud Networks",
+    "authors": [
+      "X. Wu",
+      "J. Farooq",
+      "J. Chen"
+    ],
+    "authors_str": "X. Wu, J. Farooq, and J. Chen",
+    "year": 2026,
+    "type": "Book Chapter",
+    "venue": "in Intent-Driven Network: Techniques and Applications, Springer Wireless Network Series",
+    "url": "",
+    "tags": [
+      "NextG / O-RAN"
+    ]
+  },
+  {
+    "title": "Temporally Encoded Double DQN for Proactive PRB Allocation in O-RAN Enabled Industrial Networks",
+    "authors": [
+      "E. Delavari",
+      "X. Wu",
+      "J. Farooq"
+    ],
+    "authors_str": "E. Delavari, X. Wu, and J. Farooq",
+    "year": 2026,
+    "type": "Conference",
+    "venue": "in IEEE/IFIP NOMS 2026 Workshop on Resilience in Next Generation Network Management (NGResNet), Rome, Italy",
+    "url": "",
+    "tags": [
+      "NextG / O-RAN",
+      "Cyber Resilience"
+    ]
+  },
+  {
+    "title": "A Probabilistic Alternative to Coverage Analysis in Uniform Random Wireless Networks",
+    "authors": [
+      "J. Farooq",
+      "U. Pillai"
+    ],
+    "authors_str": "J. Farooq and U. Pillai",
+    "year": 2025,
+    "type": "Journal",
+    "venue": "in IEEE Journal of Communications and Networks, vol. 27, no. 5, pp. 282-297",
+    "url": "https://ieeexplore.ieee.org/document/11142613",
+    "tags": [
+      "UAV & Aerial"
+    ]
+  },
+  {
+    "title": "ATP: Adaptive Threshold Pruning for Efficient Data Encoding in Quantum Neural Networks",
+    "authors": [
+      "M. Afane",
+      "G. Ebbrecht",
+      "J. Chen",
+      "J. Farooq"
+    ],
+    "authors_str": "M. Afane, G. Ebbrecht, J. Chen, and J. Farooq",
+    "year": 2025,
+    "type": "Conference",
+    "venue": "in IEEE/CVF CVPR 2025, Nashville TN, USA",
+    "url": "https://arxiv.org/abs/2503.21815",
+    "tags": [
+      "AI / Learning"
+    ]
+  },
+  {
+    "title": "Collaborative Resilience for Multi-Layer Heterogeneous Robotic Networks under Adversarial Environments",
+    "authors": [
+      "G. Ebbrecht",
+      "J. Hughes",
+      "J. Chen",
+      "J. Farooq"
+    ],
+    "authors_str": "G. Ebbrecht, J. Hughes, J. Chen, and J. Farooq",
+    "year": 2025,
+    "type": "Conference",
+    "venue": "in IEEE INFOCOM 2025 Workshop on Resilience in Next-Generation Networks (NGResNet), London, UK",
+    "url": "https://www.techrxiv.org/users/793184/articles/1277867",
+    "tags": [
+      "Cyber Resilience"
+    ]
+  },
+  {
+    "title": "Communication Systems for Autonomous eVTOL: Regulatory Challenges, Emerging Technologies, and Future Directions",
+    "authors": [
+      "I. Aryendu",
+      "B. Mak",
+      "E. Forbes",
+      "J. Chen",
+      "J. Farooq",
+      "Y. Wang"
+    ],
+    "authors_str": "I. Aryendu, B. Mak, E. Forbes, J. Chen, J. Farooq, and Y. Wang",
+    "year": 2025,
+    "type": "Journal",
+    "venue": "in IEEE Open Journal of the Communications Society, vol. 6, pp. 9206-9228",
+    "url": "https://ieeexplore.ieee.org/document/11206314",
+    "tags": [
+      "UAV & Aerial"
+    ]
+  },
+  {
+    "title": "Coordinated UAV Deployment and Task Offloading in UAV-Assisted LEO Satellite Edge Computing Systems via Proximal Policy Optimization",
+    "authors": [
+      "Y. Wang",
+      "X. Wu",
+      "J. Farooq",
+      "J. Chen"
+    ],
+    "authors_str": "Y. Wang, X. Wu, J. Farooq, and J. Chen",
+    "year": 2025,
+    "type": "Conference",
+    "venue": "in IEEE ICC 2025 Workshop on Emerging Technologies in Aerial and Space Networks, Montreal, Canada",
+    "url": "https://www.techrxiv.org/users/793184/articles/1277869",
+    "tags": [
+      "UAV & Aerial"
+    ]
+  },
+  {
+    "title": "Dynamic Resource Provisioning in Edge-Cloud O-RAN Systems via Deep Reinforcement Learning under Stochastic Delayed Rewards",
+    "authors": [
+      "X. Wu",
+      "J. Farooq",
+      "T. Li",
+      "J. Chen",
+      "Y. Wang"
+    ],
+    "authors_str": "X. Wu, J. Farooq, T. Li, J. Chen, and Y. Wang",
+    "year": 2025,
+    "type": "Journal",
+    "venue": "submitted to IEEE Networking Letters",
+    "url": "",
+    "tags": [
+      "NextG / O-RAN",
+      "AI / Learning"
+    ]
+  },
+  {
+    "title": "Evaluation of LLM powered agentic AI for solving multi-arm bandit problems",
+    "authors": [
+      "Hazime",
+      "J. Farooq"
+    ],
+    "authors_str": "Hazime and J. Farooq",
+    "year": 2025,
+    "type": "Conference",
+    "venue": "in IEEE COINS 2025, Madison WI, USA",
+    "url": "https://www.techrxiv.org/users/793184/articles/1315647",
+    "tags": [
+      "AI / Learning"
+    ]
+  },
+  {
+    "title": "Joint Admission Control and Resource Provisioning for URLLC Traffic in O-RAN: A Constrained Multi-Agent Reinforcement Learning Approach",
+    "authors": [
+      "X. Wu",
+      "J. Farooq",
+      "J. Chen"
+    ],
+    "authors_str": "X. Wu, J. Farooq, and J. Chen",
+    "year": 2025,
+    "type": "Conference",
+    "venue": "in IEEE ICC 2025, Montreal, Canada",
+    "url": "https://www.techrxiv.org/doi/full/10.36227/techrxiv.174284729.99809422/v1",
+    "tags": [
+      "NextG / O-RAN",
+      "AI / Learning"
+    ]
+  },
+  {
+    "title": "Joint Optimization of Positioning and Computation Offloading in Multi-UAV MEC Networks for Low Latency Applications",
+    "authors": [
+      "Y. Wang",
+      "J. Farooq",
+      "H. Ghazzai",
+      "G. Setti"
+    ],
+    "authors_str": "Y. Wang, J. Farooq, H. Ghazzai, and G. Setti",
+    "year": 2025,
+    "type": "Conference",
+    "venue": "in IEEE WCNC 2025, Milan, Italy",
+    "url": "https://www.techrxiv.org/users/793184/articles/1234294",
+    "tags": [
+      "UAV & Aerial"
+    ]
+  },
+  {
+    "title": "Joint Positioning and Computation Offloading in Multi-UAV MEC for Low Latency Applications: A Proximal Policy Optimization Approach",
+    "authors": [
+      "Y. Wang",
+      "J. Farooq",
+      "H. Ghazzai",
+      "G. Setti"
+    ],
+    "authors_str": "Y. Wang, J. Farooq, H. Ghazzai, and G. Setti",
+    "year": 2025,
+    "type": "Journal",
+    "venue": "in IEEE Transactions on Mobile Computing, vol. 24, no. 10, pp. 9584-9598",
+    "url": "https://ieeexplore.ieee.org/document/10971880",
+    "tags": [
+      "UAV & Aerial"
+    ]
+  },
+  {
+    "title": "LLM-Driven Agentic AI Approach to Enhanced O-RAN Resilience in Next-Generation Networks",
+    "authors": [
+      "X. Wu",
+      "Y. Wang",
+      "J. Farooq",
+      "J. Chen"
+    ],
+    "authors_str": "X. Wu, Y. Wang, J. Farooq, and J. Chen",
+    "year": 2025,
+    "type": "Conference",
+    "venue": "in IEEE INFOCOM 2025 Workshop on Resilience in Next-Generation Networks (NGResNet), London, UK",
+    "url": "https://www.techrxiv.org/users/793184/articles/1277868",
+    "tags": [
+      "NextG / O-RAN",
+      "Cyber Resilience",
+      "AI / Learning"
+    ]
+  },
+  {
+    "title": "LLM-Powered Agentic AI Approach to Securing EV Charging Systems Against Cyber Threats",
+    "authors": [
+      "R. Honnalli",
+      "J. Farooq"
+    ],
+    "authors_str": "R. Honnalli and J. Farooq",
+    "year": 2025,
+    "type": "Conference",
+    "venue": "in 3rd Workshop on Cybersecurity of Critical National Infrastructures (CCNI), IEEE WoWMoM 2025, Dallas TX, USA",
+    "url": "https://d197for5662m48.cloudfront.net/documents/publicationstatus/257574/preprint_pdf/8de6e8c31bd5d57611c5653f7751537f.pdf",
+    "tags": [
+      "Cyber Resilience",
+      "AI / Learning"
+    ]
+  },
+  {
+    "title": "LLM-xApp: A Large Language Model Empowered Radio Resource Management xApp for 5G O-RAN",
+    "authors": [
+      "X. Wu",
+      "J. Farooq",
+      "Y. Wang",
+      "J. Chen"
+    ],
+    "authors_str": "X. Wu, J. Farooq, Y. Wang, and J. Chen",
+    "year": 2025,
+    "type": "Conference",
+    "venue": "in Proc. NDSS 2025 Workshop on Security and Privacy of Next-Generation Networks (FutureG), San Diego CA",
+    "url": "https://www.ndss-symposium.org/ndss-paper/auto-draft-567/",
+    "tags": [
+      "NextG / O-RAN",
+      "Cyber Resilience",
+      "AI / Learning"
+    ]
+  },
+  {
+    "title": "Mapping Cyber Threats in the 5G Supply Chain: Landscape, Vulnerabilities, and Risk Management",
+    "authors": [
+      "M. Lyu",
+      "J. Farooq",
+      "Q. Zhu"
+    ],
+    "authors_str": "M. Lyu, J. Farooq, and Q. Zhu",
+    "year": 2025,
+    "type": "Journal",
+    "venue": "in IEEE Network, vol. 39, no. 1, pp. 251-269",
+    "url": "https://ieeexplore.ieee.org/document/10634234",
+    "tags": [
+      "NextG / O-RAN",
+      "Cyber Resilience"
+    ]
+  },
+  {
+    "title": "Multi-UAV Placement for Integrated Access and Backhauling Using LLM-Based Optimizers",
+    "authors": [
+      "Y. Wang",
+      "J. Farooq",
+      "H. Ghazzai",
+      "G. Setti"
+    ],
+    "authors_str": "Y. Wang, J. Farooq, H. Ghazzai, and G. Setti",
+    "year": 2025,
+    "type": "Conference",
+    "venue": "in IEEE WCNC 2025, Milan, Italy",
+    "url": "https://www.techrxiv.org/users/793184/articles/1229164",
+    "tags": [
+      "UAV & Aerial",
+      "AI / Learning"
+    ]
+  },
+  {
+    "title": "Multimodal LLM-guided sequential detection of cyber threats in electric vehicle charging systems",
+    "authors": [
+      "R. Honnalli",
+      "J. Farooq"
+    ],
+    "authors_str": "R. Honnalli and J. Farooq",
+    "year": 2025,
+    "type": "Conference",
+    "venue": "in IEEE COINS 2025, Madison WI, USA",
+    "url": "https://www.techrxiv.org/users/793184/articles/1315646",
+    "tags": [
+      "Cyber Resilience",
+      "AI / Learning"
+    ]
+  },
+  {
+    "title": "ORCA: Offloading and Resource Coordination via Multi-agent Learning in Dynamic Cloud-Edge Systems",
+    "authors": [
+      "Y. Wang",
+      "X. Wu",
+      "J. Farooq",
+      "T. Li",
+      "J. Chen"
+    ],
+    "authors_str": "Y. Wang, X. Wu, J. Farooq, T. Li, and J. Chen",
+    "year": 2025,
+    "type": "Journal",
+    "venue": "submitted to IEEE Transactions on Mobile Computing",
+    "url": "https://www.techrxiv.org/doi/full/10.36227/techrxiv.176315222.25704753",
+    "tags": [
+      "Networks"
+    ]
+  },
+  {
+    "title": "Optimized Collaborative Perception: Sector-based BEV Fusion in Limited Communication Conditions",
+    "authors": [
+      "E. Besbes",
+      "H. Ghazzai",
+      "J. Farooq",
+      "N. Doggaz",
+      "G. Setti"
+    ],
+    "authors_str": "E. Besbes, H. Ghazzai, J. Farooq, N. Doggaz, and G. Setti",
+    "year": 2025,
+    "type": "Conference",
+    "venue": "in IEEE VTC-Spring 2025, Oslo, Norway",
+    "url": "https://ieeexplore.ieee.org/document/11174390",
+    "tags": [
+      "Vehicular"
+    ]
+  },
+  {
+    "title": "Poster: Triage Slicing: Online Detection and Containment of Disruptive UEs in O-RAN Slices",
+    "authors": [
+      "X. Wu",
+      "R. Honnalli",
+      "J. Farooq"
+    ],
+    "authors_str": "X. Wu, R. Honnalli, and J. Farooq",
+    "year": 2025,
+    "type": "Conference",
+    "venue": "in 26th ACM MobiHoc 2025, Houston, TX, USA",
+    "url": "https://dl.acm.org/doi/10.1145/3704413.3765320",
+    "tags": [
+      "NextG / O-RAN"
+    ]
+  },
+  {
+    "title": "Real-time multiple obstacle avoidance and navigation in unstructured spaces with applications to indoor delivery robots",
+    "authors": [
+      "Y. Wang",
+      "U. Pillai",
+      "J. Farooq",
+      "J. Chen"
+    ],
+    "authors_str": "Y. Wang, U. Pillai, J. Farooq, and J. Chen",
+    "year": 2025,
+    "type": "Conference",
+    "venue": "in IEEE COINS 2025, Madison WI, USA",
+    "url": "https://www.techrxiv.org/users/793184/articles/1315645",
+    "tags": [
+      "Networks"
+    ]
+  },
+  {
+    "title": "Reliable and Resilient Connectivity and Coverage under Localized Backhauling in UAV-IoT Networks",
+    "authors": [
+      "X. Wu",
+      "J. Farooq"
+    ],
+    "authors_str": "X. Wu and J. Farooq",
+    "year": 2025,
+    "type": "Journal",
+    "venue": "in IEEE Open Journal of the Communications Society, vol. 6, pp. 5795-5809",
+    "url": "https://ieeexplore.ieee.org/document/11062492",
+    "tags": [
+      "UAV & Aerial",
+      "Cyber Resilience",
+      "IoT"
+    ]
+  },
+  {
+    "title": "Resilient PRB Allocation for High Mobility UEs in 5G O-RAN via LSTM-Enhanced MPC",
+    "authors": [
+      "Y. Gao",
+      "X. Wu",
+      "J. Farooq"
+    ],
+    "authors_str": "Y. Gao, X. Wu, and J. Farooq",
+    "year": 2025,
+    "type": "Conference",
+    "venue": "in IEEE Globecom Workshop on Resilience in Next-Generation Wireless Communication Networks (GC Wkshps 2025), Taiwan",
+    "url": "https://www.techrxiv.org/users/793184/articles/1341419",
+    "tags": [
+      "NextG / O-RAN",
+      "Cyber Resilience"
+    ]
+  },
+  {
+    "title": "SCOUT: A Defense Against Data Poisoning Attacks in Fine-Tuned Language Models",
+    "authors": [
+      "M. Afane",
+      "A. Satyam",
+      "K. Chen",
+      "T. Li",
+      "J. Farooq",
+      "J. Chen"
+    ],
+    "authors_str": "M. Afane, A. Satyam, K. Chen, T. Li, J. Farooq, and J. Chen",
+    "year": 2025,
+    "type": "Conference",
+    "venue": "in IEEE BigData 2025 Workshop on AI in Big Data Analytic for Healthcare, Macau, China",
+    "url": "https://arxiv.org/pdf/2512.10998",
+    "tags": [
+      "Cyber Resilience"
+    ]
+  },
+  {
+    "title": "SQUASH: A SWAP-Based Quantum Attack to Sabotage Hybrid Quantum Neural Networks",
+    "authors": [
+      "R. Kumar",
+      "W. Wei",
+      "Y. Mao",
+      "J. Farooq",
+      "Y. Wang",
+      "J. Chen"
+    ],
+    "authors_str": "R. Kumar, W. Wei, Y. Mao, J. Farooq, Y. Wang, and J. Chen",
+    "year": 2025,
+    "type": "Conference",
+    "venue": "submitted to Quantum Machine Intelligence",
+    "url": "https://arxiv.org/pdf/2506.24081",
+    "tags": [
+      "Cyber Resilience",
+      "AI / Learning"
+    ]
+  },
+  {
+    "title": "SliceWise: Traffic-Aware Multi-Agent RL with Temporal Encoding for Joint Slice Admission and Resource Orchestration in O-RAN",
+    "authors": [
+      "X. Wu",
+      "Y. Wang",
+      "J. Farooq",
+      "H. Ghazzai",
+      "G. Setti"
+    ],
+    "authors_str": "X. Wu, Y. Wang, J. Farooq, H. Ghazzai, and G. Setti",
+    "year": 2025,
+    "type": "Journal",
+    "venue": "in IEEE Networking Letters, vol. 7, no. 4, pp. 323-327",
+    "url": "https://ieeexplore.ieee.org/document/11251017",
+    "tags": [
+      "NextG / O-RAN"
+    ]
+  },
+  {
+    "title": "Adaptive Risk-Aware Resource Orchestration for 5G Microservices over Multi-Tier Edge-Cloud Systems",
+    "authors": [
+      "X. Wu",
+      "J. Farooq",
+      "J. Chen"
+    ],
+    "authors_str": "X. Wu, J. Farooq, and J. Chen",
+    "year": 2024,
+    "type": "Conference",
+    "venue": "in IEEE ICC 2024 Workshop on Intelligent Cloud Continuum for B5G Services, Boulder, CO",
+    "url": "https://www.techrxiv.org/users/793184/articles/1091386",
+    "tags": [
+      "NextG / O-RAN"
+    ]
+  },
+  {
+    "title": "Collaborative CNN-Based Federated Learning for Steering Control in Diverse Driving Conditions",
+    "authors": [
+      "D. Neifar",
+      "J. Farooq",
+      "H. Ghazzai",
+      "M. Hadded"
+    ],
+    "authors_str": "D. Neifar, J. Farooq, H. Ghazzai, and M. Hadded",
+    "year": 2024,
+    "type": "Conference",
+    "venue": "in IEEE VTC-Fall 2024, Washington D.C.",
+    "url": "https://d197for5662m48.cloudfront.net/documents/publicationstatus/217473/preprint_pdf/a8c76d89a117990c12a996e6ad807747.pdf",
+    "tags": [
+      "AI / Learning",
+      "Vehicular"
+    ]
+  },
+  {
+    "title": "Deep Reinforcement Learning Based Placement for Integrated Access Backhauling in UAV-Assisted Wireless Networks",
+    "authors": [
+      "Y. Wang",
+      "J. Farooq"
+    ],
+    "authors_str": "Y. Wang and J. Farooq",
+    "year": 2024,
+    "type": "Journal",
+    "venue": "in IEEE Internet of Things Journal, vol. 11, no. 8, pp. 14727-14738",
+    "url": "https://ieeexplore.ieee.org/document/10365695",
+    "tags": [
+      "UAV & Aerial",
+      "IoT",
+      "AI / Learning"
+    ]
+  },
+  {
+    "title": "Multi-agent Distributed Decentralized Dynamic Resource Orchestration in 5G Edge-Cloud Networks",
+    "authors": [
+      "X. Wu",
+      "J. Farooq",
+      "J. Chen"
+    ],
+    "authors_str": "X. Wu, J. Farooq, and J. Chen",
+    "year": 2024,
+    "type": "Conference",
+    "venue": "in IEEE CloudNet 2024, Rio De Janeiro, Brazil",
+    "url": "https://www.techrxiv.org/users/793184/articles/1235407",
+    "tags": [
+      "NextG / O-RAN"
+    ]
+  },
+  {
+    "title": "Next-Generation Phishing: How LLM Agents Empower Cyber Attackers",
+    "authors": [
+      "M. Afane",
+      "W. Wei",
+      "Y. Mao",
+      "J. Farooq",
+      "J. Chen"
+    ],
+    "authors_str": "M. Afane, W. Wei, Y. Mao, J. Farooq, and J. Chen",
+    "year": 2024,
+    "type": "Conference",
+    "venue": "in IEEE BigData CyberHunt 2024 Workshop, Washington D.C.",
+    "url": "https://arxiv.org/html/2411.13874v1",
+    "tags": [
+      "Cyber Resilience",
+      "AI / Learning"
+    ]
+  },
+  {
+    "title": "SecFedDrive: Securing Federated Learning for Autonomous Driving Against Backdoor Attacks",
+    "authors": [
+      "R. Kumar",
+      "G. Ebbrecht",
+      "J. Farooq",
+      "W. Wei",
+      "Y. Mao",
+      "J. Chen"
+    ],
+    "authors_str": "R. Kumar, G. Ebbrecht, J. Farooq, W. Wei, Y. Mao, and J. Chen",
+    "year": 2024,
+    "type": "Conference",
+    "venue": "in IEEE CNS Cyber Resilience Workshop (CNS-CRW 2024), Taipei, Taiwan",
+    "url": "https://ieeexplore.ieee.org/abstract/document/10735501",
+    "tags": [
+      "Cyber Resilience",
+      "AI / Learning",
+      "Vehicular"
+    ]
+  },
+  {
+    "title": "Zero Trust in 5G Networks: Principles, Challenges, and Opportunities",
+    "authors": [
+      "M. Lyu",
+      "J. Farooq"
+    ],
+    "authors_str": "M. Lyu and J. Farooq",
+    "year": 2024,
+    "type": "Conference",
+    "venue": "in Resilience Week (RW) 2024, Austin TX, USA",
+    "url": "https://www.techrxiv.org/users/793184/articles/1229171",
+    "tags": [
+      "NextG / O-RAN",
+      "Cyber Resilience"
+    ]
+  },
+  {
+    "title": "Attack Resilient Wireless Backhaul Connectivity With Optimized Fronthaul Coverage in UAV Networks",
+    "authors": [
+      "X. Wu",
+      "J. Farooq"
+    ],
+    "authors_str": "X. Wu and J. Farooq",
+    "year": 2023,
+    "type": "Conference",
+    "venue": "in IEEE CNS Cyber Resilience Workshop (CNS-CRW 2023), Orlando, FL",
+    "url": "https://ieeexplore.ieee.org/document/10288893",
+    "tags": [
+      "UAV & Aerial",
+      "Cyber Resilience"
+    ]
+  },
+  {
+    "title": "Optimal 3D Placement for Integrated Access Backhauling in UAV-Assisted Wireless Networks Using Reinforcement Learning",
+    "authors": [
+      "Y. Wang",
+      "J. Farooq"
+    ],
+    "authors_str": "Y. Wang and J. Farooq",
+    "year": 2023,
+    "type": "Conference",
+    "venue": "in IEEE MASS Workshop on Unmanned Autonomous Vehicles and IoT (UAV-IoT 2023), Toronto, Canada",
+    "url": "https://ieeexplore.ieee.org/document/10298362",
+    "tags": [
+      "UAV & Aerial",
+      "IoT",
+      "AI / Learning"
+    ]
+  },
+  {
+    "title": "QoS Based Contract Design for Profit Maximization in IoT-Enabled Data Markets",
+    "authors": [
+      "J. Chen",
+      "J. Farooq",
+      "Q. Zhu"
+    ],
+    "authors_str": "J. Chen, J. Farooq, and Q. Zhu",
+    "year": 2023,
+    "type": "Journal",
+    "venue": "in IEEE Internet of Things Journal, vol. 10, no. 11, pp. 10080-10094",
+    "url": "https://ieeexplore.ieee.org/document/10016667",
+    "tags": [
+      "IoT"
+    ]
+  },
+  {
+    "title": "IoT Supply Chain Security Risk Analysis and Mitigation: Modeling, Computation, and Software Tools",
+    "authors": [
+      "T. Kieras",
+      "J. Farooq",
+      "Q. Zhu"
+    ],
+    "authors_str": "T. Kieras, J. Farooq, and Q. Zhu",
+    "year": 2022,
+    "type": "Book",
+    "venue": "SpringerBriefs in Computer Science",
+    "url": "https://link.springer.com/book/9783031084799",
+    "tags": [
+      "Cyber Resilience",
+      "IoT"
+    ]
+  },
+  {
+    "title": "Proactive and Resilient UAV Orchestration for QoS Driven Connectivity and Coverage of Ground Users",
+    "authors": [
+      "Y. Wang",
+      "J. Farooq"
+    ],
+    "authors_str": "Y. Wang and J. Farooq",
+    "year": 2022,
+    "type": "Conference",
+    "venue": "in IEEE CNS Cyber Resilience Workshop (CNS 2022), Austin TX",
+    "url": "https://ieeexplore.ieee.org/document/9947272",
+    "tags": [
+      "UAV & Aerial",
+      "Cyber Resilience"
+    ]
+  },
+  {
+    "title": "Resilient UAV Formation for Coverage and Connectivity of Spatially Dispersed Users",
+    "authors": [
+      "Y. Wang",
+      "J. Farooq"
+    ],
+    "authors_str": "Y. Wang and J. Farooq",
+    "year": 2022,
+    "type": "Conference",
+    "venue": "in IEEE ICC 2022, Seoul, South Korea",
+    "url": "https://ieeexplore.ieee.org/document/9838960",
+    "tags": [
+      "UAV & Aerial",
+      "Cyber Resilience"
+    ]
+  },
+  {
+    "title": "Zero Touch Coordinated UAV Network Formation for 360 Degree Views of a Moving Ground Target in Remote VR Applications",
+    "authors": [
+      "Y. Wang",
+      "J. Farooq"
+    ],
+    "authors_str": "Y. Wang and J. Farooq",
+    "year": 2022,
+    "type": "Conference",
+    "venue": "in IEEE MILCOM 2022, Rockville MD",
+    "url": "https://arxiv.org/abs/2211.02833",
+    "tags": [
+      "UAV & Aerial"
+    ]
+  },
+  {
+    "title": "I-SCRAM: A Framework for IoT Supply Chain Risk Analysis and Mitigation Decisions",
+    "authors": [
+      "T. Kieras",
+      "J. Farooq",
+      "Q. Zhu"
+    ],
+    "authors_str": "T. Kieras, J. Farooq, and Q. Zhu",
+    "year": 2021,
+    "type": "Journal",
+    "venue": "in IEEE Access, vol. 9, pp. 29827-29840",
+    "url": "https://ieeexplore.ieee.org/document/9350583",
+    "tags": [
+      "Cyber Resilience",
+      "IoT"
+    ]
+  },
+  {
+    "title": "QoE Based Revenue Maximizing Dynamic Resource Allocation and Pricing for Fog-Enabled Mission-Critical IoT Applications",
+    "authors": [
+      "M. J. Farooq",
+      "Q. Zhu"
+    ],
+    "authors_str": "M. J. Farooq and Q. Zhu",
+    "year": 2021,
+    "type": "Journal",
+    "venue": "in IEEE Transactions on Mobile Computing, vol. 20, no. 12, pp. 3395-3408",
+    "url": "https://ieeexplore.ieee.org/document/9108583",
+    "tags": [
+      "IoT"
+    ]
+  },
+  {
+    "title": "Resource Management for On-Demand Mission-Critical Internet of Things Applications",
+    "authors": [
+      "J. Farooq",
+      "Q. Zhu"
+    ],
+    "authors_str": "J. Farooq and Q. Zhu",
+    "year": 2021,
+    "type": "Book",
+    "venue": "John Wiley & Sons",
+    "url": "https://www.wiley.com/en-us/Resource+Management+for+On+Demand+Mission+Critical+Internet+of+Things+Applications-p-9781119716099",
+    "tags": [
+      "IoT"
+    ]
+  },
+  {
+    "title": "Modeling and Assessment of IoT Supply Chain Security Risks: The Role of Structural and Parametric Uncertainties",
+    "authors": [
+      "T. Kieras",
+      "M. J. Farooq",
+      "Q. Zhu"
+    ],
+    "authors_str": "T. Kieras, M. J. Farooq, and Q. Zhu",
+    "year": 2020,
+    "type": "Conference",
+    "venue": "in IEEE S&P Workshop on Cyber Resilient Supply Chain Technologies, pp. 163-170",
+    "url": "https://arxiv.org/pdf/2003.12363.pdf",
+    "tags": [
+      "Cyber Resilience",
+      "IoT"
+    ]
+  },
+  {
+    "title": "Ph.D. Thesis: Cyber-Physical Dynamic Decision Mechanisms for Large Scale Internet of Things Systems & Networks",
+    "authors": [
+      "M. J. Farooq"
+    ],
+    "authors_str": "M. J. Farooq",
+    "year": 2020,
+    "type": "Thesis",
+    "venue": "New York University",
+    "url": "https://drive.google.com/file/d/122WvyZt9gzIR5bhfWPwZIamQ-tCNLJkF/view",
+    "tags": [
+      "Cyber Resilience",
+      "IoT"
+    ]
+  },
+  {
+    "title": "PhD Forum: Enabling Autonomic IoT for Smart Urban Services",
+    "authors": [
+      "M. J. Farooq",
+      "Q. Zhu"
+    ],
+    "authors_str": "M. J. Farooq and Q. Zhu",
+    "year": 2020,
+    "type": "Conference",
+    "venue": "in Proc. IEEE 6th World Forum on Internet of Things (WF-IoT 2020), New Orleans, LA, USA",
+    "url": "https://arxiv.org/pdf/2001.01561.pdf",
+    "tags": [
+      "IoT"
+    ]
+  },
+  {
+    "title": "RIoTS: Risk Analysis of IoT Supply Chain Threats",
+    "authors": [
+      "T. Kieras",
+      "M. J. Farooq",
+      "Q. Zhu"
+    ],
+    "authors_str": "T. Kieras, M. J. Farooq, and Q. Zhu",
+    "year": 2020,
+    "type": "Conference",
+    "venue": "in Proc. IEEE 6th World Forum on Internet of Things (WF-IoT 2020), New Orleans, LA, USA",
+    "url": "https://arxiv.org/pdf/1911.12862.pdf",
+    "tags": [
+      "Cyber Resilience",
+      "IoT"
+    ]
+  },
+  {
+    "title": "Dynamic Spatio-Temporal Resource Provisioning for On-Demand Urban Services in Smart Cities",
+    "authors": [
+      "M. J. Farooq",
+      "Q. Zhu"
+    ],
+    "authors_str": "M. J. Farooq and Q. Zhu",
+    "year": 2019,
+    "type": "Journal",
+    "venue": "arXiv preprint",
+    "url": "https://arxiv.org/pdf/1901.08331.pdf",
+    "tags": [
+      "Networks"
+    ]
+  },
+  {
+    "title": "IoT Supply Chain Security: Overview, Challenges, and the Road Ahead",
+    "authors": [
+      "M. J. Farooq",
+      "Q. Zhu"
+    ],
+    "authors_str": "M. J. Farooq and Q. Zhu",
+    "year": 2019,
+    "type": "Journal",
+    "venue": "arXiv preprint",
+    "url": "https://arxiv.org/pdf/1908.07828.pdf",
+    "tags": [
+      "Cyber Resilience",
+      "IoT"
+    ]
+  },
+  {
+    "title": "Modeling, Analysis, and Mitigation of Dynamic Botnet Formation in Wireless IoT Networks",
+    "authors": [
+      "M. J. Farooq",
+      "Q. Zhu"
+    ],
+    "authors_str": "M. J. Farooq and Q. Zhu",
+    "year": 2019,
+    "type": "Journal",
+    "venue": "in IEEE Transactions on Information Forensics and Security, vol. 14, no. 9, pp. 2412-2426",
+    "url": "https://arxiv.org/pdf/1901.00741.pdf",
+    "tags": [
+      "Cyber Resilience",
+      "IoT"
+    ]
+  },
+  {
+    "title": "Problems and Solutions in Undergraduate Probability",
+    "authors": [
+      "M. J. Farooq",
+      "U. Pillai"
+    ],
+    "authors_str": "M. J. Farooq and U. Pillai",
+    "year": 2019,
+    "type": "Book",
+    "venue": "Amazon Kindle Direct Publishing",
+    "url": "https://www.amazon.com/Problems-Solutions-Undergraduate-Probability-Muhammad-ebook/dp/B07MH8K9J6",
+    "tags": [
+      "Networks"
+    ]
+  },
+  {
+    "title": "A Multi-Layer Feedback System Approach to Resilient Connectivity of Remotely Deployed Mobile Internet of Things",
+    "authors": [
+      "M. J. Farooq",
+      "Q. Zhu"
+    ],
+    "authors_str": "M. J. Farooq and Q. Zhu",
+    "year": 2018,
+    "type": "Journal",
+    "venue": "in IEEE Transactions on Cognitive Communications and Networking, vol. 4, no. 2, pp. 422-432",
+    "url": "https://ieeexplore.ieee.org/document/8360491/",
+    "tags": [
+      "Cyber Resilience",
+      "IoT"
+    ]
+  },
+  {
+    "title": "Adaptive and Resilient Revenue Maximizing Dynamic Resource Allocation and Pricing for Cloud-Enabled IoT Systems",
+    "authors": [
+      "M. J. Farooq",
+      "Q. Zhu"
+    ],
+    "authors_str": "M. J. Farooq and Q. Zhu",
+    "year": 2018,
+    "type": "Conference",
+    "venue": "in Proc. American Control Conference (ACC 2018), Milwaukee, WI, USA",
+    "url": "https://arxiv.org/pdf/1707.08691.pdf",
+    "tags": [
+      "Cyber Resilience",
+      "IoT"
+    ]
+  },
+  {
+    "title": "On the Secure and Reconfigurable Multi-Layer Network Design for Critical Information Dissemination in the Internet of Battlefield Things (IoBT)",
+    "authors": [
+      "M. J. Farooq",
+      "Q. Zhu"
+    ],
+    "authors_str": "M. J. Farooq and Q. Zhu",
+    "year": 2018,
+    "type": "Journal",
+    "venue": "in IEEE Transactions on Wireless Communications, vol. 17, no. 4, pp. 2618-2632",
+    "url": "http://ieeexplore.ieee.org/document/8279518/",
+    "tags": [
+      "IoT"
+    ]
+  },
+  {
+    "title": "Optimal Dynamic Contract for Spectrum Reservation in Mission-Critical UNB-IoT Systems",
+    "authors": [
+      "M. J. Farooq",
+      "Q. Zhu"
+    ],
+    "authors_str": "M. J. Farooq and Q. Zhu",
+    "year": 2018,
+    "type": "Conference",
+    "venue": "in Proc. 16th WiOpt 2018, Shanghai, China",
+    "url": "https://ieeexplore.ieee.org/document/8362861/",
+    "tags": [
+      "IoT"
+    ]
+  },
+  {
+    "title": "A Hybrid Energy Sharing Framework for Green Cellular Networks",
+    "authors": [
+      "M. J. Farooq",
+      "H. Ghazzai",
+      "A. Kadri",
+      "H. ElSawy",
+      "M.-S. Alouini"
+    ],
+    "authors_str": "M. J. Farooq, H. Ghazzai, A. Kadri, H. ElSawy, and M.-S. Alouini",
+    "year": 2017,
+    "type": "Journal",
+    "venue": "in IEEE Transactions on Communications, vol. 65, no. 2, pp. 918-934",
+    "url": "https://arxiv.org/abs/1701.01322",
+    "tags": [
+      "Green Networks"
+    ]
+  },
+  {
+    "title": "Cognitive Connectivity Resilience in Multi-Layer Remotely Deployed Mobile Internet of Things",
+    "authors": [
+      "M. J. Farooq",
+      "Q. Zhu"
+    ],
+    "authors_str": "M. J. Farooq and Q. Zhu",
+    "year": 2017,
+    "type": "Conference",
+    "venue": "in Proc. IEEE Global Communications Conference (Globecom 2017), Singapore",
+    "url": "https://arxiv.org/abs/1709.00621",
+    "tags": [
+      "Cyber Resilience",
+      "IoT"
+    ]
+  },
+  {
+    "title": "Green Networking in Cellular HetNets: A Unified Radio Resource Management Framework with Base Station ON/OFF Switching",
+    "authors": [
+      "H. Ghazzai",
+      "M. J. Farooq",
+      "A. Alsharoa",
+      "E. Yaacoub",
+      "A. Kadri",
+      "M.-S. Alouini"
+    ],
+    "authors_str": "H. Ghazzai, M. J. Farooq, A. Alsharoa, E. Yaacoub, A. Kadri, and M.-S. Alouini",
+    "year": 2017,
+    "type": "Journal",
+    "venue": "in IEEE Transactions on Vehicular Technology, vol. 66, no. 7, pp. 5879-5893",
+    "url": "https://arxiv.org/abs/1612.01416",
+    "tags": [
+      "Green Networks",
+      "Vehicular"
+    ]
+  },
+  {
+    "title": "Green Virtualization for Multiple Collaborative Cellular Operators",
+    "authors": [
+      "M. J. Farooq",
+      "H. Ghazzai",
+      "E. Yaacoub",
+      "A. Kadri",
+      "M.-S. Alouini"
+    ],
+    "authors_str": "M. J. Farooq, H. Ghazzai, E. Yaacoub, A. Kadri, and M.-S. Alouini",
+    "year": 2017,
+    "type": "Journal",
+    "venue": "in IEEE Transactions on Cognitive Communications and Networking, vol. 3, no. 3, pp. 420-434",
+    "url": "https://arxiv.org/abs/1706.00107",
+    "tags": [
+      "Green Networks"
+    ]
+  },
+  {
+    "title": "Optimizing Mission Critical Data Dissemination in Massive IoT Networks",
+    "authors": [
+      "M. J. Farooq",
+      "H. ElSawy",
+      "Q. Zhu",
+      "M.-S. Alouini"
+    ],
+    "authors_str": "M. J. Farooq, H. ElSawy, Q. Zhu, and M.-S. Alouini",
+    "year": 2017,
+    "type": "Conference",
+    "venue": "in Workshop on Spatial Stochastic Models for Wireless Networks (SpaSWiN 2017), Paris, France",
+    "url": "https://arxiv.org/abs/1704.05954",
+    "tags": [
+      "IoT"
+    ]
+  },
+  {
+    "title": "Secure and Reconfigurable Network Design for Critical Information Dissemination in the Internet of Battlefield Things (IoBT)",
+    "authors": [
+      "M. J. Farooq",
+      "Q. Zhu"
+    ],
+    "authors_str": "M. J. Farooq and Q. Zhu",
+    "year": 2017,
+    "type": "Conference",
+    "venue": "in 15th WiOpt 2017, Paris, France",
+    "url": "https://arxiv.org/abs/1703.01224",
+    "tags": [
+      "IoT"
+    ]
+  },
+  {
+    "title": "A Stochastic Geometry Model for Multi-Hop Highway Vehicular Communication",
+    "authors": [
+      "M. J. Farooq",
+      "H. ElSawy",
+      "M.-S. Alouini"
+    ],
+    "authors_str": "M. J. Farooq, H. ElSawy, and M.-S. Alouini",
+    "year": 2016,
+    "type": "Journal",
+    "venue": "in IEEE Transactions on Wireless Communications, vol. 15, no. 3, pp. 2276-2291",
+    "url": "http://ieeexplore.ieee.org/document/7331645/",
+    "tags": [
+      "Vehicular"
+    ]
+  },
+  {
+    "title": "A Stochastic Geometry-Based Demand Response Management Framework for Cellular Networks Powered by Smart Grid",
+    "authors": [
+      "M. J. Farooq",
+      "H. Ghazzai",
+      "A. Kadri"
+    ],
+    "authors_str": "M. J. Farooq, H. Ghazzai, and A. Kadri",
+    "year": 2016,
+    "type": "Conference",
+    "venue": "in Proc. IEEE WCNC 2016, Doha, Qatar",
+    "url": "http://ieeexplore.ieee.org/document/7564929/",
+    "tags": [
+      "Green Networks"
+    ]
+  },
+  {
+    "title": "Energy Sharing Framework for Microgrid-Powered Cellular Base Stations",
+    "authors": [
+      "M. J. Farooq",
+      "H. Ghazzai",
+      "A. Kadri"
+    ],
+    "authors_str": "M. J. Farooq, H. Ghazzai, and A. Kadri",
+    "year": 2016,
+    "type": "Conference",
+    "venue": "in Proc. IEEE Globecom 2016, Washington, D.C., USA",
+    "url": "http://ieeexplore.ieee.org/document/7841800/",
+    "tags": [
+      "Green Networks"
+    ]
+  },
+  {
+    "title": "M.S. Thesis: Modeling and Analysis of Inter-vehicle Communication: A Stochastic Geometry Approach",
+    "authors": [
+      "M. J. Farooq"
+    ],
+    "authors_str": "M. J. Farooq",
+    "year": 2015,
+    "type": "Thesis",
+    "venue": "KAUST",
+    "url": "http://repository.kaust.edu.sa/kaust/bitstream/10754/552717/1/Thesis_Junaid_Farooq.pdf",
+    "tags": [
+      "Vehicular"
+    ]
+  },
+  {
+    "title": "Modeling Inter-Vehicle Communication in Multi-lane Highways: A Stochastic Geometry Approach",
+    "authors": [
+      "M. J. Farooq",
+      "H. ElSawy",
+      "M.-S. Alouini"
+    ],
+    "authors_str": "M. J. Farooq, H. ElSawy, and M.-S. Alouini",
+    "year": 2015,
+    "type": "Conference",
+    "venue": "in Proc. IEEE 82nd VTC-Fall 2015, Boston, MA",
+    "url": "http://ieeexplore.ieee.org/document/7391025/",
+    "tags": [
+      "Vehicular"
+    ]
+  },
+  {
+    "title": "Optimized Energy Procurement for Cellular Networks Powered by Smart Grid Based on Stochastic Geometry",
+    "authors": [
+      "M. J. Farooq",
+      "H. Ghazzai",
+      "A. Kadri"
+    ],
+    "authors_str": "M. J. Farooq, H. Ghazzai, and A. Kadri",
+    "year": 2015,
+    "type": "Conference",
+    "venue": "in Proc. IEEE Globecom Workshops (GC Wkshps 2015), San Diego, CA, USA",
+    "url": "http://ieeexplore.ieee.org/document/7414135/",
+    "tags": [
+      "Green Networks"
+    ]
+  },
+  {
+    "title": "A Game-Theoretic Spectrum Allocation Framework for Mixed Unicast and Broadcast Traffic Profile in Cognitive Radio Networks",
+    "authors": [
+      "M. J. Farooq",
+      "M. Hussain",
+      "J. Qadir",
+      "A. Baig"
+    ],
+    "authors_str": "M. J. Farooq, M. Hussain, J. Qadir, and A. Baig",
+    "year": 2013,
+    "type": "Conference",
+    "venue": "in Proc. 38th IEEE Conference on Local Computer Networks (LCN 2013), Sydney, Australia",
+    "url": "http://ieeexplore.ieee.org/document/6761275/",
+    "tags": [
+      "Networks"
+    ]
+  },
+  {
+    "title": "B.S. Thesis: A Game-Theoretic Spectrum Allocation Framework for Mixed Unicast and Broadcast Traffic Profile in Cognitive Radio Networks",
+    "authors": [
+      "M. J. Farooq"
+    ],
+    "authors_str": "M. J. Farooq",
+    "year": 2013,
+    "type": "Thesis",
+    "venue": "NUST",
+    "url": "https://drive.google.com/open?id=0B4l87UWdDneweGxqNzR5bGJxbjA",
+    "tags": [
+      "Networks"
+    ]
+  }
+]

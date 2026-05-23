@@ -1,0 +1,43 @@
+/* CyReN Lab — image-led editorial, University of Michigan palette */
+:root {
+  --blue:#00274c; --blue-700:#143a66; --link:#1f5394; --maize:#ffcb05; --maize-deep:#8a6d00;
+  --bg:#ffffff; --bg-soft:#f6f7f4; --surface:#ffffff; --border:#e6e3da; --border-strong:#d2cdbf;
+  --text:#16202e; --text-soft:#48566a; --text-mute:#8a93a3;
+  --ink:#0a1422;
+  --ff-sans:"Inter",system-ui,-apple-system,sans-serif;
+  --ff-serif:"Newsreader",Georgia,serif;
+  --ff-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --maxw:1180px; --radius:4px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+body{margin:0;font-family:var(--ff-body,var(--ff-sans));background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.68;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:var(--ff-serif);font-weight:600;line-height:1.12;letter-spacing:-.015em;color:var(--blue);margin:0;}
+p{margin:0 0 1rem;color:var(--text-soft);}
+a{color:var(--link);text-decoration:none;}
+a:hover{text-decoration:underline;}
+img{max-width:100%;display:block;}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,52px);}
+.section{padding:clamp(48px,7vw,96px) 0;}
+.eyebrow{font-family:var(--ff-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--link);display:inline-flex;align-items:center;gap:.6rem;margin-bottom:1rem;}
+.eyebrow::before{content:"";width:26px;height:3px;background:var(--maize);}
+.h-xl{font-size:clamp(2.4rem,6vw,4.2rem);letter-spacing:-.03em;}
+.h-lg{font-size:clamp(1.9rem,4vw,2.9rem);}
+.h-md{font-size:clamp(1.3rem,2.4vw,1.7rem);}
+.lead{font-size:clamp(1.05rem,1.5vw,1.25rem);color:var(--text-soft);max-width:62ch;}
+
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--ff-sans);font-size:14.5px;font-weight:500;padding:.7rem 1.25rem;border-radius:var(--radius);border:1px solid var(--border-strong);color:var(--blue);background:var(--surface);cursor:pointer;transition:all .18s;}
+.btn:hover{border-color:var(--blue);text-decoration:none;transform:translateY(-1px);}
+.btn-primary{background:var(--blue);color:#fff;border-color:var(--blue);}
+.btn-primary:hover{background:var(--blue-700);color:#fff;}
+.btn-maize{background:var(--maize);color:var(--blue);border-color:var(--maize);font-weight:600;}
+.btn-maize:hover{filter:brightness(.96);color:var(--blue);}
+
+.tag{font-family:var(--ff-mono);font-size:11.5px;padding:.25rem .55rem;border:1px solid var(--border-strong);color:var(--text-soft);white-space:nowrap;border-radius:3px;}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;}}
+::selection{background:var(--maize);color:var(--blue);}
+.section-alt{background:var(--bg-soft);}
