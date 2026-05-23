@@ -1,10 +1,10 @@
 [
-  { "date": "Apr 2026", "text": "Members of the CyReN Lab presented their posters at the CECS Research Poster Competition.", "image": "/images/news/posters.jpg" },
+  { "date": "Apr 2026", "text": "Members of the CyReN Lab presented their posters at the CECS Research Poster Competition.", "images": ["/images/news/posters-1.jpg", "/images/news/posters-2.jpg", "/images/news/posters-3.jpg"] },
   { "date": "Jan 2026", "text": "New book published: Cyber Resilience in Next-Generation Networks (Foundations and Trends in Networking)." },
   { "date": "Nov 2025", "text": "Paper accepted in IEEE Networking Letters. Congratulations to Xingqi and Yuhui!" },
-  { "date": "Aug 2025", "text": "Poster accepted at ACM MobiHoc 2025. Congratulations Xingqi!", "image": "/images/news/mobihoc.jpg" },
+  { "date": "Aug 2025", "text": "Poster accepted at ACM MobiHoc 2025. Congratulations Xingqi!", "images": ["/images/news/mobihoc.jpg"] },
   { "date": "Jun 2025", "text": "Paper accepted in IEEE Open Journal of the Communications Society. Congratulations Xingqi!" },
   { "date": "Feb 2025", "text": "Junaid Farooq elevated to Senior Member of the IEEE." },
-  { "date": "Feb 2025", "text": "Presented a seminar at UM-Flint on AI-Driven Management and Orchestration of Next-Generation Networks.", "image": "/images/news/seminar.jpg" },
+  { "date": "Feb 2025", "text": "Presented a seminar at UM-Flint on AI-Driven Management and Orchestration of Next-Generation Networks.", "images": ["/images/news/seminar.jpg"] },
   { "date": "Aug 2022", "text": "Multi-university NSF project on Zero Trust cybersecurity for 5G networks kicks off." }
 ]
