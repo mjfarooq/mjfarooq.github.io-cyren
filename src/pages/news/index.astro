@@ -11,7 +11,13 @@ const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
   <section class="section">
     <div class="wrap news-grid">
       <ul class="news-list">
-        {news.map((n) => <li><span class="n-date">{n.date}</span><span class="n-text">{n.text}</span></li>)}
+        {news.map((n) => (
+          <li>
+            <span class="n-date">{n.date}</span>
+            <span class="n-text">{n.text}</span>
+            {n.image && <img class="n-thumb" src={u(n.image)} alt="" loading="lazy" />}
+          </li>
+        ))}
       </ul>
       <aside class="join-card" id="join">
         <h2 class="h-md">Join the lab</h2>
