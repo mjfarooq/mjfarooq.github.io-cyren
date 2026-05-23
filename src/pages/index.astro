@@ -98,7 +98,11 @@ const recentNews = news.slice(0, 4);
         <h2 class="h-lg">Latest</h2>
         <ul class="news-list">
           {recentNews.map((n) => (
-            <li><span class="n-date">{n.date}</span><span class="n-text">{n.text}</span></li>
+            <li>
+              {n.image && <img class="n-thumb" src={u(n.image)} alt="" loading="lazy" />}
+              <span class="n-date">{n.date}</span>
+              <span class="n-text">{n.text}</span>
+            </li>
           ))}
         </ul>
         <a class="btn link-more" href={u("news")}>All news →</a>
@@ -158,9 +162,10 @@ const recentNews = news.slice(0, 4);
 
   .news-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:start;}
   .news-list{list-style:none;padding:0;margin:1.2rem 0;}
-  .news-list li{display:grid;grid-template-columns:84px 1fr;gap:.8rem;padding:.85rem 0;border-top:1px solid var(--border-strong);}
-  .n-date{font-family:var(--ff-mono);font-size:12px;color:var(--link);}
-  .n-text{font-size:.92rem;color:var(--text);}
+  .news-list li{display:flex;align-items:center;gap:.8rem;padding:.85rem 0;border-top:1px solid var(--border-strong);}
+  .n-date{flex:0 0 76px;font-family:var(--ff-mono);font-size:12px;color:var(--link);align-self:flex-start;padding-top:.15rem;}
+  .n-text{flex:1;font-size:.92rem;color:var(--text);}
+  .n-thumb{flex:0 0 64px;width:64px;height:48px;object-fit:cover;border-radius:5px;border:1px solid var(--border);order:3;}
   .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
   .g-cell{aspect-ratio:1;background-size:cover;background-position:center;border-radius:3px;}
 
