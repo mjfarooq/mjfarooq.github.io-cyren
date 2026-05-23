@@ -99,7 +99,7 @@ const recentNews = news.slice(0, 4);
         <ul class="news-list">
           {recentNews.map((n) => (
             <li>
-              {n.images && n.images.length > 0 && <img class="n-thumb" src={u(n.images[0])} data-zoom={u(n.images[0])} alt="" loading="lazy" />}
+              {n.images && n.images.length > 0 && <img class="n-thumb" src={u(n.images[0])} data-zoom={u(n.images[0])} alt="" loading="lazy" onerror="this.style.display='none'" />}
               <span class="n-date">{n.date}</span>
               <span class="n-text">{n.text}</span>
             </li>

@@ -18,7 +18,7 @@ const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
               <span class="n-text">{n.text}</span>
               {n.images && n.images.length > 0 && (
                 <div class="n-thumbs">
-                  {n.images.map((src) => <img class="n-thumb" src={u(src)} data-zoom={u(src)} alt="" loading="lazy" />)}
+                  {n.images.map((src) => <img class="n-thumb" src={u(src)} data-zoom={u(src)} alt="" loading="lazy" onerror="this.style.display='none'" />)}
                 </div>
               )}
             </div>
