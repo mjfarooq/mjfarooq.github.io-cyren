@@ -1,6 +1,13 @@
 [
   {
     "date": "May 2026",
+    "text": "Ph.D. researcher Yuhui Wang joins Nokia Bell Labs as a Generative AI Intern for Summer 2026.",
+    "images": [
+      "/images/news/yuhui_nokia.jpg"
+    ]
+  },
+  {
+    "date": "May 2026",
     "text": "Organized the 2nd Workshop on Resilience in Next Generation Networks (NGResNet) at IEEE/IFIP NOMS 2026 in Rome, Italy, with a keynote by Dr. Hans-Peter Bernhard. The lab presented work on proactive PRB allocation for O-RAN industrial networks.",
     "images": [
       "/images/news/ngresnet_2026_1.jpg",
