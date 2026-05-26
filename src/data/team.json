@@ -1,18 +1,6 @@
 {
   "members": [
     {
-      "name": "Xingqi Wu",
-      "slug": "xingqi-wu",
-      "match": "X. Wu",
-      "role": "Ph.D. Researcher",
-      "focus": "Resource orchestration for 5G O-RAN networks",
-      "photo": "/images/team/xingqi.jpg",
-      "linkedin": "https://www.linkedin.com/in/xingqi-wu-285b0926b/",
-      "grad": "Expected 2028",
-      "bio": "Xingqi Wu is a Ph.D. researcher developing multi-agent reinforcement learning and large language model methods for resource orchestration, admission control, and resilience in 5G and 6G open radio access networks (O-RAN). His work spans network slicing, microservice provisioning across edge-cloud systems, and LLM-empowered xApps for adaptive radio resource management.",
-      "education": []
-    },
-    {
       "name": "Yuhui Wang",
       "slug": "yuhui-wang",
       "match": "Y. Wang",
@@ -22,7 +10,21 @@
       "linkedin": "https://www.linkedin.com/in/yuhui-wang-a773941a1/",
       "grad": "Expected 2026",
       "bio": "Yuhui Wang is a Ph.D. researcher and Rackham Predoctoral Fellow working on UAV communication networks. His research applies deep reinforcement learning to UAV placement, integrated access and backhaul, multi-UAV mobile edge computing, and UAV-assisted LEO satellite edge systems for resilient coverage and connectivity.",
-      "education": []
+      "education": [],
+      "scholar": "https://scholar.google.com/citations?user=kNdAGE8AAAAJ&hl=en"
+    },
+    {
+      "name": "Xingqi Wu",
+      "slug": "xingqi-wu",
+      "match": "X. Wu",
+      "role": "Ph.D. Researcher",
+      "focus": "Resource orchestration for 5G O-RAN networks",
+      "photo": "/images/team/xingqi.jpg",
+      "linkedin": "https://www.linkedin.com/in/xingqi-wu-285b0926b/",
+      "grad": "Expected 2028",
+      "bio": "Xingqi Wu is a Ph.D. researcher developing multi-agent reinforcement learning and large language model methods for resource orchestration, admission control, and resilience in 5G and 6G open radio access networks (O-RAN). His work spans network slicing, microservice provisioning across edge-cloud systems, and LLM-empowered xApps for adaptive radio resource management.",
+      "education": [],
+      "scholar": "https://scholar.google.com/citations?user=Fb7qHdUAAAAJ&hl=en"
     },
     {
       "name": "Elahe Delavari",
@@ -34,7 +36,8 @@
       "linkedin": "",
       "grad": "Expected 2030",
       "bio": "Elahe Delavari is a Ph.D. researcher focused on reinforcement-learning-driven control for open radio access networks. Her work includes jamming-resilient physical resource block (PRB) reservation and resilient network slicing for latency-critical industrial 5G systems.",
-      "education": []
+      "education": [],
+      "scholar": "https://scholar.google.com/citations?user=YtieU7UAAAAJ&hl=en"
     },
     {
       "name": "Tintu Jacob Shaji",

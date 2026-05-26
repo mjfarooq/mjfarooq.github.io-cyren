@@ -31,7 +31,10 @@ const relatedNews = news.filter((n) => n.text && n.text.indexOf(member.name) !==
           <h1 class="h-page">{member.name}</h1>
           <p class="role">{member.focus}</p>
           {member.grad && <p class="grad">Anticipated graduation: {member.grad}</p>}
-          {member.linkedin && <a class="li" href={member.linkedin} target="_blank" rel="noopener">LinkedIn ↗</a>}
+          <span class="links">
+            {member.linkedin && <a class="li" href={member.linkedin} target="_blank" rel="noopener">LinkedIn ↗</a>}
+            {member.scholar && <a class="li" href={member.scholar} target="_blank" rel="noopener">Google Scholar ↗</a>}
+          </span>
         </div>
       </div>
 
@@ -127,6 +130,7 @@ const relatedNews = news.filter((n) => n.text && n.text.indexOf(member.name) !==
   .ph{aspect-ratio:4/5;background-size:cover;background-position:top;background-color:var(--blue);color:var(--maize);border-radius:var(--radius);display:grid;place-items:center;font-family:var(--ff-mono);font-size:2rem;}
   .role{font-size:1.05rem;color:var(--text-soft);margin:.2rem 0 .4rem;}
   .grad{font-family:var(--ff-mono);font-size:13px;color:var(--maize-deep);margin:0 0 .5rem;}
+  .links{display:flex;gap:1.1rem;flex-wrap:wrap;}
   .li{font-family:var(--ff-mono);font-size:13px;}
   .bio{font-size:1.05rem;max-width:70ch;margin-bottom:1rem;}
   .edu{margin-top:1.6rem;}
