@@ -135,7 +135,7 @@ const relatedNews = news.filter((n) => n.text && n.text.indexOf(member.name) !==
   .e-deg{font-family:var(--ff-serif);font-weight:600;color:var(--blue);}
   .e-inst{color:var(--text-mute);font-size:.9rem;}
   .pnews{margin-top:2rem;}
-  .pnews-row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.6rem;-webkit-overflow-scrolling:touch;}
+  .pnews-row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;padding-bottom:.6rem;-webkit-overflow-scrolling:touch;}
   .pnews-card{flex:0 0 270px;scroll-snap-align:start;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--surface);}
   .pnews-card:hover{text-decoration:none;border-color:var(--border-strong);}
   .pnews-img{height:150px;background-size:cover;background-position:top;}
