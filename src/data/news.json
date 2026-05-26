@@ -13,7 +13,8 @@
       "/images/news/ngresnet_2026_1.jpg",
       "/images/news/ngresnet_2026_2.jpg",
       "/images/news/ngresnet_2026_3.jpg"
-    ]
+    ],
+    "link": "https://sites.google.com/view/ngresnet2025/2026"
   },
   {
     "date": "May 2026",
@@ -21,7 +22,7 @@
     "images": [
       "/images/news/cns_crw26.jpg"
     ],
-    "link": "https://edas.info/N35374"
+    "link": "https://sites.google.com/view/cns-crw2025/home"
   },
   {
     "date": "May 2026",
@@ -48,7 +49,15 @@
       "/images/news/cecs_pinning_1.jpg",
       "/images/news/cecs_pinning_2.jpg",
       "/images/news/cecs_pinning_3.jpg"
-    ]
+    ],
+    "people": [
+      "yuhui-wang",
+      "xingqi-wu"
+    ],
+    "personImg": {
+      "yuhui-wang": "/images/news/cecs_pinning_1.jpg",
+      "xingqi-wu": "/images/news/cecs_pinning_2.jpg"
+    }
   },
   {
     "date": "Apr 2026",
@@ -57,7 +66,17 @@
       "/images/news/cecs_poster_yuhui.jpg",
       "/images/news/cecs_poster_xingqi.jpg",
       "/images/news/cecs_poster_elahe.jpg"
-    ]
+    ],
+    "people": [
+      "yuhui-wang",
+      "xingqi-wu",
+      "elahe-delavari"
+    ],
+    "personImg": {
+      "yuhui-wang": "/images/news/cecs_poster_yuhui.jpg",
+      "xingqi-wu": "/images/news/cecs_poster_xingqi.jpg",
+      "elahe-delavari": "/images/news/cecs_poster_elahe.jpg"
+    }
   },
   {
     "date": "Mar 2026",
@@ -92,11 +111,18 @@
   },
   {
     "date": "Nov 2025",
-    "text": "Paper accepted in IEEE Networking Letters. Congratulations to Xingqi and Yuhui!"
+    "text": "Paper accepted in IEEE Networking Letters. Congratulations to Xingqi and Yuhui!",
+    "people": [
+      "xingqi-wu",
+      "yuhui-wang"
+    ]
   },
   {
     "date": "Aug 2025",
-    "text": "Poster accepted at ACM MobiHoc 2025. Congratulations Xingqi!"
+    "text": "Poster accepted at ACM MobiHoc 2025. Congratulations Xingqi!",
+    "people": [
+      "xingqi-wu"
+    ]
   },
   {
     "date": "Jun 2025",
@@ -109,7 +135,10 @@
   },
   {
     "date": "Jun 2025",
-    "text": "Paper accepted in IEEE Open Journal of the Communications Society. Congratulations Xingqi!"
+    "text": "Paper accepted in IEEE Open Journal of the Communications Society. Congratulations Xingqi!",
+    "people": [
+      "xingqi-wu"
+    ]
   },
   {
     "date": "May 2025",

@@ -18,7 +18,11 @@ const mine = pubs.filter((p) => p.authors_str && p.authors_str.indexOf(member.ma
 const journals = mine.filter((p) => p.type === "Journal");
 const confs = mine.filter((p) => p.type === "Conference");
 const other = mine.filter((p) => p.type !== "Journal" && p.type !== "Conference");
-const relatedNews = news.filter((n) => n.text && n.text.indexOf(member.name) !== -1);
+const relatedNews = news.filter((n) =>
+  (n.people && n.people.includes(member.slug)) ||
+  (n.text && n.text.indexOf(member.name) !== -1)
+);
+const newsImg = (n) => (n.personImg && n.personImg[member.slug]) || (n.images && n.images[0]) || "";
 ---
 <Base title={member.name} description={member.bio}>
   <section class="section">
@@ -57,7 +61,7 @@ const relatedNews = news.filter((n) => n.text && n.text.indexOf(member.name) !==
           <div class="pnews-row">
             {relatedNews.map((n) => (
               <a class="pnews-card" href={u("news")}>
-                {n.images && n.images.length > 0 && <div class="pnews-img" style={`background-image:url('${u(n.images[0])}')`}></div>}
+                {newsImg(n) && <div class="pnews-img" style={`background-image:url('${u(newsImg(n))}')`}></div>}
                 <div class="pnews-body">
                   <span class="pnews-date">{n.date}</span>
                   <p class="pnews-text">{n.text}</p>
