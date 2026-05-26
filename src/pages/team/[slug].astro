@@ -62,7 +62,7 @@ const newsImg = (n) => (n.personImg && n.personImg[member.slug]) || (n.images &&
             {relatedNews.map((n) => {
               const img = newsImg(n) ? u(newsImg(n)) : "";
               return (
-              <a class="pnews-card" href={img || u("news")} data-zoom={img || undefined}>
+              <a class="pnews-card" href={img || u("news")} data-gallery={img ? JSON.stringify([img]) : undefined} data-index="0">
                 {img && <div class="pnews-img" style={`background-image:url('${img}')`}></div>}
                 <div class="pnews-body">
                   <span class="pnews-date">{n.date}</span>
