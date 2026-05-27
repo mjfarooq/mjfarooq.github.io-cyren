@@ -33,7 +33,7 @@
       "role": "Ph.D. Researcher",
       "focus": "RL-driven O-RAN control",
       "photo": "/images/team/elahe.jpg",
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/elaheh-delavari/",
       "grad": "Expected 2030",
       "bio": "Elahe Delavari is a Ph.D. researcher focused on reinforcement-learning-driven control for open radio access networks. Her work includes jamming-resilient physical resource block (PRB) reservation and resilient network slicing for latency-critical industrial 5G systems.",
       "education": [],
