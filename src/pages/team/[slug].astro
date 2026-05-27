@@ -12,7 +12,10 @@ export async function getStaticPaths() {
 const { member } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
-const authorsHtml = (s) => (member.match ? s.split(member.match).join(`<strong>${member.match}</strong>`) : s);
+const authorsHtml = (s) => {
+  const t = (s || "").replace(/\*/g, "");
+  return member.match ? t.split(member.match).join(`<strong>${member.match}</strong>`) : t;
+};
 
 const mine = pubs.filter((p) => p.authors_str && p.authors_str.indexOf(member.match) !== -1);
 const journals = mine.filter((p) => p.type === "Journal");
