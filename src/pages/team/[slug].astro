@@ -89,13 +89,11 @@ const newsImg = (n) => (n.personImg && n.personImg[member.slug]) || (n.images &&
                   {p.url ? <a class="pi-title" href={p.url} target="_blank" rel="noopener">{p.title}</a> : <span class="pi-title">{p.title}</span>}
                   <div class="pi-auth" set:html={authorsHtml(p.authors_str)}></div>
                   <div class="pi-venue">{p.venue}</div>
-                  <details class="pi-cite">
-                    <summary class="pi-cite-summary">BibTeX</summary>
-                    <div class="pi-bib-box">
-                      <button type="button" class="pi-copy" aria-label="Copy BibTeX">Copy</button>
-                      <pre class="pi-bib">{bibtex(p)}</pre>
-                    </div>
-                  </details>
+                  <button type="button" class="pi-cite-toggle">BibTeX</button>
+                  <div class="pi-cite-box" hidden>
+                    <button type="button" class="pi-copy" aria-label="Copy BibTeX">Copy</button>
+                    <pre class="pi-bib">{bibtex(p)}</pre>
+                  </div>
                 </div>
               </li>
             ))}
@@ -114,13 +112,11 @@ const newsImg = (n) => (n.personImg && n.personImg[member.slug]) || (n.images &&
                   {p.url ? <a class="pi-title" href={p.url} target="_blank" rel="noopener">{p.title}</a> : <span class="pi-title">{p.title}</span>}
                   <div class="pi-auth" set:html={authorsHtml(p.authors_str)}></div>
                   <div class="pi-venue">{p.venue}</div>
-                  <details class="pi-cite">
-                    <summary class="pi-cite-summary">BibTeX</summary>
-                    <div class="pi-bib-box">
-                      <button type="button" class="pi-copy" aria-label="Copy BibTeX">Copy</button>
-                      <pre class="pi-bib">{bibtex(p)}</pre>
-                    </div>
-                  </details>
+                  <button type="button" class="pi-cite-toggle">BibTeX</button>
+                  <div class="pi-cite-box" hidden>
+                    <button type="button" class="pi-copy" aria-label="Copy BibTeX">Copy</button>
+                    <pre class="pi-bib">{bibtex(p)}</pre>
+                  </div>
                 </div>
               </li>
             ))}
@@ -139,13 +135,11 @@ const newsImg = (n) => (n.personImg && n.personImg[member.slug]) || (n.images &&
                   {p.url ? <a class="pi-title" href={p.url} target="_blank" rel="noopener">{p.title}</a> : <span class="pi-title">{p.title}</span>}
                   <div class="pi-auth" set:html={authorsHtml(p.authors_str)}></div>
                   <div class="pi-venue">{p.venue}</div>
-                  <details class="pi-cite">
-                    <summary class="pi-cite-summary">BibTeX</summary>
-                    <div class="pi-bib-box">
-                      <button type="button" class="pi-copy" aria-label="Copy BibTeX">Copy</button>
-                      <pre class="pi-bib">{bibtex(p)}</pre>
-                    </div>
-                  </details>
+                  <button type="button" class="pi-cite-toggle">BibTeX</button>
+                  <div class="pi-cite-box" hidden>
+                    <button type="button" class="pi-copy" aria-label="Copy BibTeX">Copy</button>
+                    <pre class="pi-bib">{bibtex(p)}</pre>
+                  </div>
                 </div>
               </li>
             ))}
@@ -186,12 +180,10 @@ const newsImg = (n) => (n.personImg && n.personImg[member.slug]) || (n.images &&
   .pi-auth{font-size:.88rem;color:var(--text-soft);margin-top:.3rem;}
   .pi-auth strong{color:var(--blue);}
   .pi-venue{font-size:.84rem;color:var(--text-mute);font-style:italic;margin-top:.1rem;}
-  .pi-cite{margin-top:.55rem;}
-  .pi-cite-summary{display:inline-block;font-family:var(--ff-mono);font-size:11px;padding:.25rem .6rem;border:1px solid var(--border-strong);border-radius:5px;color:var(--link);background:#fff;cursor:pointer;list-style:none;}
-  .pi-cite-summary::-webkit-details-marker{display:none;}
-  .pi-cite-summary:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
-  .pi-cite[open] .pi-cite-summary{background:var(--blue);color:#fff;border-color:var(--blue);}
-  .pi-bib-box{position:relative;margin-top:.5rem;}
+  .pi-cite-toggle{display:inline-block;margin-top:.55rem;font-family:var(--ff-mono);font-size:11px;padding:.25rem .6rem;border:1px solid var(--border-strong);border-radius:5px;color:var(--link);background:#fff;cursor:pointer;}
+  .pi-cite-toggle:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+  .pi-cite-toggle.on{background:var(--blue);color:#fff;border-color:var(--blue);}
+  .pi-cite-box{position:relative;margin-top:.5rem;}
   .pi-bib{background:#fff;border:1px solid var(--border);border-radius:6px;padding:.8rem 1rem;font-family:var(--ff-mono);font-size:11.5px;line-height:1.55;white-space:pre;overflow-x:auto;color:var(--text);margin:0;}
   .pi-copy{position:absolute;top:8px;right:8px;font-family:var(--ff-mono);font-size:11px;padding:.25rem .55rem;border:1px solid var(--border-strong);border-radius:5px;background:#fff;color:var(--link);cursor:pointer;}
   .pi-copy:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
@@ -199,5 +191,5 @@ const newsImg = (n) => (n.personImg && n.personImg[member.slug]) || (n.images &&
   @media(max-width:620px){.head{grid-template-columns:1fr;}.ph{max-width:150px;}.pitem{grid-template-columns:1fr;gap:.3rem;}}
 </style>
 <script is:inline>
-  document.addEventListener("click",function(e){var b=e.target.closest(".pi-copy");if(!b)return;var pre=b.parentElement&&b.parentElement.querySelector(".pi-bib");if(!pre)return;var t=pre.textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){var o=b.textContent;b.textContent="Copied!";b.classList.add("ok");setTimeout(function(){b.textContent=o;b.classList.remove("ok");},1500);}).catch(function(){var r=document.createRange();r.selectNodeContents(pre);var s=window.getSelection();s.removeAllRanges();s.addRange(r);});});
+  document.addEventListener("click",function(e){var tog=e.target.closest(".pi-cite-toggle");if(tog){var box=tog.nextElementSibling;if(box&&box.classList.contains("pi-cite-box")){var nowHidden=!box.hidden;box.hidden=nowHidden;tog.classList.toggle("on",!nowHidden);}return;}var b=e.target.closest(".pi-copy");if(!b)return;var pre=b.parentElement&&b.parentElement.querySelector(".pi-bib");if(!pre)return;var t=pre.textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){var o=b.textContent;b.textContent="Copied!";b.classList.add("ok");setTimeout(function(){b.textContent=o;b.classList.remove("ok");},1500);}).catch(function(){var r=document.createRange();r.selectNodeContents(pre);var s=window.getSelection();s.removeAllRanges();s.addRange(r);});});
 </script>
