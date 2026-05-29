@@ -63,7 +63,7 @@
       "grad": "2025",
       "position": "University of Arizona",
       "photo": "/images/team/dhia.jpg",
-      "linkedin": ""
+      "linkedin": "https://www.linkedin.com/in/dhia-neifar/"
     },
     {
       "name": "Moyan Lyu",
@@ -71,7 +71,7 @@
       "grad": "2025",
       "position": "Michigan State University",
       "photo": "/images/team/moyan.jpg",
-      "linkedin": "https://www.linkedin.com/in/moyan-lyu-38a689239/"
+      "linkedin": "https://www.linkedin.com/in/moyan-lyu-38a689239"
     },
     {
       "name": "Zhaoguo Wang",
@@ -79,7 +79,7 @@
       "grad": "2022",
       "position": "XPeng",
       "photo": "/images/team/zhaoguo.jpg",
-      "linkedin": ""
+      "linkedin": "https://www.linkedin.com/in/zhaoguo-wang-842619157/"
     },
     {
       "name": "Tim Kieras",
@@ -87,7 +87,7 @@
       "grad": "2021",
       "position": "Morse Corp.",
       "photo": "/images/team/tim.jpg",
-      "linkedin": ""
+      "linkedin": "https://www.linkedin.com/in/tkieras/"
     },
     {
       "name": "Yunfan Xu",
@@ -95,7 +95,7 @@
       "grad": "2022",
       "position": "Hubspot",
       "photo": "/images/team/yunfan.jpg",
-      "linkedin": ""
+      "linkedin": "https://www.linkedin.com/in/yunfanxu/"
     }
   ],
   "interns": [
@@ -123,19 +123,19 @@
       "name": "Jawad Hazime",
       "note": "",
       "photo": "/images/team/jawad.jpg",
-      "linkedin": ""
+      "linkedin": "https://www.linkedin.com/in/jawadhazime/"
     },
     {
       "name": "Meher Jabbar",
       "note": "",
       "photo": "",
-      "linkedin": ""
+      "linkedin": "https://www.linkedin.com/in/meherjabbar"
     },
     {
       "name": "Shouryan Nikam",
       "note": "",
       "photo": "",
-      "linkedin": ""
+      "linkedin": "https://www.linkedin.com/in/shouryannikam/"
     }
   ]
 }
