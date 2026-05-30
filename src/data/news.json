@@ -45,6 +45,11 @@
     "link": "https://rackham.umich.edu/discover-rackham/announcing-the-2025-2026-rackham-predoctoral-fellowship-awards/"
   },
   {
+    "date": "May 2026",
+    "text": "Junaid Farooq promoted to Associate Professor of Electrical and Computer Engineering with tenure, approved by the U-M Board of Regents.",
+    "link": "https://record.umich.edu/articles/regents-approve-faculty-promotions-21/"
+  },
+  {
     "date": "Apr 2026",
     "text": "Yuhui Wang received his Rackham Predoctoral Fellowship certificate from Rackham Dean Dewey Jung, recognizing his research on aerial communication systems.",
     "images": [
@@ -98,6 +103,11 @@
       "/images/news/daisy_2.jpg",
       "/images/news/daisy_3.jpg"
     ]
+  },
+  {
+    "date": "Mar 2026",
+    "text": "The CyReN Lab and Elahe Delavari featured in UM-Dearborn's Campus in Focus: March Maize-ness.",
+    "link": "https://umdearborn.edu/news/campus-focus-march-maize-ness"
   },
   {
     "date": "Feb 2026",
@@ -197,7 +207,8 @@
   },
   {
     "date": "Feb 2025",
-    "text": "Presented a seminar at UM-Flint on AI-Driven Management and Orchestration of Next-Generation Networks."
+    "text": "Presented a seminar at UM-Flint on AI-Driven Management and Orchestration of Next-Generation Networks.",
+    "link": "https://events.umflint.edu/cit/events/12408"
   },
   {
     "date": "Oct 2024",
@@ -225,6 +236,11 @@
       "/images/news/nyu_commencement_2.jpg",
       "/images/news/nyu_commencement_3.jpg"
     ]
+  },
+  {
+    "date": "Sep 2022",
+    "text": "UM-Dearborn news feature on the NSF Convergence Accelerator project for zero-trust 5G security in ultra-sensitive applications.",
+    "link": "https://umdearborn.edu/news/bolstering-5g-security-ultra-sensitive-applications"
   },
   {
     "date": "Aug 2022",
