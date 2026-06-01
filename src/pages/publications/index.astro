@@ -2,7 +2,7 @@
 import Base from "../../layouts/Base.astro";
 import pubs from "../../data/publications.json";
 import { bibtex } from "../../data/bibtex.js";
-const types = ["All", "Journal", "Conference", "Book", "Book Chapter"];
+const types = ["All", "Journal", "Conference", "Book", "Book Chapter", "Preprint"];
 const list = pubs.filter(p => p.type !== "Thesis");
 const years = Array.from(new Set(list.map((p) => p.year))).sort((a, b) => b - a);
 const authorList = Array.from(new Set(list.flatMap((p) => p.authors || []))).sort((a, b) => a.localeCompare(b));
@@ -85,7 +85,7 @@ function authorsHtml(s){ return s.replace(/(M\. J\. Farooq|J\. Farooq)/g, "<stro
   .pi-copy:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
   .pi-copy.ok{background:var(--maize);color:var(--blue);border-color:var(--maize);}
   .badge{font-family:var(--ff-mono);font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:.2rem .5rem;border-radius:3px;}
-  .b-journal{background:#00274c;color:#fff;}.b-conference{background:#ffcb05;color:#00274c;}.b-book,.b-bookchapter{background:#1f5394;color:#fff;}
+  .b-journal{background:#00274c;color:#fff;}.b-conference{background:#ffcb05;color:#00274c;}.b-book,.b-bookchapter{background:#1f5394;color:#fff;}.b-preprint{background:#fff;color:var(--link);border:1px solid var(--border-strong);}
   .nores{padding:2.5rem 0;color:var(--text-mute);font-family:var(--ff-mono);}
   @media(max-width:560px){.pitem{grid-template-columns:1fr;gap:.3rem;}}
 </style>
