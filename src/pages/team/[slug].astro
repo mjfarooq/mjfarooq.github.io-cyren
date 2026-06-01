@@ -18,7 +18,10 @@ const authorsHtml = (s) => {
   return member.match ? t.split(member.match).join(`<strong>${member.match}</strong>`) : t;
 };
 
-const mine = pubs.filter((p) => p.authors_str && p.authors_str.indexOf(member.match) !== -1);
+const mine = pubs.filter((p) => {
+  if (p.peopleExclude && p.peopleExclude.includes(member.slug)) return false;
+  return p.authors_str && p.authors_str.indexOf(member.match) !== -1;
+});
 const journals = mine.filter((p) => p.type === "Journal");
 const confs = mine.filter((p) => p.type === "Conference");
 const other = mine.filter((p) => p.type !== "Journal" && p.type !== "Conference");
