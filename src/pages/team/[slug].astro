@@ -3,6 +3,7 @@ import Base from "../../layouts/Base.astro";
 import team from "../../data/team.json";
 import pubs from "../../data/publications.json";
 import news from "../../data/news.json";
+import lab from "../../data/lab.json";
 import { bibtex } from "../../data/bibtex.js";
 
 export async function getStaticPaths() {
@@ -25,6 +26,7 @@ const mine = pubs.filter((p) => {
 const journals = mine.filter((p) => p.type === "Journal");
 const confs = mine.filter((p) => p.type === "Conference");
 const other = mine.filter((p) => p.type !== "Journal" && p.type !== "Conference");
+const myPatents = (lab.patents || []).filter((p) => (p.inventors || []).includes(member.match));
 const relatedNews = news.filter((n) =>
   (n.people && n.people.includes(member.slug)) ||
   (n.text && n.text.indexOf(member.name) !== -1)
@@ -120,6 +122,24 @@ const newsImg = (n) => (n.personImg && n.personImg[member.slug]) || (n.images &&
                     <button type="button" class="pi-copy" aria-label="Copy BibTeX">Copy</button>
                     <pre class="pi-bib">{bibtex(p)}</pre>
                   </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
+
+      {myPatents.length > 0 && (
+        <div class="pubs">
+          <h2 class="h-sec">Patents</h2>
+          <ol class="plist">
+            {myPatents.map((p) => (
+              <li class="pitem">
+                <span class="pi-year">{p.year || (p.filed || "").split(" ").pop()}</span>
+                <div>
+                  <span class="pi-title">{p.title}</span>
+                  <div class="pi-auth" set:html={authorsHtml((p.inventors || []).join(", "))}></div>
+                  <div class="pi-venue">{[p.type, p.applicationNumber && "Application No. " + p.applicationNumber, p.assignee].filter(Boolean).join(" · ")}</div>
                 </div>
               </li>
             ))}
