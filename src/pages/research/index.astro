@@ -43,6 +43,24 @@ const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
       <a class="btn link-more" href={u("publications")}>See related publications →</a>
     </div>
   </section>
+  {lab.patents && lab.patents.length > 0 && (
+    <section class="section">
+      <div class="wrap"><span class="eyebrow">IP</span><h2 class="h-lg" style="margin-bottom:1.6rem;">Patents</h2>
+        <div class="pats">
+          {lab.patents.map((p) => (
+            <article class="pat">
+              <div class="pat-when">{p.filed || p.year}</div>
+              <div>
+                <h3 class="h-md">{p.title}</h3>
+                <div class="pat-inv">{(p.inventors || []).join(", ")}</div>
+                <div class="pat-info">{[p.type, p.applicationNumber && "Application No. " + p.applicationNumber, p.assignee].filter(Boolean).join(" · ")}</div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 </Base>
 <style>
   .page-head{padding:clamp(2.5rem,6vw,5rem) 0 0;}
@@ -57,5 +75,11 @@ const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
   .proj-i{font-family:var(--ff-mono);color:var(--link);font-size:1.2rem;}
   .proj-sp{font-family:var(--ff-mono);font-size:12px;color:var(--maize-deep);margin:.2rem 0 .5rem;}
   .link-more{margin-top:1.8rem;}
+  .pats{display:flex;flex-direction:column;gap:1rem;}
+  .pat{display:grid;grid-template-columns:90px 1fr;gap:1.2rem;background:#fff;border:1px solid var(--border);border-left:4px solid var(--blue);border-radius:var(--radius);padding:1.4rem;}
+  .pat-when{font-family:var(--ff-mono);color:var(--link);font-size:13px;padding-top:.25rem;}
+  .pat-inv{font-size:.9rem;color:var(--text-soft);margin-top:.3rem;}
+  .pat-info{font-family:var(--ff-mono);font-size:12px;color:var(--text-mute);margin-top:.35rem;}
+  @media(max-width:620px){.pat{grid-template-columns:1fr;gap:.4rem;}}
   @media(max-width:880px){.thrust{grid-template-columns:1fr;}.thrust.flip .thrust-img{order:0;}.thrust-img{height:220px;}.proj{grid-template-columns:1fr;gap:.5rem;}}
 </style>
