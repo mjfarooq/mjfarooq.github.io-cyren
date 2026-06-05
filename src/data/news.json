@@ -1,5 +1,21 @@
 [
   {
+    "date": "Sep 2026",
+    "text": "Our paper \"Collaborative Cloud-Edge Computing via LLM-Guided Constrained Reinforcement Learning\" was accepted in IEEE International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC 2026), Singapore. Congratulations Xingqi and Yuhui!",
+    "people": [
+      "xingqi-wu",
+      "yuhui-wang"
+    ]
+  },
+  {
+    "date": "Jul 2026",
+    "text": "Our paper \"Dependency-Aware Task Offloading via Quantum Graph Attention Network-based Deep Reinforcement Learning in Collaborative Edge-Cloud Systems\" was accepted in International Conference on Computer Communications and Networks (ICCCN 2026). Congratulations Xingqi and Yuhui!",
+    "people": [
+      "xingqi-wu",
+      "yuhui-wang"
+    ]
+  },
+  {
     "date": "Jun 2026",
     "text": "U.S. provisional patent application filed: \"Online Detection and Containment of Disruptive User Equipment (UE) in Radio Access Networks.\" Inventors: X. Wu and J. Farooq (Application No. 64/080,683).",
     "people": [
@@ -10,11 +26,8 @@
     ]
   },
   {
-    "date": "May 2026",
-    "text": "Our paper \"Delay-Aware Reinforcement Learning for O-RAN Control under Stochastic Reward Feedback\" was accepted in IEEE Networking Letters. Congratulations Xingqi!",
-    "images": [
-      "/images/news/delay_aware_oran.jpg"
-    ],
+    "date": "Jun 2026",
+    "text": "Our paper \"Risk-Aware Resource Orchestration in Multi-Tier 5G Edge-Cloud Networks\" was accepted in Intent-Driven Network: Techniques and Applications, Springer Wireless Network Series. Congratulations Xingqi!",
     "people": [
       "xingqi-wu"
     ]
@@ -60,6 +73,31 @@
     "link": "https://record.umich.edu/articles/regents-approve-faculty-promotions-21/",
     "images": [
       "/images/news/promotion_associate.jpg"
+    ]
+  },
+  {
+    "date": "May 2026",
+    "text": "Our paper \"Jamming-Resilient PRB Reservation for Latency-Critical O-RAN Network Slicing\" was accepted in IEEE DySPAN 2026 ML-Spec Workshop, Washington D.C., USA. Congratulations Elahe!",
+    "people": [
+      "elahe-delavari"
+    ]
+  },
+  {
+    "date": "May 2026",
+    "text": "Our paper \"Temporally Encoded Double DQN for Proactive PRB Allocation in O-RAN Enabled Industrial Networks\" was accepted in IEEE/IFIP NOMS 2026 Workshop on Resilience in Next Generation Network Management (NGResNet), Rome, Italy. Congratulations Xingqi and Elahe!",
+    "people": [
+      "xingqi-wu",
+      "elahe-delavari"
+    ]
+  },
+  {
+    "date": "May 2026",
+    "text": "Our paper \"Delay-Aware Reinforcement Learning for O-RAN Control under Stochastic Reward Feedback\" was accepted in IEEE Networking Letters. Congratulations Xingqi!",
+    "images": [
+      "/images/news/delay_aware_oran.jpg"
+    ],
+    "people": [
+      "xingqi-wu"
     ]
   },
   {
@@ -109,6 +147,18 @@
     }
   },
   {
+    "date": "Apr 2026",
+    "text": "Our paper \"Process-Informed Multi-Agent Reinforcement Learning for Joint Radio-Compute Orchestration in Industrial O-RAN\" was accepted in IEEE Networking Letters. Congratulations to Xingqi and Yuhui!",
+    "people": [
+      "xingqi-wu",
+      "yuhui-wang"
+    ],
+    "images": [
+      "/images/news/process_informed_marl.jpg"
+    ],
+    "link": "https://ieeexplore.ieee.org/document/11494807"
+  },
+  {
     "date": "Mar 2026",
     "text": "Chaired the Dearborn Automation and Intelligent Systems (DAISY) Symposium, featuring a panel on NextG networks and smart manufacturing with Majid Butt, Haneya Naeem Qureshi, and Georges Ayoub. Supported by the UM Bold Challenges Pollination Award.",
     "images": [
@@ -142,11 +192,53 @@
     ]
   },
   {
+    "date": "Feb 2026",
+    "text": "Our paper \"PROMPTGUARD: Zero Trust Prompting for Securing LLM-Driven O-RAN Control\" was accepted in Proc. NDSS 2026 Workshop on Security and Privacy of Next-Generation Networks (FutureG), San Diego CA. Congratulations Xingqi and Yuhui!",
+    "people": [
+      "xingqi-wu",
+      "yuhui-wang"
+    ],
+    "link": "https://www.ndss-symposium.org/wp-content/uploads/futureg26-22.pdf"
+  },
+  {
+    "date": "Feb 2026",
+    "text": "Our paper \"Dynamic Multi-Modal UAV Control for Optimized Coverage and Backhaul Connectivity in Spatially Unstructured and Dispersed User Environments\" was accepted in IEEE Transactions on Mobile Computing. Congratulations Yuhui!",
+    "people": [
+      "yuhui-wang"
+    ],
+    "link": "https://www.computer.org/csdl/journal/tm/5555/01/11152341/29LAw5X8z2E"
+  },
+  {
     "date": "Jan 2026",
     "text": "New book published: Cyber Resilience in Next-Generation Networks (Foundations and Trends in Networking).",
     "images": [
       "/images/news/FnT_Book.jpg"
     ]
+  },
+  {
+    "date": "Dec 2025",
+    "text": "Our paper \"SliceWise: Traffic-Aware Multi-Agent RL with Temporal Encoding for Joint Slice Admission and Resource Orchestration in O-RAN\" was accepted in IEEE Networking Letters. Congratulations Xingqi and Yuhui!",
+    "people": [
+      "xingqi-wu",
+      "yuhui-wang"
+    ],
+    "link": "https://ieeexplore.ieee.org/document/11251017"
+  },
+  {
+    "date": "Dec 2025",
+    "text": "Our paper \"Resilient PRB Allocation for High Mobility UEs in 5G O-RAN via LSTM-Enhanced MPC\" was accepted in IEEE Globecom Workshop on Resilience in Next-Generation Wireless Communication Networks (GC Wkshps 2025), Taiwan. Congratulations Xingqi and Yuxuan!",
+    "people": [
+      "xingqi-wu"
+    ],
+    "link": "https://www.techrxiv.org/users/793184/articles/1341419"
+  },
+  {
+    "date": "Nov 2025",
+    "text": "Our paper \"Multi-agent Resource Orchestration Based on D3QN for Network Slicing in 5G Edge-Cloud Networks\" was accepted in IEEE Transactions on Network and Service Management. Congratulations Xingqi!",
+    "people": [
+      "xingqi-wu"
+    ],
+    "link": "https://ieeexplore.ieee.org/document/11297800"
   },
   {
     "date": "Nov 2025",
@@ -158,16 +250,20 @@
     ]
   },
   {
-    "date": "Nov 2025",
-    "text": "Our paper \"Process-Informed Multi-Agent Reinforcement Learning for Joint Radio-Compute Orchestration in Industrial O-RAN\" was accepted in IEEE Networking Letters. Congratulations to Xingqi and Yuhui!",
+    "date": "Oct 2025",
+    "text": "Our paper \"Joint Positioning and Computation Offloading in Multi-UAV MEC for Low Latency Applications: A Proximal Policy Optimization Approach\" was accepted in IEEE Transactions on Mobile Computing. Congratulations Yuhui!",
     "people": [
-      "xingqi-wu",
       "yuhui-wang"
     ],
-    "images": [
-      "/images/news/process_informed_marl.jpg"
+    "link": "https://ieeexplore.ieee.org/document/10971880"
+  },
+  {
+    "date": "Oct 2025",
+    "text": "Our paper \"Poster: Triage Slicing: Online Detection and Containment of Disruptive UEs in O-RAN Slices\" was accepted in 26th ACM MobiHoc 2025, Houston, TX, USA. Congratulations Xingqi and Ritesh!",
+    "people": [
+      "xingqi-wu"
     ],
-    "link": "https://ieeexplore.ieee.org/document/11494807"
+    "link": "https://dl.acm.org/doi/10.1145/3704413.3765320"
   },
   {
     "date": "Aug 2025",
@@ -175,6 +271,32 @@
     "people": [
       "xingqi-wu"
     ]
+  },
+  {
+    "date": "Aug 2025",
+    "text": "Our paper \"Evaluation of LLM powered agentic AI for solving multi-arm bandit problems\" was accepted in IEEE COINS 2025, Madison WI, USA. Congratulations Jawad!",
+    "link": "https://www.techrxiv.org/users/793184/articles/1315647"
+  },
+  {
+    "date": "Aug 2025",
+    "text": "Our paper \"Multimodal LLM-guided sequential detection of cyber threats in electric vehicle charging systems\" was accepted in IEEE COINS 2025, Madison WI, USA. Congratulations Ritesh!",
+    "link": "https://www.techrxiv.org/users/793184/articles/1315646"
+  },
+  {
+    "date": "Aug 2025",
+    "text": "Our paper \"Real-time multiple obstacle avoidance and navigation in unstructured spaces with applications to indoor delivery robots\" was accepted in IEEE COINS 2025, Madison WI, USA. Congratulations Yuhui!",
+    "people": [
+      "yuhui-wang"
+    ],
+    "link": "https://www.techrxiv.org/users/793184/articles/1315645"
+  },
+  {
+    "date": "Jul 2025",
+    "text": "Our paper \"Reliable and Resilient Connectivity and Coverage under Localized Backhauling in UAV-IoT Networks\" was accepted in IEEE Open Journal of the Communications Society. Congratulations Xingqi!",
+    "people": [
+      "xingqi-wu"
+    ],
+    "link": "https://ieeexplore.ieee.org/document/11062492"
   },
   {
     "date": "Jun 2025",
@@ -191,6 +313,23 @@
     "people": [
       "xingqi-wu"
     ]
+  },
+  {
+    "date": "Jun 2025",
+    "text": "Our paper \"Coordinated UAV Deployment and Task Offloading in UAV-Assisted LEO Satellite Edge Computing Systems via Proximal Policy Optimization\" was accepted in IEEE ICC 2025 Workshop on Emerging Technologies in Aerial and Space Networks, Montreal, Canada. Congratulations Xingqi and Yuhui!",
+    "people": [
+      "xingqi-wu",
+      "yuhui-wang"
+    ],
+    "link": "https://www.techrxiv.org/users/793184/articles/1277869"
+  },
+  {
+    "date": "Jun 2025",
+    "text": "Our paper \"Joint Admission Control and Resource Provisioning for URLLC Traffic in O-RAN: A Constrained Multi-Agent Reinforcement Learning Approach\" was accepted in IEEE ICC 2025, Montreal, Canada. Congratulations Xingqi!",
+    "people": [
+      "xingqi-wu"
+    ],
+    "link": "https://www.techrxiv.org/doi/full/10.36227/techrxiv.174284729.99809422/v1"
   },
   {
     "date": "May 2025",
@@ -211,6 +350,20 @@
     ]
   },
   {
+    "date": "May 2025",
+    "text": "Our paper \"LLM-Driven Agentic AI Approach to Enhanced O-RAN Resilience in Next-Generation Networks\" was accepted in IEEE INFOCOM 2025 Workshop on Resilience in Next-Generation Networks (NGResNet), London, UK. Congratulations Xingqi and Yuhui!",
+    "people": [
+      "xingqi-wu",
+      "yuhui-wang"
+    ],
+    "link": "https://www.techrxiv.org/users/793184/articles/1277868"
+  },
+  {
+    "date": "May 2025",
+    "text": "Our paper \"LLM-Powered Agentic AI Approach to Securing EV Charging Systems Against Cyber Threats\" was accepted in 3rd Workshop on Cybersecurity of Critical National Infrastructures (CCNI), IEEE WoWMoM 2025, Dallas TX, USA. Congratulations Ritesh!",
+    "link": "https://d197for5662m48.cloudfront.net/documents/publicationstatus/257574/preprint_pdf/8de6e8c31bd5d57611c5653f7751537f.pdf"
+  },
+  {
     "date": "Mar 2025",
     "text": "Presented two papers from the group at IEEE WCNC 2025 in Milan, on multi-UAV placement with LLM-driven optimization and computation offloading in multi-UAV MEC networks, with Yuhui Wang.",
     "images": [
@@ -218,6 +371,22 @@
       "/images/news/wcnc_2025_2.jpg",
       "/images/news/wcnc_2025_3.jpg"
     ]
+  },
+  {
+    "date": "Mar 2025",
+    "text": "Our paper \"Joint Optimization of Positioning and Computation Offloading in Multi-UAV MEC Networks for Low Latency Applications\" was accepted in IEEE WCNC 2025, Milan, Italy. Congratulations Yuhui!",
+    "people": [
+      "yuhui-wang"
+    ],
+    "link": "https://www.techrxiv.org/users/793184/articles/1234294"
+  },
+  {
+    "date": "Mar 2025",
+    "text": "Our paper \"Multi-UAV Placement for Integrated Access and Backhauling Using LLM-Based Optimizers\" was accepted in IEEE WCNC 2025, Milan, Italy. Congratulations Yuhui!",
+    "people": [
+      "yuhui-wang"
+    ],
+    "link": "https://www.techrxiv.org/users/793184/articles/1229164"
   },
   {
     "date": "Feb 2025",
@@ -239,6 +408,20 @@
     "date": "Feb 2025",
     "text": "Presented a seminar at UM-Flint on AI-Driven Management and Orchestration of Next-Generation Networks.",
     "link": "https://events.umflint.edu/cit/events/12408"
+  },
+  {
+    "date": "Feb 2025",
+    "text": "Our paper \"LLM-xApp: A Large Language Model Empowered Radio Resource Management xApp for 5G O-RAN\" was accepted in Proc. NDSS 2025 Workshop on Security and Privacy of Next-Generation Networks (FutureG), San Diego CA. Congratulations Xingqi and Yuhui!",
+    "people": [
+      "xingqi-wu",
+      "yuhui-wang"
+    ],
+    "link": "https://www.ndss-symposium.org/ndss-paper/auto-draft-567/"
+  },
+  {
+    "date": "Jan 2025",
+    "text": "Our paper \"Mapping Cyber Threats in the 5G Supply Chain: Landscape, Vulnerabilities, and Risk Management\" was accepted in IEEE Network. Congratulations Moyan!",
+    "link": "https://ieeexplore.ieee.org/document/10634234"
   },
   {
     "date": "Oct 2024",
