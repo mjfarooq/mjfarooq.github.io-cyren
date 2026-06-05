@@ -5,6 +5,9 @@
     "people": [
       "xingqi-wu",
       "yuhui-wang"
+    ],
+    "images": [
+      "/images/news/collaborative_llm_rl.jpg"
     ]
   },
   {
@@ -13,6 +16,9 @@
     "people": [
       "xingqi-wu",
       "yuhui-wang"
+    ],
+    "images": [
+      "/images/news/quantum_graph_attention.jpg"
     ]
   },
   {
@@ -30,6 +36,9 @@
     "text": "Our paper \"Risk-Aware Resource Orchestration in Multi-Tier 5G Edge-Cloud Networks\" was accepted in Intent-Driven Network: Techniques and Applications, Springer Wireless Network Series. Congratulations Xingqi!",
     "people": [
       "xingqi-wu"
+    ],
+    "images": [
+      "/images/news/risk_aware_orchestration.jpg"
     ]
   },
   {
@@ -80,6 +89,9 @@
     "text": "Our paper \"Jamming-Resilient PRB Reservation for Latency-Critical O-RAN Network Slicing\" was accepted in IEEE DySPAN 2026 ML-Spec Workshop, Washington D.C., USA. Congratulations Elahe!",
     "people": [
       "elahe-delavari"
+    ],
+    "images": [
+      "/images/news/jamming_resilient_prb.jpg"
     ]
   },
   {
@@ -88,6 +100,9 @@
     "people": [
       "xingqi-wu",
       "elahe-delavari"
+    ],
+    "images": [
+      "/images/news/temporal_ddqn_prb.jpg"
     ]
   },
   {
@@ -198,7 +213,10 @@
       "xingqi-wu",
       "yuhui-wang"
     ],
-    "link": "https://www.ndss-symposium.org/wp-content/uploads/futureg26-22.pdf"
+    "link": "https://www.ndss-symposium.org/wp-content/uploads/futureg26-22.pdf",
+    "images": [
+      "/images/news/promptguard.jpg"
+    ]
   },
   {
     "date": "Feb 2026",
@@ -206,7 +224,10 @@
     "people": [
       "yuhui-wang"
     ],
-    "link": "https://www.computer.org/csdl/journal/tm/5555/01/11152341/29LAw5X8z2E"
+    "link": "https://www.computer.org/csdl/journal/tm/5555/01/11152341/29LAw5X8z2E",
+    "images": [
+      "/images/news/dynamic_multimodal_uav.jpg"
+    ]
   },
   {
     "date": "Jan 2026",
@@ -222,7 +243,10 @@
       "xingqi-wu",
       "yuhui-wang"
     ],
-    "link": "https://ieeexplore.ieee.org/document/11251017"
+    "link": "https://ieeexplore.ieee.org/document/11251017",
+    "images": [
+      "/images/news/slicewise.jpg"
+    ]
   },
   {
     "date": "Dec 2025",
@@ -230,7 +254,10 @@
     "people": [
       "xingqi-wu"
     ],
-    "link": "https://www.techrxiv.org/users/793184/articles/1341419"
+    "link": "https://www.techrxiv.org/users/793184/articles/1341419",
+    "images": [
+      "/images/news/prb_high_mobility.jpg"
+    ]
   },
   {
     "date": "Nov 2025",
@@ -238,7 +265,10 @@
     "people": [
       "xingqi-wu"
     ],
-    "link": "https://ieeexplore.ieee.org/document/11297800"
+    "link": "https://ieeexplore.ieee.org/document/11297800",
+    "images": [
+      "/images/news/d3qn_orchestration.jpg"
+    ]
   },
   {
     "date": "Nov 2025",
@@ -255,7 +285,10 @@
     "people": [
       "yuhui-wang"
     ],
-    "link": "https://ieeexplore.ieee.org/document/10971880"
+    "link": "https://ieeexplore.ieee.org/document/10971880",
+    "images": [
+      "/images/news/joint_positioning_uav_mec.jpg"
+    ]
   },
   {
     "date": "Oct 2025",
@@ -263,7 +296,10 @@
     "people": [
       "xingqi-wu"
     ],
-    "link": "https://dl.acm.org/doi/10.1145/3704413.3765320"
+    "link": "https://dl.acm.org/doi/10.1145/3704413.3765320",
+    "images": [
+      "/images/news/triage_slicing.jpg"
+    ]
   },
   {
     "date": "Aug 2025",
@@ -275,12 +311,18 @@
   {
     "date": "Aug 2025",
     "text": "Our paper \"Evaluation of LLM powered agentic AI for solving multi-arm bandit problems\" was accepted in IEEE COINS 2025, Madison WI, USA. Congratulations Jawad!",
-    "link": "https://www.techrxiv.org/users/793184/articles/1315647"
+    "link": "https://www.techrxiv.org/users/793184/articles/1315647",
+    "images": [
+      "/images/news/llm_bandit.jpg"
+    ]
   },
   {
     "date": "Aug 2025",
     "text": "Our paper \"Multimodal LLM-guided sequential detection of cyber threats in electric vehicle charging systems\" was accepted in IEEE COINS 2025, Madison WI, USA. Congratulations Ritesh!",
-    "link": "https://www.techrxiv.org/users/793184/articles/1315646"
+    "link": "https://www.techrxiv.org/users/793184/articles/1315646",
+    "images": [
+      "/images/news/llm_ev_charging.jpg"
+    ]
   },
   {
     "date": "Aug 2025",
@@ -288,7 +330,10 @@
     "people": [
       "yuhui-wang"
     ],
-    "link": "https://www.techrxiv.org/users/793184/articles/1315645"
+    "link": "https://www.techrxiv.org/users/793184/articles/1315645",
+    "images": [
+      "/images/news/indoor_robot_navigation.jpg"
+    ]
   },
   {
     "date": "Jul 2025",
@@ -296,7 +341,10 @@
     "people": [
       "xingqi-wu"
     ],
-    "link": "https://ieeexplore.ieee.org/document/11062492"
+    "link": "https://ieeexplore.ieee.org/document/11062492",
+    "images": [
+      "/images/news/reliable_resilient_uav_iot.jpg"
+    ]
   },
   {
     "date": "Jun 2025",
@@ -321,7 +369,10 @@
       "xingqi-wu",
       "yuhui-wang"
     ],
-    "link": "https://www.techrxiv.org/users/793184/articles/1277869"
+    "link": "https://www.techrxiv.org/users/793184/articles/1277869",
+    "images": [
+      "/images/news/uav_leo_satellite.jpg"
+    ]
   },
   {
     "date": "Jun 2025",
@@ -329,7 +380,10 @@
     "people": [
       "xingqi-wu"
     ],
-    "link": "https://www.techrxiv.org/doi/full/10.36227/techrxiv.174284729.99809422/v1"
+    "link": "https://www.techrxiv.org/doi/full/10.36227/techrxiv.174284729.99809422/v1",
+    "images": [
+      "/images/news/urllc_admission.jpg"
+    ]
   },
   {
     "date": "May 2025",
@@ -356,12 +410,18 @@
       "xingqi-wu",
       "yuhui-wang"
     ],
-    "link": "https://www.techrxiv.org/users/793184/articles/1277868"
+    "link": "https://www.techrxiv.org/users/793184/articles/1277868",
+    "images": [
+      "/images/news/llm_agentic_oran.jpg"
+    ]
   },
   {
     "date": "May 2025",
     "text": "Our paper \"LLM-Powered Agentic AI Approach to Securing EV Charging Systems Against Cyber Threats\" was accepted in 3rd Workshop on Cybersecurity of Critical National Infrastructures (CCNI), IEEE WoWMoM 2025, Dallas TX, USA. Congratulations Ritesh!",
-    "link": "https://d197for5662m48.cloudfront.net/documents/publicationstatus/257574/preprint_pdf/8de6e8c31bd5d57611c5653f7751537f.pdf"
+    "link": "https://d197for5662m48.cloudfront.net/documents/publicationstatus/257574/preprint_pdf/8de6e8c31bd5d57611c5653f7751537f.pdf",
+    "images": [
+      "/images/news/llm_ev_securing.jpg"
+    ]
   },
   {
     "date": "Mar 2025",
@@ -378,7 +438,10 @@
     "people": [
       "yuhui-wang"
     ],
-    "link": "https://www.techrxiv.org/users/793184/articles/1234294"
+    "link": "https://www.techrxiv.org/users/793184/articles/1234294",
+    "images": [
+      "/images/news/joint_optimization_uav.jpg"
+    ]
   },
   {
     "date": "Mar 2025",
@@ -386,7 +449,10 @@
     "people": [
       "yuhui-wang"
     ],
-    "link": "https://www.techrxiv.org/users/793184/articles/1229164"
+    "link": "https://www.techrxiv.org/users/793184/articles/1229164",
+    "images": [
+      "/images/news/multi_uav_iab.jpg"
+    ]
   },
   {
     "date": "Feb 2025",
@@ -416,12 +482,18 @@
       "xingqi-wu",
       "yuhui-wang"
     ],
-    "link": "https://www.ndss-symposium.org/ndss-paper/auto-draft-567/"
+    "link": "https://www.ndss-symposium.org/ndss-paper/auto-draft-567/",
+    "images": [
+      "/images/news/llm_xapp.jpg"
+    ]
   },
   {
     "date": "Jan 2025",
     "text": "Our paper \"Mapping Cyber Threats in the 5G Supply Chain: Landscape, Vulnerabilities, and Risk Management\" was accepted in IEEE Network. Congratulations Moyan!",
-    "link": "https://ieeexplore.ieee.org/document/10634234"
+    "link": "https://ieeexplore.ieee.org/document/10634234",
+    "images": [
+      "/images/news/mapping_cyber_threats_5g.jpg"
+    ]
   },
   {
     "date": "Oct 2024",
