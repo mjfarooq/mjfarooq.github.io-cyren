@@ -1,5 +1,12 @@
 [
   {
+    "date": "Jun 2026",
+    "text": "U.S. provisional patent application filed: \"Online Detection and Containment of Disruptive User Equipment (UE) in Radio Access Networks.\" Inventors: X. Wu and J. Farooq (Application No. 64/080,683).",
+    "people": [
+      "xingqi-wu"
+    ]
+  },
+  {
     "date": "May 2026",
     "text": "Our paper \"Delay-Aware Reinforcement Learning for O-RAN Control under Stochastic Reward Feedback\" was accepted in IEEE Networking Letters. Congratulations Xingqi!",
     "images": [
@@ -107,7 +114,10 @@
   {
     "date": "Mar 2026",
     "text": "The CyReN Lab and Elahe Delavari featured in UM-Dearborn's Campus in Focus: March Maize-ness.",
-    "link": "https://umdearborn.edu/news/campus-focus-march-maize-ness"
+    "link": "https://umdearborn.edu/news/campus-focus-march-maize-ness",
+    "images": [
+      "/images/news/campus_focus_maize_ness.jpg"
+    ]
   },
   {
     "date": "Feb 2026",
@@ -117,6 +127,10 @@
       "/images/news/elahe_3mt_2.jpg",
       "/images/news/elahe_3mt_3.jpg"
     ]
+  },
+  {
+    "date": "Feb 2026",
+    "text": "Invited talk at Grand Valley State University: \"Enabling Assured Autonomy: AI-Driven Optimization and Reliability in Next-Generation Networks.\""
   },
   {
     "date": "Jan 2026",
