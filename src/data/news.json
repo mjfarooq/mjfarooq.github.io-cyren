@@ -140,7 +140,10 @@
   },
   {
     "date": "Jan 2026",
-    "text": "New book published: Cyber Resilience in Next-Generation Networks (Foundations and Trends in Networking)."
+    "text": "New book published: Cyber Resilience in Next-Generation Networks (Foundations and Trends in Networking).",
+    "images": [
+      "/images/news/FnT_Book.jpg"
+    ]
   },
   {
     "date": "Nov 2025",
