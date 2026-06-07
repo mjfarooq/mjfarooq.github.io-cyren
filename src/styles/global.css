@@ -35,7 +35,8 @@ img{max-width:100%;display:block;}
 .btn-maize{background:var(--maize);color:var(--blue);border-color:var(--maize);font-weight:600;}
 .btn-maize:hover{filter:brightness(.96);color:var(--blue);}
 
-.tag{font-family:var(--ff-mono);font-size:11.5px;padding:.25rem .55rem;border:1px solid var(--border-strong);color:var(--text-soft);white-space:nowrap;border-radius:3px;}
+.tag{font-family:var(--ff-mono);font-size:11.5px;padding:.25rem .55rem;border:1px solid var(--border-strong);color:var(--text-soft);white-space:nowrap;border-radius:3px;text-decoration:none;}
+a.tag:hover{background:var(--blue);color:#fff;border-color:var(--blue);text-decoration:none;}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
 .reveal.in{opacity:1;transform:none;}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;}}

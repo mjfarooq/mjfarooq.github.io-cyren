@@ -46,7 +46,7 @@ const linkify = (t) => {
         </div>
         <div class="sponsors">
           <span class="sp-label">Sponsors</span>
-          {lab.sponsors.map((s) => <span class="tag">{s}</span>)}
+          {lab.sponsors.map((s) => <a class="tag" href={u("publications") + "?q=" + encodeURIComponent(s)}>{s}</a>)}
         </div>
       </div>
     </div>
@@ -65,7 +65,7 @@ const linkify = (t) => {
               <div class="thrust-num">0{i + 1}</div>
               <h3 class="h-md">{t.title}</h3>
               <p>{t.blurb}</p>
-              <div class="tags">{t.tags.map((x) => <span class="tag">{x}</span>)}</div>
+              <div class="tags">{t.tags.map((x) => <a class="tag" href={u("publications") + "?q=" + encodeURIComponent(x)}>{x}</a>)}</div>
             </div>
           </article>
         ))}
