@@ -7,12 +7,51 @@ const list = pubs.filter(p => p.type !== "Thesis");
 const years = Array.from(new Set(list.map((p) => p.year))).sort((a, b) => b - a);
 const authorList = Array.from(new Set(list.flatMap((p) => p.authors || []))).sort((a, b) => a.localeCompare(b));
 function authorsHtml(s){ return s.replace(/(M\. J\. Farooq|J\. Farooq)/g, "<strong>$1</strong>"); }
+
+const _yc = {};
+list.forEach(p => { _yc[p.year] = (_yc[p.year]||0) + 1; });
+const _yKeys = Object.keys(_yc).map(Number).sort((a,b)=>a-b);
+const _yMax = Math.max(1, ..._yKeys.map(y => _yc[y]));
+const yearBars = _yKeys.map(y => ({ year: y, n: _yc[y], h: Math.max(10, Math.round((_yc[y] / _yMax) * 100)) }));
+
+const _tc = {};
+list.forEach(p => (p.tags || []).forEach(t => { _tc[t] = (_tc[t]||0) + 1; }));
+const _topTags = Object.entries(_tc).sort((a,b) => b[1]-a[1]).slice(0, 22);
+const _tMax = Math.max(1, ..._topTags.map(x => x[1]));
+const _tMin = Math.min(..._topTags.map(x => x[1]), _tMax);
+const topTags = _topTags.map(([t, n]) => ({
+  t, n,
+  size: 11 + Math.round(((n - _tMin) / Math.max(1, _tMax - _tMin)) * 9)
+}));
 ---
 <Base title="Publications" description="Publications from the CyReN Lab.">
   <section class="page-head"><div class="wrap"><span class="eyebrow">Publications</span><h1 class="h-xl">Publications</h1>
     <p class="lead">An asterisk denotes a student advisee. The full record is also on <a href="https://scholar.google.com/citations?user=Per3ks8AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p></div></section>
   <section class="section">
     <div class="wrap">
+      <div class="pubviz">
+        <div class="yh">
+          <div class="yh-head"><span class="yh-label">Activity by year</span><span class="yh-hint">click a bar to filter</span></div>
+          <div class="yh-bars">
+            {yearBars.map((b) => (
+              <button type="button" class="yh-bar" data-year={b.year} title={`${b.year}: ${b.n} publication${b.n===1?'':'s'}`}>
+                <span class="yh-num">{b.n}</span>
+                <span class="yh-track"><span class="yh-fill" style={`height:${b.h}%`}></span></span>
+                <span class="yh-year">{"'" + String(b.year).slice(-2)}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+        <div class="tc">
+          <div class="tc-head"><span class="tc-label">Browse by topic</span></div>
+          <div class="tc-cloud">
+            {topTags.map((t) => (
+              <button type="button" class="tc-tag" data-tag={t.t} style={`font-size:${t.size}px`} title={`${t.n} paper${t.n===1?'':'s'}`}>{t.t}</button>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div class="bar">
         <div class="search"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg><input id="q" type="search" placeholder="Search publications…" autocomplete="off"/></div>
         <div class="chips" id="chips">{types.map((t) => <button class={"chip"+(t==="All"?" on":"")} data-t={t}>{t}</button>)}</div>
@@ -53,6 +92,27 @@ function authorsHtml(s){ return s.replace(/(M\. J\. Farooq|J\. Farooq)/g, "<stro
 </Base>
 <style>
   .page-head{padding:clamp(2.5rem,6vw,5rem) 0 0;}
+  .pubviz{display:grid;grid-template-columns:1.4fr 1fr;gap:1.4rem;margin:0 0 1.4rem;}
+  .yh,.tc{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:1rem 1.1rem 1.1rem;}
+  .yh-head,.tc-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.8rem;}
+  .yh-label,.tc-label{font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--link);}
+  .yh-hint{font-family:var(--ff-mono);font-size:10.5px;color:var(--text-mute);}
+  .yh-bars{display:flex;align-items:flex-end;gap:4px;height:96px;}
+  .yh-bar{flex:1 1 0;display:flex;flex-direction:column;align-items:center;gap:4px;padding:0;background:none;border:0;cursor:pointer;height:100%;min-width:24px;}
+  .yh-num{font-family:var(--ff-mono);font-size:9.5px;color:var(--text-mute);opacity:0;transition:opacity .15s;line-height:1;}
+  .yh-bar:hover .yh-num,.yh-bar.on .yh-num{opacity:1;color:var(--link);}
+  .yh-track{flex:1;width:100%;display:flex;align-items:flex-end;background:var(--bg-soft);border-radius:3px;overflow:hidden;}
+  .yh-fill{display:block;width:100%;background:linear-gradient(180deg,var(--link),var(--blue));border-radius:3px 3px 0 0;}
+  .yh-bar:hover .yh-fill{background:linear-gradient(180deg,var(--maize),var(--blue));}
+  .yh-bar.on .yh-fill{background:var(--maize);}
+  .yh-year{font-family:var(--ff-mono);font-size:10px;color:var(--text-mute);line-height:1;}
+  .yh-bar:hover .yh-year,.yh-bar.on .yh-year{color:var(--link);}
+  .tc-cloud{display:flex;flex-wrap:wrap;gap:.35rem .55rem;align-items:center;line-height:1.5;}
+  .tc-tag{font-family:var(--ff-mono);border:0;background:none;padding:.15rem .3rem;color:var(--text-soft);cursor:pointer;border-radius:3px;transition:color .15s,background .15s;line-height:1.2;}
+  .tc-tag:hover{color:var(--blue);background:#fff7d6;}
+  .tc-tag.on{color:var(--blue);background:var(--maize);}
+  @media(max-width:720px){.pubviz{grid-template-columns:1fr;}.yh-bars{height:80px;}}
+
   .bar{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:space-between;align-items:center;margin:0 0 .6rem;}
   .search{display:flex;align-items:center;gap:.5rem;flex:1 1 240px;min-width:220px;border:1px solid var(--border-strong);border-radius:4px;padding:.1rem .8rem;color:var(--text-mute);}
   .search:focus-within{border-color:var(--blue);color:var(--blue);}
@@ -100,6 +160,35 @@ function authorsHtml(s){ return s.replace(/(M\. J\. Farooq|J\. Farooq)/g, "<stro
     authorSel.addEventListener("change",apply);
     document.getElementById("chips").addEventListener("click",function(e){var b=e.target.closest(".chip");if(!b)return;active=b.getAttribute("data-t");document.querySelectorAll("#chips .chip").forEach(function(c){c.classList.toggle("on",c===b);});apply();});
     var params=new URLSearchParams(location.search); var pq=params.get("q"); if(pq){q.value=pq;apply();}
+
+    document.querySelectorAll(".yh-bar").forEach(function(b){
+      b.addEventListener("click", function(){
+        var y = b.getAttribute("data-year");
+        var same = b.classList.contains("on");
+        document.querySelectorAll(".yh-bar.on").forEach(function(o){ o.classList.remove("on"); });
+        if(same){ yearSel.value = "All"; }
+        else { yearSel.value = y; b.classList.add("on"); }
+        apply();
+        document.getElementById("plist").scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+    yearSel.addEventListener("change", function(){
+      document.querySelectorAll(".yh-bar.on").forEach(function(o){ o.classList.remove("on"); });
+      if(yearSel.value !== "All"){
+        var bar = document.querySelector('.yh-bar[data-year="' + yearSel.value + '"]');
+        if(bar) bar.classList.add("on");
+      }
+    });
+    document.querySelectorAll(".tc-tag").forEach(function(t){
+      t.addEventListener("click", function(){
+        var same = t.classList.contains("on");
+        document.querySelectorAll(".tc-tag.on").forEach(function(o){ o.classList.remove("on"); });
+        if(same){ q.value = ""; }
+        else { q.value = t.getAttribute("data-tag"); t.classList.add("on"); }
+        apply();
+        document.getElementById("plist").scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
     document.addEventListener("click",function(e){var tog=e.target.closest(".pi-cite-toggle");if(tog){var links=tog.closest(".pi-links");var box=links&&links.nextElementSibling;if(box&&box.classList.contains("pi-cite-box")){var nowHidden=!box.hidden;box.hidden=nowHidden;tog.classList.toggle("on",!nowHidden);}return;}var b=e.target.closest(".pi-copy");if(!b)return;var pre=b.parentElement&&b.parentElement.querySelector(".pi-bib");if(!pre)return;var t=pre.textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){var o=b.textContent;b.textContent="Copied!";b.classList.add("ok");setTimeout(function(){b.textContent=o;b.classList.remove("ok");},1500);}).catch(function(){var r=document.createRange();r.selectNodeContents(pre);var s=window.getSelection();s.removeAllRanges();s.addRange(r);});});
   })();
 </script>

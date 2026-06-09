@@ -39,10 +39,10 @@ const linkify = (t) => {
       <div>
         <p class="lead">{lab.intro}</p>
         <div class="stats">
-          <div><b class="counter" data-target={pubCount} data-suffix="+">0</b><span>Publications</span></div>
-          <div><b class="counter" data-target={team.members.length}>0</b><span>Researchers</span></div>
-          <div><b class="counter" data-target={4}>0</b><span>Research themes</span></div>
-          <div><b class="counter" data-target={lab.sponsors.length}>0</b><span>Sponsors</span></div>
+          <div><b>{pubCount}+</b><span>Publications</span></div>
+          <div><b>{team.members.length}</b><span>Researchers</span></div>
+          <div><b>4</b><span>Research themes</span></div>
+          <div><b>{lab.sponsors.length}</b><span>Sponsors</span></div>
         </div>
         <div class="sponsors">
           <span class="sp-label">Sponsors</span>
