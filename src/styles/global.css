@@ -17,6 +17,35 @@ h1,h2,h3,h4{font-family:var(--ff-serif);font-weight:600;line-height:1.12;letter-
 p{margin:0 0 1rem;color:var(--text-soft);}
 a{color:var(--link);text-decoration:none;}
 a:hover{text-decoration:underline;}
+
+/* Editorial underline for prose links: faint at rest, saturates on hover */
+p a, li a, .lead a, blockquote a, .prose a {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 32%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color .25s ease;
+}
+p a:hover, li a:hover, .lead a:hover, blockquote a:hover, .prose a:hover {
+  text-decoration-color: currentColor;
+}
+@media (prefers-reduced-motion: reduce) {
+  p a, li a, .lead a, blockquote a, .prose a { transition: none; }
+}
+
+/* Consistent focus ring in brand maize */
+:focus-visible {
+  outline: 2px solid var(--maize);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* MPA View Transitions: subtle crossfade between pages (Chromium 126+) */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.22s; }
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+}
 img{max-width:100%;display:block;}
 
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,52px);}
