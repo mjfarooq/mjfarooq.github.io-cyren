@@ -39,10 +39,10 @@ const linkify = (t) => {
       <div>
         <p class="lead">{lab.intro}</p>
         <div class="stats">
-          <div><b>{pubCount}+</b><span>Publications</span></div>
-          <div><b>{team.members.length}</b><span>Researchers</span></div>
-          <div><b>4</b><span>Research themes</span></div>
-          <div><b>{lab.sponsors.length}</b><span>Sponsors</span></div>
+          <div><b class="counter" data-target={pubCount} data-suffix="+">0</b><span>Publications</span></div>
+          <div><b class="counter" data-target={team.members.length}>0</b><span>Researchers</span></div>
+          <div><b class="counter" data-target={4}>0</b><span>Research themes</span></div>
+          <div><b class="counter" data-target={lab.sponsors.length}>0</b><span>Sponsors</span></div>
         </div>
         <div class="sponsors">
           <span class="sp-label">Sponsors</span>
@@ -112,7 +112,10 @@ const linkify = (t) => {
           </li>
         ))}
       </ul>
-      <a class="btn link-more" href={u("news")}>All news →</a>
+      <div class="news-cta-row">
+        <a class="btn link-more" href={u("news")}>All news →</a>
+        {recentNews[0]?.date && <span class="latest-mark">Latest update <b>{recentNews[0].date}</b></span>}
+      </div>
     </div>
   </section>
 
@@ -152,6 +155,13 @@ const linkify = (t) => {
   .thrust-body h3{margin-bottom:.6rem;}
   .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem;}
   .link-more{margin-top:2rem;}
+  .news-cta-row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:2rem;}
+  .news-cta-row .link-more{margin-top:0;}
+  .latest-mark{font-family:var(--ff-mono);font-size:11.5px;letter-spacing:.04em;color:var(--text-mute);display:inline-flex;align-items:center;gap:.55rem;}
+  .latest-mark::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--maize);box-shadow:0 0 0 0 var(--maize);animation:latest-pulse 2.4s ease-out infinite;}
+  .latest-mark b{font-weight:600;color:var(--text-soft);}
+  @keyframes latest-pulse{0%{box-shadow:0 0 0 0 rgba(255,203,5,.55);}70%{box-shadow:0 0 0 8px rgba(255,203,5,0);}100%{box-shadow:0 0 0 0 rgba(255,203,5,0);}}
+  @media (prefers-reduced-motion: reduce){.latest-mark::before{animation:none;}}
 
   .row-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;margin-bottom:1.8rem;}
   .team-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;}
