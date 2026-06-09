@@ -157,11 +157,8 @@ const linkify = (t) => {
   .link-more{margin-top:2rem;}
   .news-cta-row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:2rem;}
   .news-cta-row .link-more{margin-top:0;}
-  .latest-mark{font-family:var(--ff-mono);font-size:11.5px;letter-spacing:.04em;color:var(--text-mute);display:inline-flex;align-items:center;gap:.55rem;}
-  .latest-mark::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--maize);box-shadow:0 0 0 0 var(--maize);animation:latest-pulse 2.4s ease-out infinite;}
+  .latest-mark{font-family:var(--ff-mono);font-size:11.5px;letter-spacing:.04em;color:var(--text-mute);}
   .latest-mark b{font-weight:600;color:var(--text-soft);}
-  @keyframes latest-pulse{0%{box-shadow:0 0 0 0 rgba(255,203,5,.55);}70%{box-shadow:0 0 0 8px rgba(255,203,5,0);}100%{box-shadow:0 0 0 0 rgba(255,203,5,0);}}
-  @media (prefers-reduced-motion: reduce){.latest-mark::before{animation:none;}}
 
   .row-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;margin-bottom:1.8rem;}
   .team-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;}

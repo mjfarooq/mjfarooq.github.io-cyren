@@ -30,9 +30,5 @@ const latestUpdate = news[0]?.date || "";
   .foot-links a:hover{color:var(--maize);}
   .foot-base{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:1.4rem;padding-bottom:2.2rem;margin-top:1.6rem;border-top:1px solid rgba(255,255,255,.14);font-family:var(--ff-mono);font-size:12px;color:#9fb3cc;}
   .foot-base a{color:#cdd9e6;}
-  .foot-updated{display:inline-flex;align-items:center;gap:.5rem;}
-  .foot-updated::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--maize);box-shadow:0 0 0 0 var(--maize);animation:foot-pulse 2.6s ease-out infinite;}
   .foot-updated b{color:#eef3fa;font-weight:600;}
-  @keyframes foot-pulse{0%{box-shadow:0 0 0 0 rgba(255,203,5,.5);}70%{box-shadow:0 0 0 7px rgba(255,203,5,0);}100%{box-shadow:0 0 0 0 rgba(255,203,5,0);}}
-  @media (prefers-reduced-motion:reduce){.foot-updated::before{animation:none;}}
 </style>
