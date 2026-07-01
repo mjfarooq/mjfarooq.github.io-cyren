@@ -1,0 +1,226 @@
+---
+import Base from "../../layouts/Base.astro";
+import daisy from "../../data/daisy.json";
+const base = import.meta.env.BASE_URL;
+const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
+
+const latest = daisy.editions[0];
+const past = daisy.editions.slice(1);
+---
+<Base title="DAISY Symposium" description={daisy.tagline}>
+  <section class="d-hero">
+    <div class="wrap d-hero-in">
+      <div class="d-brand">
+        <svg class="d-mark" viewBox="0 0 64 64" width="56" height="56" aria-hidden="true">
+          <g fill="#ffcb05" stroke="#8a6d00" stroke-width="1">
+            <ellipse cx="32" cy="14" rx="6" ry="10"/>
+            <ellipse cx="32" cy="50" rx="6" ry="10"/>
+            <ellipse cx="14" cy="32" rx="10" ry="6"/>
+            <ellipse cx="50" cy="32" rx="10" ry="6"/>
+            <ellipse cx="19.5" cy="19.5" rx="8" ry="6" transform="rotate(-45 19.5 19.5)"/>
+            <ellipse cx="44.5" cy="19.5" rx="8" ry="6" transform="rotate(45 44.5 19.5)"/>
+            <ellipse cx="19.5" cy="44.5" rx="8" ry="6" transform="rotate(45 19.5 44.5)"/>
+            <ellipse cx="44.5" cy="44.5" rx="8" ry="6" transform="rotate(-45 44.5 44.5)"/>
+          </g>
+          <circle cx="32" cy="32" r="6" fill="#00274c"/>
+          <circle cx="32" cy="32" r="2.4" fill="#ffcb05"/>
+        </svg>
+        <div>
+          <span class="d-eyebrow">Annual symposium</span>
+          <h1 class="d-title">DAISY <span class="d-title-sub">Symposium</span></h1>
+        </div>
+      </div>
+      <p class="d-fullname">{daisy.fullName}</p>
+      <p class="d-tag">{daisy.tagline}</p>
+      <div class="d-meta">
+        <span><b>Host</b>{daisy.host}</span>
+        <span><b>Organizers</b>{daisy.organizers.map((o) => o.name).join(" · ")}</span>
+        <span><b>Cadence</b>{daisy.cadence}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="d-latest-head">
+        <div>
+          <span class="eyebrow">{latest.status === "upcoming" ? "Upcoming edition" : "Latest edition"}</span>
+          <h2 class="h-lg">DAISY {latest.year}</h2>
+          <p class="d-latest-theme"><span>Theme</span>{latest.theme}</p>
+        </div>
+        <div class="d-when">
+          <div class="d-when-date">{latest.shortDate}</div>
+          <div class="d-when-time">{latest.time}</div>
+          <div class="d-when-loc">{latest.location}</div>
+        </div>
+      </div>
+      <p class="lead d-blurb">{latest.blurb}</p>
+
+      <div class="d-program">
+        <h3 class="d-section-h">Program</h3>
+        <ol class="d-schedule">
+          {latest.keynotes.map((k) => (
+            <li class="d-item">
+              <div class="d-slot">
+                <span class="d-slot-tag">{k.slot}</span>
+                <span class="d-slot-time">{k.time}</span>
+              </div>
+              <div class="d-item-body">
+                <h4 class="d-item-title">{k.title}</h4>
+                <div class="d-speaker">{k.speaker}<span class="d-affil"> · {k.affiliation}</span></div>
+                {k.bio && <p class="d-bio">{k.bio}</p>}
+              </div>
+            </li>
+          ))}
+          {latest.panels.map((p) => (
+            <li class="d-item d-item-panel">
+              <div class="d-slot">
+                <span class="d-slot-tag d-slot-tag-panel">Panel</span>
+                <span class="d-slot-time">{p.time}</span>
+              </div>
+              <div class="d-item-body">
+                <h4 class="d-item-title">{p.title}</h4>
+                {p.blurb && <p class="d-bio">{p.blurb}</p>}
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      {latest.images && latest.images.length > 0 && (
+        <div class="d-gallery">
+          <h3 class="d-section-h">From the symposium</h3>
+          <div class="d-gallery-grid">
+            {latest.images.map((img, i) => (
+              <div class="d-photo" onerror="this.style.display='none'">
+                <img src={u(img)} alt={`DAISY ${latest.year} photo ${i+1}`} loading="lazy" data-gallery={JSON.stringify(latest.images.map((s) => u(s)))} data-index={i} onerror="this.closest('.d-photo').style.display='none'" />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {latest.impressions && <p class="d-impressions">{latest.impressions}</p>}
+
+      <div class="d-ack">
+        <span class="d-ack-label">Acknowledgements</span>
+        <span>{latest.acknowledgements}</span>
+      </div>
+    </div>
+  </section>
+
+  {past.length > 0 && (
+    <section class="section section-alt">
+      <div class="wrap">
+        <span class="eyebrow">Archive</span>
+        <h2 class="h-lg">Past editions</h2>
+        <ol class="d-archive">
+          {past.map((e) => (
+            <li>
+              <div class="d-arch-year">{e.year}</div>
+              <div>
+                <h3 class="d-arch-title">DAISY {e.year} · {e.theme}</h3>
+                <p class="d-arch-meta">{e.date} · {e.location}</p>
+                <p>{e.blurb}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  )}
+
+  <section class="section">
+    <div class="wrap">
+      <div class="d-orgs">
+        <span class="eyebrow">Organizers</span>
+        <h2 class="h-lg">Get in touch</h2>
+        <p class="lead">DAISY runs every spring at UM-Dearborn. To propose a talk, sponsor, or express interest for a future edition, reach out to the organizers.</p>
+        <div class="d-org-grid">
+          {daisy.organizers.map((o) => (
+            <div class="d-org-card">
+              <div class="d-org-name">{o.name}</div>
+              <div class="d-org-affil">{o.affiliation}</div>
+              {o.email && <a class="d-org-email" href={"mailto:" + o.email}>{o.email}</a>}
+            </div>
+          ))}
+        </div>
+        {daisy.linkedin && (
+          <p class="d-link-out"><a href={daisy.linkedin} target="_blank" rel="noopener">Join the DAISY Symposium community on LinkedIn →</a></p>
+        )}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .d-hero { background: linear-gradient(160deg, #00274c 0%, #143a66 55%, #1e4a82 100%); color: #fff; padding: clamp(3.5rem, 8vw, 6rem) 0 clamp(3rem, 6vw, 5rem); position: relative; overflow: hidden; }
+  .d-hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 85% 20%, rgba(255,203,5,.18) 0%, transparent 55%); pointer-events: none; }
+  .d-hero-in { position: relative; }
+  .d-brand { display: flex; align-items: center; gap: 1.1rem; margin-bottom: 1.4rem; }
+  .d-mark { flex: 0 0 auto; filter: drop-shadow(0 3px 8px rgba(0,0,0,.25)); }
+  .d-eyebrow { font-family: var(--ff-mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--maize); display: block; margin-bottom: .35rem; }
+  .d-title { font-family: var(--ff-serif); font-weight: 600; font-size: clamp(2.6rem, 6vw, 4.4rem); color: #fff; letter-spacing: -.03em; line-height: 1; margin: 0; }
+  .d-title-sub { font-weight: 400; font-style: italic; color: var(--maize); font-size: .78em; letter-spacing: -.02em; margin-left: .35rem; }
+  .d-fullname { color: #e7ecf2; font-family: var(--ff-mono); font-size: 13.5px; letter-spacing: .05em; margin: 0 0 .8rem; }
+  .d-tag { color: #cdd9e6; font-size: clamp(1.05rem, 1.5vw, 1.25rem); max-width: 60ch; line-height: 1.55; margin: 0 0 2rem; }
+  .d-meta { display: flex; flex-wrap: wrap; gap: 2rem; font-family: var(--ff-mono); font-size: 12px; color: #cdd9e6; border-top: 1px solid rgba(255,255,255,.16); padding-top: 1.2rem; }
+  .d-meta span { display: flex; flex-direction: column; gap: .25rem; }
+  .d-meta b { color: var(--maize); font-weight: 500; letter-spacing: .1em; text-transform: uppercase; font-size: 10.5px; }
+
+  .d-latest-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.6rem; flex-wrap: wrap; margin-bottom: 1.4rem; }
+  .d-latest-theme { margin: .5rem 0 0; font-family: var(--ff-mono); font-size: 13px; color: var(--text-mute); }
+  .d-latest-theme span { color: var(--link); letter-spacing: .1em; text-transform: uppercase; font-size: 10.5px; margin-right: .5rem; }
+  .d-when { text-align: right; background: var(--bg-soft); border: 1px solid var(--border); padding: 1rem 1.2rem; border-radius: 6px; min-width: 220px; }
+  .d-when-date { font-family: var(--ff-serif); font-size: 1.25rem; color: var(--blue); font-weight: 600; }
+  .d-when-time { font-family: var(--ff-mono); font-size: 12.5px; color: var(--link); margin-top: .3rem; }
+  .d-when-loc { font-size: 12px; color: var(--text-mute); margin-top: .4rem; max-width: 240px; margin-left: auto; }
+  .d-blurb { margin: 1.4rem 0 2.6rem; max-width: 68ch; }
+
+  .d-section-h { font-family: var(--ff-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--link); margin: 0 0 1.4rem; }
+
+  .d-program { margin-bottom: 3rem; }
+  .d-schedule { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--border); }
+  .d-item { display: grid; grid-template-columns: 200px 1fr; gap: 1.6rem; padding: 1.7rem 0; border-bottom: 1px solid var(--border); }
+  .d-slot { display: flex; flex-direction: column; gap: .5rem; padding-top: .2rem; }
+  .d-slot-tag { display: inline-block; font-family: var(--ff-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; padding: .3rem .55rem; background: var(--blue); color: #fff; border-radius: 3px; align-self: flex-start; }
+  .d-slot-tag-panel { background: var(--maize); color: var(--blue); }
+  .d-slot-time { font-family: var(--ff-mono); font-size: 12px; color: var(--text-mute); }
+  .d-item-title { font-family: var(--ff-serif); font-size: 1.35rem; font-weight: 600; color: var(--blue); margin: 0 0 .5rem; line-height: 1.25; letter-spacing: -.015em; }
+  .d-speaker { font-family: var(--ff-sans); font-weight: 500; color: var(--text); font-size: 1rem; margin-bottom: .8rem; }
+  .d-affil { color: var(--text-mute); font-weight: 400; }
+  .d-bio { font-size: .93rem; color: var(--text-soft); line-height: 1.6; max-width: 68ch; margin: 0; }
+
+  .d-gallery { margin: 0 0 2.4rem; }
+  .d-gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .d-photo { aspect-ratio: 4/3; overflow: hidden; border-radius: 4px; background: var(--bg-soft); }
+  .d-photo img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; display: block; }
+
+  .d-impressions { font-family: var(--ff-mono); font-size: 12px; color: var(--text-mute); margin-bottom: 2rem; }
+  .d-ack { display: flex; gap: 1rem; align-items: baseline; padding: 1rem 1.2rem; background: var(--bg-soft); border-left: 3px solid var(--maize); border-radius: 0 4px 4px 0; font-size: .95rem; color: var(--text-soft); }
+  .d-ack-label { font-family: var(--ff-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--link); flex: 0 0 auto; }
+
+  .d-archive { list-style: none; padding: 0; margin: 0; }
+  .d-archive li { display: grid; grid-template-columns: 90px 1fr; gap: 1.5rem; padding: 1.6rem 0; border-top: 1px solid var(--border); }
+  .d-arch-year { font-family: var(--ff-serif); font-size: 2rem; color: var(--link); font-weight: 500; }
+  .d-arch-title { font-family: var(--ff-serif); font-size: 1.2rem; color: var(--blue); margin: 0 0 .3rem; }
+  .d-arch-meta { font-family: var(--ff-mono); font-size: 12px; color: var(--text-mute); margin: 0 0 .5rem; }
+
+  .d-orgs { max-width: 900px; }
+  .d-org-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.6rem 0 1.2rem; }
+  .d-org-card { padding: 1.1rem 1.3rem; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); }
+  .d-org-name { font-family: var(--ff-serif); font-size: 1.1rem; font-weight: 600; color: var(--blue); }
+  .d-org-affil { font-size: .88rem; color: var(--text-soft); margin: .25rem 0 .6rem; }
+  .d-org-email { font-family: var(--ff-mono); font-size: 12.5px; color: var(--link); }
+  .d-link-out { font-family: var(--ff-mono); font-size: 13px; margin-top: 1rem; }
+
+  @media (max-width: 760px) {
+    .d-item { grid-template-columns: 1fr; gap: .6rem; }
+    .d-latest-head { flex-direction: column; }
+    .d-when { text-align: left; }
+    .d-when-loc { margin-left: 0; }
+    .d-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .d-org-grid { grid-template-columns: 1fr; }
+    .d-archive li { grid-template-columns: 1fr; }
+  }
+</style>

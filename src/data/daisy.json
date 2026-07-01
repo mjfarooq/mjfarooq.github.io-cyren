@@ -1,0 +1,74 @@
+{
+  "name": "DAISY Symposium",
+  "fullName": "Dearborn Automation & Intelligent SYstems",
+  "tagline": "An annual meeting where academia and industry advance dialogue at the intersection of intelligent systems, automation, and networked technologies.",
+  "cadence": "Annual",
+  "host": "University of Michigan-Dearborn",
+  "contactEmails": ["mjfarooq@umich.edu", "kpatnaik@umich.edu"],
+  "linkedin": "https://www.linkedin.com/groups/13161927/",
+  "organizers": [
+    {
+      "name": "Junaid Farooq",
+      "affiliation": "Associate Professor of ECE, UM-Dearborn",
+      "url": "https://mjfarooq.github.io/",
+      "email": "mjfarooq@umich.edu"
+    },
+    {
+      "name": "Karishma Patnaik",
+      "affiliation": "UM-Dearborn",
+      "email": "kpatnaik@umich.edu"
+    }
+  ],
+  "editions": [
+    {
+      "year": 2026,
+      "status": "past",
+      "date": "March 31, 2026",
+      "shortDate": "Mar 31, 2026",
+      "location": "Kochoff Hall, University Center, UM-Dearborn",
+      "time": "10:00 AM – 1:30 PM",
+      "theme": "NextG Networks and Smart Manufacturing",
+      "blurb": "The inaugural DAISY brought together leading voices from academia and industry to explore next-generation networks and smart manufacturing, spanning 6G radio technologies, vehicle connectivity, and digital twins in industrial systems.",
+      "keynotes": [
+        {
+          "slot": "Keynote I",
+          "time": "10:00 – 11:00 AM",
+          "title": "Radio Technologies for 6G Day 1",
+          "speaker": "Dr. Majid Butt",
+          "affiliation": "Nokia Bell Labs",
+          "bio": "M. Majid Butt is a senior staff research specialist at Nokia, USA, and an adjunct research professor at Trinity College Dublin, Ireland. He has held prior positions at the University of Glasgow, Trinity College Dublin, and Fraunhofer Heinrich Hertz Institute, Germany. He has authored nearly 100 peer-reviewed articles and contributed to more than 200 patent families. He is an IEEE ComSoc and VTS Distinguished Speaker."
+        },
+        {
+          "slot": "Keynote II",
+          "time": "11:00 – 11:45 AM",
+          "title": "Emerging Wireless Technologies and Challenges in Vehicle Connectivity",
+          "speaker": "Dr. Haneya Qureshi",
+          "affiliation": "General Motors",
+          "bio": "Haneya Qureshi is a Connectivity Standards Engineer at General Motors, where she drives innovation in vehicle connectivity and supports product and software services on crosstechnology interference and coexistence challenges. She represents GM in multiple standards consortia including the IEEE Standards Association, Bluetooth SIG, and Wi-Fi Alliance, where she also serves as Vice Chair of the Narrowband Coexistence Group."
+        },
+        {
+          "slot": "Keynote III",
+          "time": "12:00 – 12:45 PM",
+          "title": "Digital Twin in Smart Manufacturing: From Sheet Metal Forming to Additive Manufacturing",
+          "speaker": "Prof. Georges Ayoub",
+          "affiliation": "University of Michigan-Dearborn",
+          "bio": "Georges Ayoub is an Associate Professor of Industrial and Manufacturing Systems Engineering, Director of the Center for Materials and Advanced Manufacturing, and co-founding faculty of the Sustainability Center at UM-Dearborn. His research combines experimental characterization, computational modeling, and real-time data integration for digital twins in manufacturing."
+        }
+      ],
+      "panels": [
+        {
+          "time": "1:00 – 1:30 PM",
+          "title": "Panel on NextG Networks for Smart Manufacturing",
+          "blurb": "A cross-industry panel exploring how ultra-reliable low-latency connectivity, AI-driven automation, and intelligent edge computing are shaping smart manufacturing."
+        }
+      ],
+      "acknowledgements": "UM Bold Challenges Pollination Award",
+      "images": [
+        "/images/daisy/2026/daisy_2026_flyer.jpg",
+        "/images/daisy/2026/daisy_2026_panel.jpg",
+        "/images/daisy/2026/daisy_2026_keynote.jpg"
+      ],
+      "impressions": "Reached over 8,000 impressions across the DAISY Symposium LinkedIn community with 26 members and growing."
+    }
+  ]
+}
