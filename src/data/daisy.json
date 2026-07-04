@@ -4,6 +4,7 @@
   "tagline": "An annual meeting where academia and industry advance dialogue at the intersection of intelligent systems, automation, and networked technologies.",
   "cadence": "Annual",
   "host": "University of Michigan-Dearborn",
+  "logo": "/images/daisy/2026/daisy_logo.png",
   "contactEmails": ["mjfarooq@umich.edu", "kpatnaik@umich.edu"],
   "linkedin": "https://www.linkedin.com/groups/13161927/",
   "organizers": [
@@ -29,6 +30,8 @@
       "time": "10:00 AM – 1:30 PM",
       "theme": "NextG Networks and Smart Manufacturing",
       "blurb": "The inaugural DAISY brought together leading voices from academia and industry to explore next-generation networks and smart manufacturing, spanning 6G radio technologies, vehicle connectivity, and digital twins in industrial systems.",
+      "flyer": "/images/daisy/2026/daisy_2026_flyer.jpg",
+      "intro": "/images/daisy/2026/daisy_2026_intro.jpg",
       "keynotes": [
         {
           "slot": "Keynote I",
@@ -36,6 +39,7 @@
           "title": "Radio Technologies for 6G Day 1",
           "speaker": "Dr. Majid Butt",
           "affiliation": "Nokia Bell Labs",
+          "card": "/images/daisy/2026/daisy_2026_keynote_majid.jpg",
           "bio": "M. Majid Butt is a senior staff research specialist at Nokia, USA, and an adjunct research professor at Trinity College Dublin, Ireland. He has held prior positions at the University of Glasgow, Trinity College Dublin, and Fraunhofer Heinrich Hertz Institute, Germany. He has authored nearly 100 peer-reviewed articles and contributed to more than 200 patent families. He is an IEEE ComSoc and VTS Distinguished Speaker."
         },
         {
@@ -44,6 +48,7 @@
           "title": "Emerging Wireless Technologies and Challenges in Vehicle Connectivity",
           "speaker": "Dr. Haneya Qureshi",
           "affiliation": "General Motors",
+          "card": "/images/daisy/2026/daisy_2026_keynote_haneya.jpg",
           "bio": "Haneya Qureshi is a Connectivity Standards Engineer at General Motors, where she drives innovation in vehicle connectivity and supports product and software services on crosstechnology interference and coexistence challenges. She represents GM in multiple standards consortia including the IEEE Standards Association, Bluetooth SIG, and Wi-Fi Alliance, where she also serves as Vice Chair of the Narrowband Coexistence Group."
         },
         {
@@ -52,6 +57,7 @@
           "title": "Digital Twin in Smart Manufacturing: From Sheet Metal Forming to Additive Manufacturing",
           "speaker": "Prof. Georges Ayoub",
           "affiliation": "University of Michigan-Dearborn",
+          "card": "/images/daisy/2026/daisy_2026_keynote_georges.jpg",
           "bio": "Georges Ayoub is an Associate Professor of Industrial and Manufacturing Systems Engineering, Director of the Center for Materials and Advanced Manufacturing, and co-founding faculty of the Sustainability Center at UM-Dearborn. His research combines experimental characterization, computational modeling, and real-time data integration for digital twins in manufacturing."
         }
       ],
@@ -64,11 +70,11 @@
       ],
       "acknowledgements": "UM Bold Challenges Pollination Award",
       "images": [
-        "/images/daisy/2026/daisy_2026_flyer.jpg",
-        "/images/daisy/2026/daisy_2026_panel.jpg",
-        "/images/daisy/2026/daisy_2026_keynote.jpg"
+        "/images/daisy/2026/daisy_2026_event_1.jpg",
+        "/images/daisy/2026/daisy_2026_event_2.jpg",
+        "/images/daisy/2026/daisy_2026_event_3.jpg"
       ],
-      "impressions": "Reached over 8,000 impressions across the DAISY Symposium LinkedIn community with 26 members and growing."
+      "impressions": "Reached over 8,000 impressions across the DAISY Symposium LinkedIn community."
     }
   ]
 }

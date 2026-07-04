@@ -10,32 +10,23 @@ const past = daisy.editions.slice(1);
 <Base title="DAISY Symposium" description={daisy.tagline}>
   <section class="d-hero">
     <div class="wrap d-hero-in">
-      <div class="d-brand">
-        <svg class="d-mark" viewBox="0 0 64 64" width="56" height="56" aria-hidden="true">
-          <g fill="#ffcb05" stroke="#8a6d00" stroke-width="1">
-            <ellipse cx="32" cy="14" rx="6" ry="10"/>
-            <ellipse cx="32" cy="50" rx="6" ry="10"/>
-            <ellipse cx="14" cy="32" rx="10" ry="6"/>
-            <ellipse cx="50" cy="32" rx="10" ry="6"/>
-            <ellipse cx="19.5" cy="19.5" rx="8" ry="6" transform="rotate(-45 19.5 19.5)"/>
-            <ellipse cx="44.5" cy="19.5" rx="8" ry="6" transform="rotate(45 44.5 19.5)"/>
-            <ellipse cx="19.5" cy="44.5" rx="8" ry="6" transform="rotate(45 19.5 44.5)"/>
-            <ellipse cx="44.5" cy="44.5" rx="8" ry="6" transform="rotate(-45 44.5 44.5)"/>
-          </g>
-          <circle cx="32" cy="32" r="6" fill="#00274c"/>
-          <circle cx="32" cy="32" r="2.4" fill="#ffcb05"/>
-        </svg>
-        <div>
+      <div class="d-hero-cols">
+        <div class="d-hero-text">
           <span class="d-eyebrow">Annual symposium</span>
           <h1 class="d-title">DAISY <span class="d-title-sub">Symposium</span></h1>
+          <p class="d-fullname">{daisy.fullName}</p>
+          <p class="d-tag">{daisy.tagline}</p>
+          <div class="d-meta">
+            <span><b>Host</b>{daisy.host}</span>
+            <span><b>Organizers</b>{daisy.organizers.map((o) => o.name).join(" · ")}</span>
+            <span><b>Cadence</b>{daisy.cadence}</span>
+          </div>
         </div>
-      </div>
-      <p class="d-fullname">{daisy.fullName}</p>
-      <p class="d-tag">{daisy.tagline}</p>
-      <div class="d-meta">
-        <span><b>Host</b>{daisy.host}</span>
-        <span><b>Organizers</b>{daisy.organizers.map((o) => o.name).join(" · ")}</span>
-        <span><b>Cadence</b>{daisy.cadence}</span>
+        {daisy.logo && (
+          <div class="d-hero-mark">
+            <img src={u(daisy.logo)} alt="DAISY Symposium" onerror="this.style.display='none'" />
+          </div>
+        )}
       </div>
     </div>
   </section>
@@ -56,6 +47,15 @@ const past = daisy.editions.slice(1);
       </div>
       <p class="lead d-blurb">{latest.blurb}</p>
 
+      {latest.flyer && (
+        <div class="d-flyer">
+          <a href={u(latest.flyer)} target="_blank" rel="noopener" title="Open full-size flyer">
+            <img src={u(latest.flyer)} alt={`DAISY ${latest.year} program flyer`} loading="lazy" onerror="this.parentElement.parentElement.style.display='none'" />
+          </a>
+          <p class="d-flyer-cap">Full program flyer · click to enlarge</p>
+        </div>
+      )}
+
       <div class="d-program">
         <h3 class="d-section-h">Program</h3>
         <ol class="d-schedule">
@@ -69,6 +69,11 @@ const past = daisy.editions.slice(1);
                 <h4 class="d-item-title">{k.title}</h4>
                 <div class="d-speaker">{k.speaker}<span class="d-affil"> · {k.affiliation}</span></div>
                 {k.bio && <p class="d-bio">{k.bio}</p>}
+                {k.card && (
+                  <a class="d-card-link" href={u(k.card)} target="_blank" rel="noopener">
+                    <img src={u(k.card)} alt={`${k.speaker} keynote announcement`} loading="lazy" onerror="this.parentElement.style.display='none'" />
+                  </a>
+                )}
               </div>
             </li>
           ))}
@@ -157,9 +162,10 @@ const past = daisy.editions.slice(1);
   .d-hero { background: linear-gradient(160deg, #00274c 0%, #143a66 55%, #1e4a82 100%); color: #fff; padding: clamp(3.5rem, 8vw, 6rem) 0 clamp(3rem, 6vw, 5rem); position: relative; overflow: hidden; }
   .d-hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 85% 20%, rgba(255,203,5,.18) 0%, transparent 55%); pointer-events: none; }
   .d-hero-in { position: relative; }
-  .d-brand { display: flex; align-items: center; gap: 1.1rem; margin-bottom: 1.4rem; }
-  .d-mark { flex: 0 0 auto; filter: drop-shadow(0 3px 8px rgba(0,0,0,.25)); }
-  .d-eyebrow { font-family: var(--ff-mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--maize); display: block; margin-bottom: .35rem; }
+  .d-hero-cols { display: grid; grid-template-columns: 1fr 320px; gap: clamp(1.5rem, 5vw, 3.5rem); align-items: center; }
+  .d-hero-mark { text-align: right; }
+  .d-hero-mark img { max-width: 100%; height: auto; max-height: 260px; filter: drop-shadow(0 6px 22px rgba(0,0,0,.35)); }
+  .d-eyebrow { font-family: var(--ff-mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--maize); display: block; margin-bottom: .55rem; }
   .d-title { font-family: var(--ff-serif); font-weight: 600; font-size: clamp(2.6rem, 6vw, 4.4rem); color: #fff; letter-spacing: -.03em; line-height: 1; margin: 0; }
   .d-title-sub { font-weight: 400; font-style: italic; color: var(--maize); font-size: .78em; letter-spacing: -.02em; margin-left: .35rem; }
   .d-fullname { color: #e7ecf2; font-family: var(--ff-mono); font-size: 13.5px; letter-spacing: .05em; margin: 0 0 .8rem; }
@@ -175,7 +181,17 @@ const past = daisy.editions.slice(1);
   .d-when-date { font-family: var(--ff-serif); font-size: 1.25rem; color: var(--blue); font-weight: 600; }
   .d-when-time { font-family: var(--ff-mono); font-size: 12.5px; color: var(--link); margin-top: .3rem; }
   .d-when-loc { font-size: 12px; color: var(--text-mute); margin-top: .4rem; max-width: 240px; margin-left: auto; }
-  .d-blurb { margin: 1.4rem 0 2.6rem; max-width: 68ch; }
+  .d-blurb { margin: 1.4rem 0 2rem; max-width: 68ch; }
+
+  .d-flyer { margin: 0 0 2.8rem; text-align: center; }
+  .d-flyer a { display: inline-block; border: 1px solid var(--border); background: var(--bg-soft); padding: 8px; border-radius: 6px; transition: transform .2s, box-shadow .2s; }
+  .d-flyer a:hover { transform: translateY(-2px); box-shadow: 0 12px 32px -12px rgba(0,39,76,.35); text-decoration: none; }
+  .d-flyer img { display: block; max-width: 100%; max-height: 720px; height: auto; border-radius: 3px; }
+  .d-flyer-cap { font-family: var(--ff-mono); font-size: 11px; letter-spacing: .06em; color: var(--text-mute); margin: .7rem 0 0; }
+
+  .d-card-link { display: block; margin-top: 1.2rem; border: 1px solid var(--border); background: var(--bg-soft); border-radius: 4px; overflow: hidden; max-width: 720px; transition: transform .2s, box-shadow .2s; }
+  .d-card-link:hover { transform: translateY(-2px); box-shadow: 0 12px 32px -12px rgba(0,39,76,.35); text-decoration: none; }
+  .d-card-link img { display: block; width: 100%; height: auto; }
 
   .d-section-h { font-family: var(--ff-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--link); margin: 0 0 1.4rem; }
 
@@ -214,6 +230,11 @@ const past = daisy.editions.slice(1);
   .d-org-email { font-family: var(--ff-mono); font-size: 12.5px; color: var(--link); }
   .d-link-out { font-family: var(--ff-mono); font-size: 13px; margin-top: 1rem; }
 
+  @media (max-width: 900px) {
+    .d-hero-cols { grid-template-columns: 1fr; }
+    .d-hero-mark { text-align: left; }
+    .d-hero-mark img { max-height: 180px; }
+  }
   @media (max-width: 760px) {
     .d-item { grid-template-columns: 1fr; gap: .6rem; }
     .d-latest-head { flex-direction: column; }
