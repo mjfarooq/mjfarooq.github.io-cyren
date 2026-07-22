@@ -31,6 +31,13 @@
   },
   {
     "date": "Jun 2026",
+    "text": "Delivered an invited talk at the UNESCO Chair on Education \"Connect the Unconnected\" Summer 2026 Seminar Series, hosted by King Abdullah University of Science and Technology (KAUST): \"Orchestrating NextG Networks at the Confluence of Communications, Computing, and Control.\" The talk explored AI-driven resource orchestration across mobile, edge, and cloud systems — spanning UAV placement, computation offloading, user association, and resource allocation in 5G edge-cloud networks — and outlined a research vision for autonomous NextG networks that continuously learn from their operating environments.",
+    "images": [
+      "/images/news/unesco_kaust_talk.jpg"
+    ]
+  },
+  {
+    "date": "Jun 2026",
     "text": "U.S. provisional patent application filed: \"Online Detection and Containment of Disruptive User Equipment (UE) in Radio Access Networks.\" Inventors: X. Wu and J. Farooq (Application No. 64/080,683).",
     "people": [
       "xingqi-wu"
