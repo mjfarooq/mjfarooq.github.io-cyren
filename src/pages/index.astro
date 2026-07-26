@@ -8,6 +8,17 @@ const base = import.meta.env.BASE_URL;
 const u = (p) => base.replace(/\/$/, "") + "/" + p.replace(/^\//, "");
 const pubCount = pubs.filter(p => p.type !== "Thesis").length;
 const recentNews = news.slice(0, 4);
+const _MONTHS = { Jan:0, Feb:1, Mar:2, Apr:3, May:4, Jun:5, Jul:6, Aug:7, Sep:8, Oct:9, Nov:10, Dec:11 };
+function _parseMY(s) {
+  const m = (s || "").match(/^([A-Za-z]+)\.?\s+(\d{4})$/);
+  if (!m) return null;
+  const mi = _MONTHS[m[1].slice(0,3)];
+  if (mi === undefined) return null;
+  return new Date(Number(m[2]), mi, 1);
+}
+const _now = new Date();
+const _cm = new Date(_now.getFullYear(), _now.getMonth(), 1);
+const latestPast = news.find(n => { const d = _parseMY(n.date); return d && d <= _cm; }) || news[0];
 const linkMembers = team.members.filter((m) => m.slug);
 const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const linkify = (t) => {
@@ -131,7 +142,7 @@ const linkify = (t) => {
       </ul>
       <div class="news-cta-row">
         <a class="btn link-more" href={u("news")}>All news →</a>
-        {recentNews[0]?.date && <span class="latest-mark">Latest update <b>{recentNews[0].date}</b></span>}
+        {latestPast?.date && <span class="latest-mark">Latest update <b>{latestPast.date}</b></span>}
       </div>
     </div>
   </section>

@@ -2,7 +2,22 @@
 import lab from "../data/lab.json";
 import news from "../data/news.json";
 const year = new Date().getFullYear();
-const latestUpdate = news[0]?.date || "";
+// Cap at current month so we never claim an update from the future (news items
+// sometimes use venue dates that are months ahead of the actual announcement).
+const MONTHS = { Jan:0, Feb:1, Mar:2, Apr:3, May:4, Jun:5, Jul:6, Aug:7, Sep:8, Oct:9, Nov:10, Dec:11 };
+function parseMonthYear(s) {
+  const m = (s || "").match(/^([A-Za-z]+)\.?\s+(\d{4})$/);
+  if (!m) return null;
+  const mi = MONTHS[m[1].slice(0,3)];
+  if (mi === undefined) return null;
+  return new Date(Number(m[2]), mi, 1);
+}
+const _now = new Date();
+const _currentMonth = new Date(_now.getFullYear(), _now.getMonth(), 1);
+const latestUpdate = (news.find(n => {
+  const d = parseMonthYear(n.date);
+  return d && d <= _currentMonth;
+})?.date) || news[0]?.date || "";
 ---
 <footer class="foot">
   <div class="wrap foot-in">
