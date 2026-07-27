@@ -1,9 +1,12 @@
 ---
 import lab from "../data/lab.json";
 import news from "../data/news.json";
+import fs from "node:fs";
+import path from "node:path";
 const year = new Date().getFullYear();
 // Cap at current month so we never claim an update from the future (news items
 // sometimes use venue dates that are months ahead of the actual announcement).
+// Also skip items with no uploaded image (hidden from the site entirely).
 const MONTHS = { Jan:0, Feb:1, Mar:2, Apr:3, May:4, Jun:5, Jul:6, Aug:7, Sep:8, Oct:9, Nov:10, Dec:11 };
 function parseMonthYear(s) {
   const m = (s || "").match(/^([A-Za-z]+)\.?\s+(\d{4})$/);
@@ -12,12 +15,24 @@ function parseMonthYear(s) {
   if (mi === undefined) return null;
   return new Date(Number(m[2]), mi, 1);
 }
+const _publicDir = path.resolve("./public");
+function _hasImage(n) {
+  const imgs = n.images || [];
+  if (imgs.length === 0) return false;
+  return imgs.some((p) => {
+    if (!p) return false;
+    if (/^https?:\/\//i.test(p)) return true;
+    const rel = p.startsWith("/") ? p.slice(1) : p;
+    return fs.existsSync(path.join(_publicDir, rel));
+  });
+}
+const _visibleNews = news.filter(_hasImage);
 const _now = new Date();
 const _currentMonth = new Date(_now.getFullYear(), _now.getMonth(), 1);
-const latestUpdate = (news.find(n => {
+const latestUpdate = (_visibleNews.find(n => {
   const d = parseMonthYear(n.date);
   return d && d <= _currentMonth;
-})?.date) || news[0]?.date || "";
+})?.date) || _visibleNews[0]?.date || "";
 ---
 <footer class="foot">
   <div class="wrap foot-in">
