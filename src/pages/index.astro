@@ -232,5 +232,12 @@ const linkify = (t) => {
     .thrust-img{height:220px;}
     .team-strip{grid-template-columns:repeat(3,1fr);}
   }
-  @media(max-width:520px){.stats{grid-template-columns:repeat(2,1fr);}.team-strip{grid-template-columns:repeat(2,1fr);}.news-list li{grid-template-columns:1fr;gap:.2rem;}}
+  @media(max-width:520px){
+    .stats{grid-template-columns:repeat(2,1fr);}
+    .team-strip{grid-template-columns:repeat(2,1fr);}
+    /* Full-width uncropped thumb above the text on phones. */
+    .news-list li{flex-direction:column;align-items:stretch;gap:.6rem;}
+    .n-thumb{order:0;flex:0 0 auto;width:100%;height:auto;aspect-ratio:4/3;max-height:340px;object-fit:contain;background:var(--bg-soft);object-position:center;}
+    .n-date{flex:0 0 auto;}
+  }
 </style>
