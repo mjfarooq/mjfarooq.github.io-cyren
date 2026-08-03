@@ -19,6 +19,8 @@ function hasImage(n) {
   });
 }
 const visibleNews = news.filter(hasImage);
+const slug = (s) =>
+  (s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80);
 const linkMembers = team.members.filter((m) => m.slug);
 const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const linkify = (t) => {
@@ -49,7 +51,7 @@ const linkify = (t) => {
     <div class="wrap news-grid">
       <ul class="news-list">
         {visibleNews.map((n) => (
-          <li>
+          <li id={slug((n.text || '').slice(0, 60))}>
             <span class="n-date">{n.date}</span>
             <div class="n-body">
               <span class="n-text" set:html={linkify(n.text)}></span>
@@ -100,3 +102,22 @@ const linkify = (t) => {
   .g-fig figcaption{font-size:.82rem;color:var(--text-mute);margin-top:.4rem;font-family:var(--ff-mono);}
   @media(max-width:880px){.news-grid{grid-template-columns:1fr;}.join-card{position:static;}.gallery{grid-template-columns:repeat(2,1fr);}}
 </style>
+
+<style>
+  .news-list li{scroll-margin-top:90px;}
+  .ni-flash{animation:ni-flash 2.2s ease-out;border-radius:6px;}
+  @keyframes ni-flash{0%,40%{background:#fff7d6;box-shadow:inset 3px 0 0 var(--maize);}100%{background:transparent;box-shadow:inset 3px 0 0 transparent;}}
+  @media (prefers-reduced-motion: reduce){.ni-flash{animation:none;box-shadow:inset 3px 0 0 var(--maize);}}
+</style>
+<script is:inline>
+  (function(){
+    function focusHash(){
+      var id=(location.hash||"").slice(1); if(!id) return;
+      var el=document.getElementById(id); if(!el) return;
+      try{ el.scrollIntoView({behavior:"smooth",block:"center"}); }catch(e){}
+      el.classList.add("ni-flash");
+      setTimeout(function(){ el.classList.remove("ni-flash"); },2200);
+    }
+    focusHash(); window.addEventListener("hashchange", focusHash);
+  })();
+</script>

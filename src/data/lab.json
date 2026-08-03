@@ -6,6 +6,7 @@
   "institutionUrl": "https://www.umdearborn.edu/",
   "facultyUrl": "https://mjfarooq.github.io/",
   "email": "mjfarooq@umich.edu",
+  "analyticsToken": "e2c93b0841e647c89db176d09c04a817",
   "intro": "The Cyber Resilient Networks (CyReN) Lab develops the theory and systems that keep next-generation networks connected, secure, and intelligent under stress, attack, and uncertainty. Our work spans 5G and 6G open radio access networks, zero trust security, autonomous aerial systems, and AI-driven network management for mission-critical applications.",
   "director": {
     "name": "Junaid Farooq",

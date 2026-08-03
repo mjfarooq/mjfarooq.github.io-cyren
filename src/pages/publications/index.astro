@@ -4,6 +4,9 @@ import pubs from "../../data/publications.json";
 import { bibtex } from "../../data/bibtex.js";
 import tagAliases from "../../data/tagAliases.json";
 
+const slug = (s) =>
+  (s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80);
+
 const aliasGroups = (tagAliases.synonyms || []).map((g) => g.map((t) => t.toLowerCase()));
 function searchHaystack(p) {
   const base = (p.title + " " + p.authors_str + " " + p.venue + " " + (p.tags || []).join(" ")).toLowerCase();
@@ -85,7 +88,7 @@ const topTags = _topTags.map(([t, n]) => ({
       <div id="plist-top"></div>
       <ol class="plist" id="plist">
         {list.map((p) => (
-          <li class="pitem" data-type={p.type} data-year={p.year} data-authors={(p.authors || []).join("|")} data-s={searchHaystack(p)}>
+          <li class="pitem" id={slug(p.title)} data-type={p.type} data-year={p.year} data-authors={(p.authors || []).join("|")} data-s={searchHaystack(p)}>
             <div class="pi-year">{p.year}</div>
             <div>
               <div class="pi-top"><span class={"badge b-"+p.type.toLowerCase().replace(" ","")}>{p.type}</span>{p.tags.slice(0,3).map((t)=><a class="tag" href={"?q=" + encodeURIComponent(t)}>{t}</a>)}</div>
@@ -95,6 +98,7 @@ const topTags = _topTags.map(([t, n]) => ({
               <div class="pi-links">
                 {p.links && p.links.map((l) => <a class="pi-link" href={l.url} target="_blank" rel="noopener">{l.label}</a>)}
                 <button class="pi-link pi-cite-toggle" type="button">BibTeX</button>
+                <button class="pi-link pi-permalink" type="button" title="Copy link to this paper">Link</button>
               </div>
               <div class="pi-cite-box" hidden>
                 <button type="button" class="pi-copy" aria-label="Copy BibTeX">Copy</button>
@@ -164,6 +168,13 @@ const topTags = _topTags.map(([t, n]) => ({
   .pi-copy.ok{background:var(--maize);color:var(--blue);border-color:var(--maize);}
   .badge{font-family:var(--ff-mono);font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:.2rem .5rem;border-radius:3px;}
   .b-journal{background:#00274c;color:#fff;}.b-conference{background:#ffcb05;color:#00274c;}.b-book,.b-bookchapter{background:#1f5394;color:#fff;}.b-preprint{background:#fff;color:var(--link);border:1px solid var(--border-strong);}
+
+  .pi-permalink{font-family:var(--ff-mono);cursor:pointer;}
+  .pi-permalink.ok{background:var(--maize);color:var(--blue);border-color:var(--maize);}
+  .pitem{scroll-margin-top:90px;}
+  .pi-flash{animation:pi-flash 2.2s ease-out;border-radius:6px;}
+  @keyframes pi-flash{0%,40%{background:#fff7d6;box-shadow:inset 3px 0 0 var(--maize);}100%{background:transparent;box-shadow:inset 3px 0 0 transparent;}}
+  @media (prefers-reduced-motion: reduce){.pi-flash{animation:none;box-shadow:inset 3px 0 0 var(--maize);}}
   .nores{padding:2.5rem 0;color:var(--text-mute);font-family:var(--ff-mono);}
   @media(max-width:560px){.pitem{grid-template-columns:1fr;gap:.3rem;}}
 </style>
@@ -205,5 +216,35 @@ const topTags = _topTags.map(([t, n]) => ({
       apply(); safeScroll();
     });
     document.addEventListener("click",function(e){var tog=e.target.closest(".pi-cite-toggle");if(tog){var links=tog.closest(".pi-links");var box=links&&links.nextElementSibling;if(box&&box.classList.contains("pi-cite-box")){var nowHidden=!box.hidden;box.hidden=nowHidden;tog.classList.toggle("on",!nowHidden);}return;}var b=e.target.closest(".pi-copy");if(!b)return;var pre=b.parentElement&&b.parentElement.querySelector(".pi-bib");if(!pre)return;var t=pre.textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){var o=b.textContent;b.textContent="Copied!";b.classList.add("ok");setTimeout(function(){b.textContent=o;b.classList.remove("ok");},1500);}).catch(function(){var r=document.createRange();r.selectNodeContents(pre);var s=window.getSelection();s.removeAllRanges();s.addRange(r);});});
+  })();
+</script>
+
+<script is:inline>
+  (function(){
+    document.addEventListener("click", function(e){
+      var b = e.target.closest(".pi-permalink");
+      if(!b) return;
+      var li = b.closest(".pitem");
+      var url = location.origin + location.pathname + "#" + (li ? li.id : "");
+      var restore = b.textContent;
+      (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject())
+        .then(function(){ b.textContent="Copied"; b.classList.add("ok"); })
+        .catch(function(){ history.replaceState(null,"","#"+(li?li.id:"")); b.textContent="In URL"; })
+        .then(function(){ setTimeout(function(){ b.textContent=restore; b.classList.remove("ok"); },1400); });
+    });
+    function focusHash(){
+      var id=(location.hash||"").slice(1); if(!id) return;
+      var el=document.getElementById(id); if(!el) return;
+      if(el.style.display==="none"){
+        var q=document.getElementById("q"), y=document.getElementById("year"), a=document.getElementById("author");
+        if(q) q.value=""; if(y) y.value="All"; if(a) a.value="All";
+        document.querySelectorAll("#chips .chip").forEach(function(c){c.classList.toggle("on",c.getAttribute("data-t")==="All");});
+        if(y) y.dispatchEvent(new Event("change",{bubbles:true}));
+      }
+      try{ el.scrollIntoView({behavior:"smooth",block:"center"}); }catch(e){}
+      el.classList.add("pi-flash");
+      setTimeout(function(){ el.classList.remove("pi-flash"); },2200);
+    }
+    focusHash(); window.addEventListener("hashchange", focusHash);
   })();
 </script>
