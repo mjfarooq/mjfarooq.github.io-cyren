@@ -2,11 +2,24 @@
 import pubs from "../data/publications.json";
 import news from "../data/news.json";
 import team from "../data/team.json";
+import authorNames from "../data/authorNames.json";
 import fs from "node:fs";
 import path from "node:path";
 
 const base = import.meta.env.BASE_URL;
 const u = (p) => base.replace(/\/$/, "") + "/" + String(p).replace(/^\//, "");
+
+// Expand abbreviated author strings to full names so a query like "Ritesh"
+// matches papers whose author list only says "R. Honnalli".
+function expandAuthors(authors) {
+  const out = [];
+  for (const a of authors || []) {
+    out.push(a);
+    const d = authorNames[a];
+    if (d) Array.isArray(d) ? out.push(...d) : out.push(d);
+  }
+  return Array.from(new Set(out)).join(" ");
+}
 
 const slug = (s) =>
   (s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80);
@@ -42,7 +55,7 @@ const idx = [
     t: p.title,
     s: `${p.year} · ${p.authors_str}`,
     u: u("publications") + "#" + slug(p.title),
-    x: `${p.venue} ${(p.tags || []).join(" ")}`,
+    x: `${p.venue} ${(p.tags || []).join(" ")} ${expandAuthors(p.authors)}`,
   })),
   ...news.filter(hasImage).map((n) => ({
     k: "News",
