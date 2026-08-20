@@ -98,7 +98,6 @@ const topTags = _topTags.map(([t, n]) => ({
               <div class="pi-links">
                 {p.links && p.links.map((l) => <a class="pi-link" href={l.url} target="_blank" rel="noopener">{l.label}</a>)}
                 <button class="pi-link pi-cite-toggle" type="button">BibTeX</button>
-                <button class="pi-link pi-permalink" type="button" title="Copy link to this paper">Link</button>
               </div>
               <div class="pi-cite-box" hidden>
                 <button type="button" class="pi-copy" aria-label="Copy BibTeX">Copy</button>
@@ -168,8 +167,6 @@ const topTags = _topTags.map(([t, n]) => ({
   .badge{font-family:var(--ff-mono);font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:.2rem .5rem;border-radius:3px;}
   .b-journal{background:#00274c;color:#fff;}.b-conference{background:#ffcb05;color:#00274c;}.b-book,.b-bookchapter{background:#1f5394;color:#fff;}.b-preprint{background:#fff;color:var(--link);border:1px solid var(--border-strong);}
 
-  .pi-permalink{font-family:var(--ff-mono);cursor:pointer;}
-  .pi-permalink.ok{background:var(--maize);color:var(--blue);border-color:var(--maize);}
   .pitem{scroll-margin-top:90px;}
   .pi-flash{animation:pi-flash 2.2s ease-out;border-radius:6px;}
   @keyframes pi-flash{0%,40%{background:#fff7d6;box-shadow:inset 3px 0 0 var(--maize);}100%{background:transparent;box-shadow:inset 3px 0 0 transparent;}}
@@ -220,17 +217,6 @@ const topTags = _topTags.map(([t, n]) => ({
 
 <script is:inline>
   (function(){
-    document.addEventListener("click", function(e){
-      var b = e.target.closest(".pi-permalink");
-      if(!b) return;
-      var li = b.closest(".pitem");
-      var url = location.origin + location.pathname + "#" + (li ? li.id : "");
-      var restore = b.textContent;
-      (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject())
-        .then(function(){ b.textContent="Copied"; b.classList.add("ok"); })
-        .catch(function(){ history.replaceState(null,"","#"+(li?li.id:"")); b.textContent="In URL"; })
-        .then(function(){ setTimeout(function(){ b.textContent=restore; b.classList.remove("ok"); },1400); });
-    });
     function focusHash(){
       var id=(location.hash||"").slice(1); if(!id) return;
       var el=document.getElementById(id); if(!el) return;
