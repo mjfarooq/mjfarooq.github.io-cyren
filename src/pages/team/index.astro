@@ -41,29 +41,6 @@ const initials = (n) => n.split(" ").map((w) => w[0]).join("").slice(0, 2).toUpp
         ))}
       </div>
 
-      {team.alumni.length > 0 && (
-        <div class="people-sec">
-          <h2 class="h-md sect">Alumni</h2>
-          <div class="people-grid">
-            {team.alumni.map((a) => (
-              <article class="person">
-                <div class="p-av">
-                  {a.photo && <img src={u(a.photo)} alt={a.name} loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'" />}
-                  <span class="p-ini" style={a.photo ? "display:none" : ""}>{initials(a.name)}</span>
-                </div>
-                <div>
-                  {a.linkedin
-                    ? <a class="p-name" href={a.linkedin} target="_blank" rel="noopener">{a.name}</a>
-                    : <span class="p-name">{a.name}</span>}
-                  {a.note && <div class="p-note">{a.note}</div>}
-                  {(a.grad || a.position) && <div class="p-year">{[a.grad, a.position].filter(Boolean).join(" · ")}</div>}
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      )}
-
       {team.interns && team.interns.length > 0 && (
         <div class="people-sec">
           <h2 class="h-md sect">Interns & visiting researchers</h2>
@@ -86,9 +63,32 @@ const initials = (n) => n.split(" ").map((w) => w[0]).join("").slice(0, 2).toUpp
         </div>
       )}
 
+      {team.alumni.length > 0 && (
+        <div class="people-sec">
+          <h2 class="h-md sect">Graduate alumni</h2>
+          <div class="people-grid">
+            {team.alumni.map((a) => (
+              <article class="person">
+                <div class="p-av">
+                  {a.photo && <img src={u(a.photo)} alt={a.name} loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'" />}
+                  <span class="p-ini" style={a.photo ? "display:none" : ""}>{initials(a.name)}</span>
+                </div>
+                <div>
+                  {a.linkedin
+                    ? <a class="p-name" href={a.linkedin} target="_blank" rel="noopener">{a.name}</a>
+                    : <span class="p-name">{a.name}</span>}
+                  {a.note && <div class="p-note">{a.note}</div>}
+                  {(a.grad || a.position) && <div class="p-year">{[a.grad, a.position].filter(Boolean).join(" · ")}</div>}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      )}
+
       {team.undergrads && team.undergrads.length > 0 && (
         <div class="people-sec">
-          <h2 class="h-md sect">Undergraduate researchers</h2>
+          <h2 class="h-md sect">Undergraduate alumni</h2>
           <div class="people-grid">
             {team.undergrads.map((a) => (
               <article class="person">
