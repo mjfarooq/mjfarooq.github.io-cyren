@@ -72,7 +72,12 @@ const newsImg = (n) => (n.personImg && n.personImg[member.slug]) || (n.images &&
               const img = newsImg(n) ? u(newsImg(n)) : "";
               return (
               <a class="pnews-card" href={img || u("news")} data-gallery={img ? JSON.stringify([img]) : undefined} data-index="0">
-                {img && <div class="pnews-img" style={`background-image:url('${img}')`}></div>}
+                {img && (
+                  <div class="pnews-img">
+                    <div class="pnews-fill" style={`background-image:url('${img}')`}></div>
+                    <div class="pnews-photo" style={`background-image:url('${img}')`}></div>
+                  </div>
+                )}
                 <div class="pnews-body">
                   <span class="pnews-date">{n.date}</span>
                   <p class="pnews-text">{n.text}</p>
@@ -205,12 +210,19 @@ const newsImg = (n) => (n.personImg && n.personImg[member.slug]) || (n.images &&
   .e-inst{color:var(--text-mute);font-size:.9rem;}
   .pnews{margin-top:2rem;}
   .pnews-row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;padding-bottom:.6rem;-webkit-overflow-scrolling:touch;}
-  .pnews-card{flex:0 0 270px;scroll-snap-align:start;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--surface);}
-  .pnews-card:hover{text-decoration:none;border-color:var(--border-strong);}
-  .pnews-img{height:150px;background-size:cover;background-position:top;}
-  .pnews-body{padding:.8rem 1rem;}
-  .pnews-date{font-family:var(--ff-mono);font-size:12px;color:var(--link);}
-  .pnews-text{font-size:.86rem;color:var(--text);margin:.4rem 0 0;}
+  .pnews-card{flex:0 0 340px;scroll-snap-align:start;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--surface);transition:border-color .18s,transform .18s,box-shadow .18s;}
+  .pnews-card:hover{text-decoration:none;border-color:var(--border-strong);transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,39,76,.10);}
+  /* These cards mix wide infographics (up to 2:1) with portrait photos (0.75:1).
+     Cropping to fill would cut the text out of the figures, so the image is
+     contained in full and a blurred copy fills the leftover space. */
+  .pnews-img{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--bg-soft);}
+  .pnews-fill{position:absolute;inset:-8%;background-size:cover;background-position:center;filter:blur(20px) saturate(.7) brightness(.95);transform:scale(1.05);}
+  .pnews-photo{position:absolute;inset:0;background-size:contain;background-repeat:no-repeat;background-position:center;}
+  .pnews-body{padding:.6rem .8rem .75rem;}
+  .pnews-date{font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-mute);}
+  /* Caption is a teaser, not the content: clamped so the figure stays dominant. */
+  .pnews-text{font-size:.76rem;line-height:1.45;color:var(--text-soft);margin:.25rem 0 0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+  @media (prefers-reduced-motion: reduce){.pnews-card{transition:none;}.pnews-card:hover{transform:none;}}
   .pubs{margin-top:2rem;}
   .plist{list-style:none;padding:0;margin:1rem 0 0;}
   .pitem{display:grid;grid-template-columns:54px 1fr;gap:1rem;padding:1.1rem 0;border-top:1px solid var(--border);}
