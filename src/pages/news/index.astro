@@ -19,6 +19,16 @@ function hasImage(n) {
   });
 }
 const visibleNews = news.filter(hasImage);
+// Only images that really exist, resolved once here. The tiles are background
+// divs (so a blurred copy can sit behind the contained image), and a div has no
+// onerror to fall back on, so a missing file has to be filtered out at build time.
+function imagesOf(n) {
+  return (n.images || []).filter((p) => {
+    if (!p) return false;
+    if (/^https?:\/\//i.test(p)) return true;
+    return fs.existsSync(path.join(publicDir, p.replace(/^\//, "")));
+  });
+}
 const slug = (s) =>
   (s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80);
 const linkMembers = team.members.filter((m) => m.slug);
@@ -50,20 +60,28 @@ const linkify = (t) => {
   <section class="section">
     <div class="wrap news-grid">
       <ul class="news-list">
-        {visibleNews.map((n) => (
-          <li id={slug((n.text || '').slice(0, 60))}>
+        {visibleNews.map((n) => {
+          const imgs = imagesOf(n);
+          const gallery = JSON.stringify(imgs.map((s) => u(s)));
+          return (
+          <li id={slug((n.text || '').slice(0, 60))} class={imgs.length ? undefined : "n-nomedia"}>
             <span class="n-date">{n.date}</span>
+            {imgs.length > 0 && (
+              <div class={"n-media" + (imgs.length > 1 ? " n-media-multi" : "")}>
+                {imgs.map((src, i) => (
+                  <div class="n-tile" data-gallery={gallery} data-index={i} role="button" tabindex="0" aria-label="Open image">
+                    <div class="n-tile-fill" style={`background-image:url('${u(src)}')`}></div>
+                    <div class="n-tile-img" style={`background-image:url('${u(src)}')`}></div>
+                  </div>
+                ))}
+              </div>
+            )}
             <div class="n-body">
               <span class="n-text" set:html={linkify(n.text)}></span>
               {n.link && <a class="n-more" href={n.link} target="_blank" rel="noopener">Visit site →</a>}
-              {n.images && n.images.length > 0 && (
-                <div class="n-thumbs">
-                  {n.images.map((src, i) => <img class="n-thumb" src={u(src)} data-gallery={JSON.stringify(n.images.map((s) => u(s)))} data-index={i} alt="" loading="lazy" onerror="this.style.display='none'" />)}
-                </div>
-              )}
             </div>
           </li>
-        ))}
+        );})}
       </ul>
       <aside class="join-card" id="join">
         <h2 class="h-md">Join the lab</h2>
@@ -77,21 +95,34 @@ const linkify = (t) => {
   .page-head{padding:clamp(2.5rem,6vw,5rem) 0 0;}
   .news-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:start;}
   .news-list{list-style:none;padding:0;margin:0;}
-  .news-list li{display:flex;gap:1rem;padding:1rem 0;border-top:1px solid var(--border);}
-  .n-date{flex:0 0 84px;font-family:var(--ff-mono);font-size:12px;color:var(--link);padding-top:.15rem;}
-  .n-body{flex:1;}
-  .n-text{font-size:.95rem;color:var(--text);}
+  /* date | image | text. Putting the text beside the image instead of under it
+     removes the dead column of whitespace the old stacked layout left behind. */
+  .news-list li{display:grid;grid-template-columns:74px 250px minmax(0,1fr);gap:1.1rem;padding:1.15rem 0;border-top:1px solid var(--border);align-items:start;}
+  .n-date{font-family:var(--ff-mono);font-size:12px;color:var(--link);padding-top:.15rem;}
+  .n-text{font-size:.95rem;line-height:1.6;color:var(--text);}
   .n-link{color:var(--link);font-weight:500;}
   .n-more{display:inline-block;font-family:var(--ff-mono);font-size:12px;color:var(--link);margin-top:.45rem;}
-  .n-thumbs{display:flex;flex-wrap:wrap;gap:8px;margin-top:.7rem;}
-  .n-thumb{width:120px;height:84px;object-fit:cover;object-position:top;border-radius:6px;border:1px solid var(--border);cursor:zoom-in;}
+  /* Figures run 1.5:1 to 2:1 and photos down to 0.75:1, so the image is contained
+     in full over a blurred copy of itself rather than cropped to fill. */
+  .n-media{display:grid;gap:6px;}
+  .n-media-multi{grid-template-columns:1fr 1fr;}
+  .n-media-multi .n-tile:first-child{grid-column:1 / -1;}
+  .n-tile{position:relative;aspect-ratio:16/10;border-radius:6px;overflow:hidden;border:1px solid var(--border);background:var(--bg-soft);cursor:zoom-in;}
+  .n-media-multi .n-tile:not(:first-child){aspect-ratio:4/3;}
+  .n-tile-fill{position:absolute;inset:-8%;background-size:cover;background-position:center;filter:blur(18px) saturate(.7) brightness(.95);transform:scale(1.05);}
+  .n-tile-img{position:absolute;inset:0;background-size:contain;background-repeat:no-repeat;background-position:center;}
+  .n-tile:focus-visible{outline:2px solid var(--maize);outline-offset:2px;}
+  /* No image (possible if a figure is pending): text takes the image column. */
+  .news-list li.n-nomedia{grid-template-columns:74px minmax(0,1fr);}
+  @media(max-width:880px){
+    .news-list li{grid-template-columns:74px minmax(0,1fr);}
+    .n-media{grid-column:2;max-width:420px;}
+    .n-body{grid-column:2;}
+  }
   @media(max-width:520px){
-    .news-list li{flex-direction:column;gap:.4rem;}
-    .n-date{flex:0 0 auto;padding-top:0;}
-    .n-thumbs{gap:6px;margin-top:.5rem;}
-    /* One or two per row; contain so nothing gets cropped */
-    .n-thumb{width:100%;height:auto;aspect-ratio:4/3;max-height:280px;object-fit:contain;background:var(--bg-soft);}
-    .n-thumbs .n-thumb ~ .n-thumb{width:calc(50% - 3px);aspect-ratio:1/1;max-height:160px;}
+    .news-list li{grid-template-columns:1fr;gap:.55rem;}
+    .n-date{padding-top:0;}
+    .n-media,.n-body{grid-column:1;max-width:none;}
   }
   .join-card{background:var(--blue);color:#fff;border-radius:var(--radius);padding:1.6rem;position:sticky;top:90px;}
   .join-card h2{color:#fff;margin-bottom:.6rem;}
