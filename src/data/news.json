@@ -1,5 +1,13 @@
 [
   {
+    "date": "Nov 2026",
+    "text": "New book forthcoming with Cambridge University Press: \"Game Theory for Security: With Applications to Cyber-Physical Systems,\" with Quanyan Zhu and Juntao Chen. A graduate text and research reference on the strategic modeling of attack and defense in cyber-physical systems, accompanied by 128 Python scripts that reproduce the worked examples. To appear 2027.",
+    "images": [
+      "/images/news/gt_security_book.jpg"
+    ],
+    "link": "https://quanyan8.github.io/game-theory-for-security/"
+  },
+  {
     "date": "Sep 2026",
     "text": "Our paper \"Adaptive Zero-Trust Microsegmentation via Graph-Aware Learning for Wireless Networks\" was accepted in the IEEE CNS Cyber Resilience Workshop (CRW 2026), Newark, Delaware. Congratulations Yuhui and Xingqi!",
     "people": [
