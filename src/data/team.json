@@ -41,6 +41,11 @@
       "priorPubs": [
         {
           "title": "CARIL: Confidence-Aware Regression in Imitation Learning for Autonomous Driving",
+          "authors": [
+            "E. Delavari",
+            "A. Khalil",
+            "J. Kwon"
+          ],
           "authors_str": "E. Delavari, A. Khalil, and J. Kwon",
           "year": 2026,
           "type": "Conference",
@@ -50,10 +55,16 @@
               "label": "IEEE",
               "url": "https://ieeexplore.ieee.org/document/11760932"
             }
-          ]
+          ],
+          "url": "https://ieeexplore.ieee.org/document/11760932"
         },
         {
           "title": "A Comprehensive Review of Reinforcement Learning for Autonomous Driving in the CARLA Simulator",
+          "authors": [
+            "E. Delavari",
+            "F. K. Khanzada",
+            "J. Kwon"
+          ],
           "authors_str": "E. Delavari, F. K. Khanzada, and J. Kwon",
           "year": 2026,
           "type": "Journal",
@@ -63,10 +74,18 @@
               "label": "IEEE",
               "url": "https://doi.org/10.1109/ACCESS.2026.3724381"
             }
-          ]
+          ],
+          "url": "https://doi.org/10.1109/ACCESS.2026.3724381"
         },
         {
           "title": "Comparative Study on Simulated Outdoor Navigation for Agricultural Robots",
+          "authors": [
+            "F. K. Khanzada",
+            "E. Delavari",
+            "W. Jeong",
+            "Y. S. Cho",
+            "J. Kwon"
+          ],
           "authors_str": "F. K. Khanzada, E. Delavari, W. Jeong, Y. S. Cho, and J. Kwon",
           "year": 2024,
           "type": "Journal",
@@ -76,7 +95,8 @@
               "label": "MDPI",
               "url": "https://doi.org/10.3390/s24082487"
             }
-          ]
+          ],
+          "url": "https://doi.org/10.3390/s24082487"
         }
       ]
     },
