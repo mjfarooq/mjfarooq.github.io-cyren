@@ -23,9 +23,14 @@ const mine = pubs.filter((p) => {
   if (p.peopleExclude && p.peopleExclude.includes(member.slug)) return false;
   return p.authors_str && p.authors_str.indexOf(member.match) !== -1;
 });
-const journals = mine.filter((p) => p.type === "Journal");
+// A preprint that names a journal ("submitted to …", "under revision in …") belongs with the
+// journal work rather than under "Other". A bare arXiv posting still goes to Other.
+const underReview = (p) => p.type === "Preprint" && /^(submitted to|under revision in)\s/i.test(p.venue || "");
+const isJournalish = (p) => p.type === "Journal" || underReview(p);
+// Published first, then items still under review; each group keeps its newest-first order.
+const journals = [...mine.filter((p) => p.type === "Journal"), ...mine.filter(underReview)];
 const confs = mine.filter((p) => p.type === "Conference");
-const other = mine.filter((p) => p.type !== "Journal" && p.type !== "Conference");
+const other = mine.filter((p) => !isJournalish(p) && p.type !== "Conference");
 const myPatents = (lab.patents || []).filter((p) => (p.inventors || []).includes(member.match));
 const relatedNews = news.filter((n) =>
   (n.people && n.people.includes(member.slug)) ||
@@ -97,6 +102,7 @@ const newsImg = (n) => (n.personImg && n.personImg[member.slug]) || (n.images &&
                 <span class="pi-year">{p.year}</span>
                 <div>
                   <span class="pi-title">{p.title}</span>
+                  {underReview(p) && <span class="pi-status">Under review</span>}
                   <div class="pi-auth" set:html={authorsHtml(p.authors_str)}></div>
                   <div class="pi-venue">{p.venue}</div>
                   <div class="pi-links">
@@ -227,6 +233,7 @@ const newsImg = (n) => (n.personImg && n.personImg[member.slug]) || (n.images &&
   .plist{list-style:none;padding:0;margin:1rem 0 0;}
   .pitem{display:grid;grid-template-columns:54px 1fr;gap:1rem;padding:1.1rem 0;border-top:1px solid var(--border);}
   .pi-year{font-family:var(--ff-mono);font-size:13px;color:var(--link);}
+  .pi-status{display:inline-block;margin-left:.5rem;vertical-align:middle;font-family:var(--ff-mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-mute);border:1px solid var(--border-strong);border-radius:4px;padding:.05rem .32rem;}
   .pi-title{font-family:var(--ff-serif);font-weight:600;font-size:1.05rem;color:var(--blue);line-height:1.3;}
   .pi-auth{font-size:.88rem;color:var(--text-soft);margin-top:.3rem;}
   .pi-auth strong{color:var(--blue);}
