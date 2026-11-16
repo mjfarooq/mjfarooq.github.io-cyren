@@ -32,12 +32,20 @@ const isJournalish = (p) => p.type === "Journal" || underReview(p);
 // J/C/U reference labels and the collaboration graph. It is merged into the sections below
 // so the member's page reads as one coherent record.
 const priorPubs = member.priorPubs || [];
-const byYear = (a, b) => b.year - a.year;   // stable: equal years keep their original order
-// Published first, then items still under review.
+const byYear = (a, b) => b.year - a.year;
+// Conference venues usually embed the year; journal venues do not. Append it only when
+// absent so each line reads as a complete citation without repeating itself.
+const citation = (p) => {
+  const v = String(p.venue || "");
+  return p.year && !v.includes(String(p.year)) ? `${v}, ${p.year}` : v;
+};   // stable: equal years keep their original order
+// Strictly newest first; under-review items sit by year like everything else and are
+// told apart by their "Under review" chip rather than by position.
 const journals = [
-  ...[...mine.filter((p) => p.type === "Journal"), ...priorPubs.filter((p) => p.type === "Journal")].sort(byYear),
+  ...mine.filter((p) => p.type === "Journal"),
+  ...priorPubs.filter((p) => p.type === "Journal"),
   ...mine.filter(underReview),
-];
+].sort(byYear);
 const confs = [...mine.filter((p) => p.type === "Conference"), ...priorPubs.filter((p) => p.type === "Conference")].sort(byYear);
 const other = mine.filter((p) => !isJournalish(p) && p.type !== "Conference");
 const myPatents = (lab.patents || []).filter((p) => (p.inventors || []).includes(member.match));
@@ -113,7 +121,7 @@ const newsImg = (n) => (n.personImg && n.personImg[member.slug]) || (n.images &&
                   <span class="pi-title">{p.title}</span>
                   {underReview(p) && <span class="pi-status">Under review</span>}
                   <div class="pi-auth" set:html={authorsHtml(p.authors_str)}></div>
-                  <div class="pi-venue">{p.venue}</div>
+                  <div class="pi-venue">{citation(p)}</div>
                   <div class="pi-links">
                     {p.links && p.links.map((l) => <a class="pi-link" href={l.url} target="_blank" rel="noopener">{l.label}</a>)}
                     <button type="button" class="pi-link pi-cite-toggle">BibTeX</button>
@@ -139,7 +147,7 @@ const newsImg = (n) => (n.personImg && n.personImg[member.slug]) || (n.images &&
                 <div>
                   <span class="pi-title">{p.title}</span>
                   <div class="pi-auth" set:html={authorsHtml(p.authors_str)}></div>
-                  <div class="pi-venue">{p.venue}</div>
+                  <div class="pi-venue">{citation(p)}</div>
                   <div class="pi-links">
                     {p.links && p.links.map((l) => <a class="pi-link" href={l.url} target="_blank" rel="noopener">{l.label}</a>)}
                     <button type="button" class="pi-link pi-cite-toggle">BibTeX</button>
@@ -183,7 +191,7 @@ const newsImg = (n) => (n.personImg && n.personImg[member.slug]) || (n.images &&
                 <div>
                   <span class="pi-title">{p.title}</span>
                   <div class="pi-auth" set:html={authorsHtml(p.authors_str)}></div>
-                  <div class="pi-venue">{p.venue}</div>
+                  <div class="pi-venue">{citation(p)}</div>
                   <div class="pi-links">
                     {p.links && p.links.map((l) => <a class="pi-link" href={l.url} target="_blank" rel="noopener">{l.label}</a>)}
                     <button type="button" class="pi-link pi-cite-toggle">BibTeX</button>
