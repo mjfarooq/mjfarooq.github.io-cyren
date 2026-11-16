@@ -37,7 +37,48 @@
       "grad": "Expected 2028",
       "bio": "Elahe Delavari is a Ph.D. researcher focused on reinforcement-learning-driven control for open radio access networks. Her work includes jamming-resilient physical resource block (PRB) reservation and resilient network slicing for latency-critical industrial 5G systems.",
       "education": [],
-      "scholar": "https://scholar.google.com/citations?user=YtieU7UAAAAJ&hl=en"
+      "scholar": "https://scholar.google.com/citations?user=YtieU7UAAAAJ&hl=en",
+      "priorPubs": [
+        {
+          "title": "CARIL: Confidence-Aware Regression in Imitation Learning for Autonomous Driving",
+          "authors_str": "E. Delavari, A. Khalil, and J. Kwon",
+          "year": 2026,
+          "type": "Conference",
+          "venue": "in 25th IEEE International Conference on Machine Learning and Applications (ICMLA 2026)",
+          "links": [
+            {
+              "label": "IEEE",
+              "url": "https://ieeexplore.ieee.org/document/11760932"
+            }
+          ]
+        },
+        {
+          "title": "A Comprehensive Review of Reinforcement Learning for Autonomous Driving in the CARLA Simulator",
+          "authors_str": "E. Delavari, F. K. Khanzada, and J. Kwon",
+          "year": 2026,
+          "type": "Journal",
+          "venue": "in IEEE Access, vol. 14, pp. 132298-132330",
+          "links": [
+            {
+              "label": "IEEE",
+              "url": "https://doi.org/10.1109/ACCESS.2026.3724381"
+            }
+          ]
+        },
+        {
+          "title": "Comparative Study on Simulated Outdoor Navigation for Agricultural Robots",
+          "authors_str": "F. K. Khanzada, E. Delavari, W. Jeong, Y. S. Cho, and J. Kwon",
+          "year": 2024,
+          "type": "Journal",
+          "venue": "in Sensors, vol. 24, no. 8, art. 2487",
+          "links": [
+            {
+              "label": "MDPI",
+              "url": "https://doi.org/10.3390/s24082487"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Tintu Jacob Shaji",

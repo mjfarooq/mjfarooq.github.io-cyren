@@ -31,6 +31,10 @@ const isJournalish = (p) => p.type === "Journal" || underReview(p);
 const journals = [...mine.filter((p) => p.type === "Journal"), ...mine.filter(underReview)];
 const confs = mine.filter((p) => p.type === "Conference");
 const other = mine.filter((p) => !isJournalish(p) && p.type !== "Conference");
+// Work published with other groups (e.g. a previous advisor). Kept on the member record
+// rather than in publications.json, which is Junaid Farooq's own list and drives the CV,
+// the J/C/U reference labels and the collaboration graph.
+const priorPubs = [...(member.priorPubs || [])].sort((a, b) => b.year - a.year);
 const myPatents = (lab.patents || []).filter((p) => (p.inventors || []).includes(member.match));
 const relatedNews = news.filter((n) =>
   (n.people && n.people.includes(member.slug)) ||
@@ -183,6 +187,29 @@ const newsImg = (n) => (n.personImg && n.personImg[member.slug]) || (n.images &&
                     <button type="button" class="pi-copy" aria-label="Copy BibTeX">Copy</button>
                     <pre class="pi-bib">{bibtex(p)}</pre>
                   </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
+
+      {priorPubs.length > 0 && (
+        <div class="pubs">
+          <h2 class="h-sec">Publications with other groups</h2>
+          <ol class="plist">
+            {priorPubs.map((p) => (
+              <li class="pitem">
+                <span class="pi-year">{p.year}</span>
+                <div>
+                  <span class="pi-title">{p.title}</span>
+                  <div class="pi-auth" set:html={authorsHtml(p.authors_str)}></div>
+                  <div class="pi-venue">{p.venue}</div>
+                  {p.links && p.links.length > 0 && (
+                    <div class="pi-links">
+                      {p.links.map((l) => <a class="pi-link" href={l.url} target="_blank" rel="noopener">{l.label}</a>)}
+                    </div>
+                  )}
                 </div>
               </li>
             ))}
