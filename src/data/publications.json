@@ -153,6 +153,31 @@
     "cover": "/images/books/fnt_book_cover.jpg"
   },
   {
+    "title": "ORCA: Offloading and Resource Coordination via Multi-Agent Learning in Dynamic Cloud-Edge Systems",
+    "ref": "J25",
+    "authors": [
+      "Y. Wang",
+      "X. Wu",
+      "J. Farooq",
+      "T. Li",
+      "J. Chen"
+    ],
+    "authors_str": "Y. Wang*, X. Wu*, J. Farooq, T. Li, and J. Chen",
+    "year": 2026,
+    "type": "Journal",
+    "venue": "in IEEE Transactions on Mobile Computing",
+    "url": "https://www.techrxiv.org/doi/full/10.36227/techrxiv.176315222.25704753",
+    "tags": [
+      "Networks"
+    ],
+    "links": [
+      {
+        "label": "PDF",
+        "url": "https://www.techrxiv.org/doi/full/10.36227/techrxiv.176315222.25704753"
+      }
+    ]
+  },
+  {
     "title": "Rao-Blackwellized Coverage Estimation in Poisson Networks: A High-Fidelity Hybrid Framework",
     "ref": "J23",
     "authors": [
@@ -910,7 +935,7 @@
   },
   {
     "title": "Deep Reinforcement Learning for Jamming-Resilient PRB Orchestration in O-RAN Networks",
-    "ref": "U11",
+    "ref": "U10",
     "authors": [
       "E. Delavari",
       "A. Alghadhban",
@@ -930,7 +955,7 @@
   },
   {
     "title": "Inter-Slice Radio Resource Allocation With Elastic Traffic and Load-Coupled Interference",
-    "ref": "U10",
+    "ref": "U9",
     "authors": [
       "X. Wu",
       "J. Farooq",
@@ -949,7 +974,7 @@
   },
   {
     "title": "Intent-Aware Task Placement and Multi-Agent Radio Resource Orchestration for Industrial O-RAN",
-    "ref": "U9",
+    "ref": "U8",
     "authors": [
       "X. Wu",
       "E. Delavari",
@@ -970,7 +995,7 @@
   },
   {
     "title": "Decentralized Multi-Agent Soft Actor-Critic for Energy-Efficient Power and Resource Allocation in O-RAN under Spatio-Temporal Traffic Dynamics",
-    "ref": "U8",
+    "ref": "U7",
     "authors": [
       "X. Wu",
       "J. Farooq",
@@ -991,7 +1016,7 @@
   },
   {
     "title": "Federated Multi-Agent Resource Orchestration in O-RAN with Distribution-Aware Critic Distillation",
-    "ref": "U7",
+    "ref": "U6",
     "authors": [
       "X. Wu",
       "J. Farooq",
@@ -1015,7 +1040,7 @@
   },
   {
     "title": "Process-Aware Cross-Layer Adaptation for O-RAN-Enabled Industrial Systems",
-    "ref": "U6",
+    "ref": "U5",
     "authors": [
       "E. Delavari",
       "J. Farooq",
@@ -1040,7 +1065,7 @@
   },
   {
     "title": "Optimized BEV Sharing for Enhanced LiDAR-based Collaborative Perception in CAVs",
-    "ref": "U5",
+    "ref": "U4",
     "authors": [
       "E. Besbes",
       "H. Ghazzai",
@@ -1059,31 +1084,6 @@
       "AI / Learning"
     ],
     "links": []
-  },
-  {
-    "title": "ORCA: Offloading and Resource Coordination via Multi-Agent Learning in Dynamic Cloud-Edge Systems",
-    "ref": "U4",
-    "authors": [
-      "Y. Wang",
-      "X. Wu",
-      "J. Farooq",
-      "T. Li",
-      "J. Chen"
-    ],
-    "authors_str": "Y. Wang*, X. Wu*, J. Farooq, T. Li, and J. Chen",
-    "year": 2025,
-    "type": "Preprint",
-    "venue": "submitted to IEEE Transactions on Mobile Computing",
-    "url": "https://www.techrxiv.org/doi/full/10.36227/techrxiv.176315222.25704753",
-    "tags": [
-      "Networks"
-    ],
-    "links": [
-      {
-        "label": "PDF",
-        "url": "https://www.techrxiv.org/doi/full/10.36227/techrxiv.176315222.25704753"
-      }
-    ]
   },
   {
     "title": "Optimized Collaborative Perception: Sector-Based BEV Fusion in Limited Communication Conditions",
